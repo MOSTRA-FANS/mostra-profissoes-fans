@@ -1,160 +1,161 @@
-# Planejamento e Divisao de Tarefas — Amostra de Profissoes
+# Planejamento e Divisao de Tarefas do Backend — Amostra de Profissoes
 
-Este documento estabelece a divisao do desenvolvimento do projeto **Amostra de Profissoes (Backend Node.js/Express e Frontend)** em etapas cronologicas e distribui as responsabilidades tecnicas entre **5 integrantes**, assegurando independencia no desenvolvimento, definicao clara de entregaveis e integracao padronizada.
+Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao de inscricoes da Amostra de Profissoes (Node.js/Express)** em etapas cronologicas e distribui as responsabilidades tecnicas exclusivamente no ecossistema do backend entre **5 integrantes**, assegurando separacao de conceitos (SRP), desacoplamento entre camadas e integracao fluida da API REST.
 
 ---
 
-## 1. Estrutura e Distribuicao de Funcoes
+## 1. Arquitetura em Camadas e Distribuicao das 5 Funcoes
 
 ```text
-+------------------------------------------------------------------------+
-|                        ARQUITETURA DO PROJETO                          |
-+---------------+-------------------+--------------------+---------------+
-|   PESSOA 1    |     PESSOA 2      |      PESSOA 3      |   PESSOA 4    |
-|  Setup & Core |  Banco de Dados   | Schemas & Handling | Service/Ctrl  |
-+-------+-------+---------+---------+----------+---------+-------+-------+
-        |                 |                    |                 |
-        +-----------------+--------------------+-----------------+
-                          |
-                          v
-                    +----------------------------+
-                    |          PESSOA 5          |
-                    |   Frontend & Integracao    |
-                    +----------------------------+
++-----------------------------------------------------------------------------------+
+|                            ARQUITETURA DO BACKEND                                 |
++-------------------+-------------------+-------------------+-----------------------+
+|     PESSOA 1      |     PESSOA 2      |     PESSOA 3      |       PESSOA 4        |
+|  Core & Seguranca | Banco & Persist.  | Validacao & Erros |   Regras de Negocio   |
+| (Server/RateLimit)| (DB & Repository) | (Schema/Handler)  |    (Service Layer)    |
++---------+---------+---------+---------+---------+---------+-----------+-----------+
+          |                   |                   |                     |
+          +-------------------+-------------------+---------------------+
+                                      |
+                                      v
+                        +---------------------------+
+                        |         PESSOA 5          |
+                        | Rotas, Controller, Testes |
+                        |     e Docs da API REST    |
+                        +---------------------------+
 ```
 
 ---
 
-### Pessoa 1: Setup do Projeto, Infraestrutura e Seguranca Global
-**Foco:** Inicializacao do ecossistema, infraestrutura de servidor, seguranca e monitoramento por logs.
+### Pessoa 1: Core do Servidor, Infraestrutura e Seguranca Global
+**Foco:** Inicializacao do runtime Node.js, configuracao do Express, politicas de seguranca de rede e modulo de logs.
 
 * **Arquivos sob responsabilidade:**
-  * `package.json` / `.env.example` / `.gitignore`
+  * `package.json`
+  * `.env.example`
+  * `.gitignore`
   * `src/server.js`
   * `src/config/rateLimiter.js`
   * `src/shared/middlewares/rateLimiter.js`
   * `src/shared/utils/logger.js`
 * **Tarefas tecnicas:**
-  - [ ] Inicializar o projeto Node.js (`npm init -y`) e instalar dependencias base (`express`, `cors`, `dotenv`, `express-rate-limit`).
-  - [ ] Implementar `src/server.js` com inicializacao do servidor Express e middlewares globais (parser JSON e politicas de CORS).
-  - [ ] Configurar middleware de Rate Limiting (`express-rate-limit`) para protecao contra ataques de forca bruta, spam e DoS.
-  - [ ] Desenvolver utilitario de logs (`src/shared/utils/logger.js`) para rastreamento de requisicoes e falhas do sistema.
-  - [ ] Configurar scripts de execucao no `package.json` (`npm run dev` com Nodemon e `npm start`).
-* **Criterio de Entrega:** Servidor Express inicializando corretamente na porta definida, com CORS restrito ao cliente oficial, limitador de requisicoes ativo e registros de log padronizados.
+  - [ ] Inicializar o projeto Node.js (`npm init -y`) e configurar scripts no `package.json` (`start`, `dev` com nodemon).
+  - [ ] Instalar dependencias centrais de infraestrutura (`express`, `cors`, `dotenv`, `express-rate-limit`, `helmet`).
+  - [ ] Configurar o arquivo principal `src/server.js` com instanciacao do Express, parsing de JSON (`express.json`) e politicas de CORS restritas ao dominio cliente.
+  - [ ] Implementar e parametrizar o limitador de requisicoes (`src/config/rateLimiter.js` e `src/shared/middlewares/rateLimiter.js`) para mitigar abusos e ataques DoS.
+  - [ ] Desenvolver utilitario de logs (`src/shared/utils/logger.js`) para rastreamento de acessos, erros e tempo de resposta das chamadas.
+* **Criterio de Entrega:** Servidor Express inicializando de forma resiliente na porta definida, com protecao por Rate Limit ativa, configuracao de variaveis de ambiente e logs operacionais.
 
 ---
 
 ### Pessoa 2: Banco de Dados, Modelagem e Camada de Persistencia (Repository)
-**Foco:** Conexao com banco de dados, definicao do esquema relacional/documental e metodos de persistencia.
+**Foco:** Conexao com a base de dados, modelagem das tabelas de inscricao e metodos de consulta/escrita SQL ou ORM.
 
 * **Arquivos sob responsabilidade:**
   * `src/config/database.js`
-  * Scripts de migracao/esquema (ex: `schema.sql` ou migrations de ORM)
+  * Scripts de migracao/esquema SQL (ex: `migrations/` ou `schema.sql`)
   * `src/features/subscriptions/subscription.repository.js`
 * **Tarefas tecnicas:**
-  - [ ] Configurar e instanciar a conexao com o banco de dados em `src/config/database.js` com gerenciamento de pool e reconexao automatica.
-  - [ ] Modelar a estrutura da tabela de inscricoes (campos: `id`, `nome`, `email`, `cpf`, `telefone`, `profissao_interesse`, `criado_em`).
-  - [ ] Implementar as operacoes de banco de dados em `subscription.repository.js`:
-    - `create(subscriptionData)`: Insercao de novo registro de inscricao.
+  - [ ] Configurar o conector com o banco de dados em `src/config/database.js` (gerenciamento de pool de conexoes, tratamento de timeout e reconexao).
+  - [ ] Elaborar a modelagem de dados da tabela `subscriptions` com campos: `id`, `nome`, `email`, `cpf`, `telefone`, `profissao_interesse`, `protocolo`, `criado_em`.
+  - [ ] Implementar a camada de persistencia em `subscription.repository.js`:
+    - `create(subscriptionData)`: Persistencia do registro da inscricao no banco.
     - `findByEmail(email)`: Consulta de inscricao por endereco de e-mail.
     - `findByCpf(cpf)`: Consulta de inscricao por CPF.
-    - `countByProfession(profissao)`: Contagem de inscritos por categoria/oficina para controle de limite de vagas.
-* **Criterio de Entrega:** Modulo de conexao estavel e repositorio com funcoes de persistencia e consulta testadas e documentadas.
+    - `countByProfession(profissao)`: Contagem de inscritos para calculo de capacidade de vagas.
+    - `checkHealth()`: Funcao para verificar status ativo da conexao com a base.
+* **Criterio de Entrega:** Modulo de conexao estavel e repositorio com funcoes de consulta e escrita testadas, sem vulnerabilidades de injecao (SQL Injection).
 
 ---
 
 ### Pessoa 3: Validacao de Dados (Schemas) e Tratamento Centralizado de Erros
-**Foco:** Validacao rigorosa de payloads de entrada, regras estruturais de dados e captura uniforme de excecoes.
+**Foco:** Garantia da integridade dos payloads de entrada, regras estruturais de validacao e captura padronizada de falhas.
 
 * **Arquivos sob responsabilidade:**
   * `src/features/subscriptions/subscription.schema.js`
-  * `src/shared/middlewares/errorHandler.js`
   * `src/shared/middlewares/validateRequest.js`
+  * `src/shared/middlewares/errorHandler.js`
 * **Tarefas tecnicas:**
-  - [ ] Configurar biblioteca de validacao de esquemas (ex: `Zod` ou `Joi`).
-  - [ ] Construir o esquema de validacao em `subscription.schema.js`:
-    - Nome completo (obrigatorio, minimo de caracteres).
-    - E-mail (formato RFC compativel e obrigatorio).
-    - CPF (formato valido e validacao matematica de digitos verificadores).
-    - Telefone (formato padronizado com codigo de area).
-    - Profissao/Oficina (validacao contra lista predefinida de opcoes validas).
-  - [ ] Implementar middleware generico `validateRequest.js` para interceptar requisicoes com payload invalido e retornar status `400 Bad Request` detalhado.
-  - [ ] Implementar middleware global `errorHandler.js` para interceptar falhas nao tratadas, registrar logs e ocultar stack traces em ambiente de producao.
-* **Criterio de Entrega:** Validacao consistente barrando entradas invalidas antes da camada de negocio e respostas de erro uniformes em JSON.
+  - [ ] Integrar biblioteca de validacao de esquemas (ex: `Zod` ou `Joi`).
+  - [ ] Definir regras de validacao rigorosas em `subscription.schema.js`:
+    - Nome completo (obrigatorio, minimo de caracteres, sanitizacao de espacos).
+    - E-mail (formato de e-mail valido segundo especificacao RFC).
+    - CPF (formato numerico/formatado com validacao matematica de digitos verificadores).
+    - Telefone (codigo DDD valido e tamanho padrao nacional).
+    - Profissao de interesse (restrita a um conjunto predefinido de opcoes permitidas).
+  - [ ] Implementar middleware reutilizavel `validateRequest.js` para interceptar payloads invalidos antes de chegarem aos controladores, retornando status `400 Bad Request` com array de inconsistencias.
+  - [ ] Implementar middleware global `errorHandler.js` para capturar excecoes sincronas e assincronas, formatar a saida JSON e omitir detalhes internos em ambiente de producao.
+* **Criterio de Entrega:** Validacao robusta barrando entradas invalidas com mensagens claras e camada central de captura de erros operando em todas as rotas.
 
 ---
 
-### Pessoa 4: Regras de Negocio (Service), Controladores e Rotas
-**Foco:** Orquestracao do fluxo de inscricao, validacoes de negocio e exposicao dos endpoints REST.
+### Pessoa 4: Regras de Negocio e Camada de Servico (Service Layer)
+**Foco:** Implementacao da logica do dominio de inscricoes, validacoes de negocio, verificacao de concorrencia e regras de vagas.
 
 * **Arquivos sob responsabilidade:**
-  * `src/features/subscriptions/subscription.routes.js`
-  * `src/features/subscriptions/subscription.controller.js`
   * `src/features/subscriptions/subscription.service.js`
+  * `src/shared/errors/AppError.js` (classes de erros personalizados)
 * **Tarefas tecnicas:**
-  - [ ] Implementar regras de negocio em `subscription.service.js`:
-    - Validacao de duplicidade de e-mail e CPF consultando o repositorio.
-    - Verificacao de disponibilidade de vagas para a profissao selecionada.
-    - Delegacao da gravacao dos dados para a camada de persistencia.
-  - [ ] Implementar controlador `subscription.controller.js`:
-    - Extracao de parametros de `req.body`, repasse ao servico e construcao da resposta HTTP (`201 Created` ou codigos de erro apropriados).
-  - [ ] Configurar rotas em `subscription.routes.js`:
-    - Definir rota `POST /api/subscriptions` acoplando middleware de validacao e controlador.
-    - Definir rota de verificacao `GET /api/subscriptions/health` (se aplicavel).
-* **Criterio de Entrega:** Endpoints REST operacionais, desacoplados, aplicando principios de responsabilidade unica e integrados ao repositorio e esquemas.
+  - [ ] Criar classes de erros customizados (ex: `ConflictError`, `BusinessError`, `NotFoundError`) para mapeamento automatico de status HTTP.
+  - [ ] Implementar a logica de negocio em `subscription.service.js`:
+    - Validacao de duplicidade de inscricao: rejeitar cadastros com o mesmo CPF ou e-mail.
+    - Verificacao de lotacao: consultar total de inscritos via repositorio e barrar novas inscricoes caso o limite da profissao/oficina tenha sido atingido.
+    - Geracao de identificador unico/codigo de protocolo de inscricao para o participante.
+    - Chamada ao repositorio para efetivacao da gravacao dos dados tratados.
+* **Criterio de Entrega:** Camada de servico contendo todas as regras de negocio isoladas, sem dependencia direta do protocolo HTTP (`req`/`res`), com testes de cenarios positivos e excecoes.
 
 ---
 
-### Pessoa 5: Interface de Usuario (Frontend) e Integracao com a API
-**Foco:** Construcao da interface web responsiva, mascaras de entrada, consumo da API REST e feedback ao usuario.
+### Pessoa 5: Controladores, Roteamento HTTP, Testes Automatizados e Documentacao da API
+**Foco:** Recebimento das requisicoes HTTP, orquestracao da comunicacao entre camadas, suite de testes de integracao e especificacao dos contratos REST.
 
 * **Arquivos sob responsabilidade:**
-  * `public/index.html`
-  * `public/css/styles.css`
-  * `public/js/app.js`
+  * `src/features/subscriptions/subscription.controller.js`
+  * `src/features/subscriptions/subscription.routes.js`
+  * `tests/` ou script de validacao de endpoints (ex: Jest/Supertest ou suite Postman/Insomnia)
+  * `docs/api-spec.md` (ou especificacao OpenAPI/Swagger)
 * **Tarefas tecnicas:**
-  - [ ] Desenvolver estrutura semantica (HTML5) e layout responsivo e acessivel (CSS moderno).
-  - [ ] Aplicar mascaras de formatacao e validacoes client-side em campos criticos (CPF, telefone, e-mail).
-  - [ ] Implementar chamadas assincronas (`fetch` ou `axios`) direcionadas ao endpoint `POST /api/subscriptions`.
-  - [ ] Desenvolver componentes de feedback visual:
-    - Exibicao de confirmacao e comprovante em caso de sucesso (`201 Created`).
-    - Exibicao de mensagens especificas para erros de validacao ou duplicidade (`400 Bad Request`, `409 Conflict`).
-    - Notificacao de bloqueio temporario em caso de excesso de requisicoes (`429 Too Many Requests`).
-  - [ ] Executar testes de ponta a ponta (E2E) simulando o preenchimento e submissao do formulario.
-* **Criterio de Entrega:** Interface grafica funcional, integrada a API do backend, com tratamento de respostas de sucesso e excecoes.
+  - [ ] Implementar `subscription.controller.js`:
+    - Extrair dados do corpo (`req.body`), acionar o servico (`subscription.service.js`) e retornar status HTTP correspondente (`201 Created`, `200 OK`).
+  - [ ] Configurar o roteador `subscription.routes.js`:
+    - Mapear a rota `POST /api/subscriptions` vinculando os middlewares de Rate Limiting, validacao de schema e o metodo do controller.
+    - Mapear rota de diagnostico `GET /api/health` para monitoramento do backend e da conexao com o banco.
+  - [ ] Desenvolver suite de testes de integracao / colecao de testes de API cobrindo cenarios: sucesso (201), dados invalidos (400), cadastro duplicado (409), excesso de requisicoes (429) e erro interno (500).
+  - [ ] Elaborar a documentacao tecnica dos endpoints da API REST (metodos, URLs, cabeçalhos, payloads de requisicao e exemplos de respostas JSON).
+* **Criterio de Entrega:** Endpoints expostos e funcionais, rotas integradas ao servidor principal, suite de testes comprovando o funcionamento da API e documentacao dos contratos para consumo pelo frontend.
 
 ---
 
 ## 2. Cronograma de Execucao por Etapas
 
-| Etapa | Duracao Estimada | Atividades Principais | Responsaveis |
+| Etapa | Duracao Estimada | Atividades Principais | Responsaveis Envolvidos |
 | :--- | :--- | :--- | :--- |
-| **Etapa 1: Setup e Infraestrutura Base** | Dia 1 | Inicializacao do repositorio, configuracao do Express, conexao inicial com banco e definicao das variaveis de ambiente. | Pessoa 1 e Pessoa 2 |
-| **Etapa 2: Construcao dos Modulos** | Dia 2 e Dia 3 | Desenvolvimento dos Schemas de validacao, Repository, Service, Controllers, Middlewares e prototipo da interface. | Pessoas 2, 3, 4 e 5 |
-| **Etapa 3: Integracao de Camadas** | Dia 4 | Vinculacao de rotas, servicos, persistencia e conexao do Frontend com os endpoints da API. | Todas as Pessoas (1 a 5) |
-| **Etapa 4: Validacao, Testes e Entrega** | Dia 5 | Testes de carga no Rate Limiting, validacao de dados de borda, responsividade cross-device e consolidacao da documentacao. | Todas as Pessoas (1 a 5) |
+| **Etapa 1: Estrutura Base e Persistencia** | Dia 1 | Criacao do repositorio Git, setup do Express, configuracao do banco de dados e modelagem das tabelas. | Pessoa 1 e Pessoa 2 |
+| **Etapa 2: Validacao, Regras e Endpoints** | Dia 2 e Dia 3 | Construcao dos Schemas de validacao, Services de negocio, Repositories, Controllers e Middlewares de erro. | Pessoas 2, 3, 4 e 5 |
+| **Etapa 3: Integracao do Pipeline HTTP** | Dia 4 | Vinculacao de todas as camadas no `server.js`, aplicacao dos middlewares globais e integracao completa do fluxo de inscricao. | Todas as Pessoas (1 a 5) |
+| **Etapa 4: Testes de Integracao e Seguranca** | Dia 5 | Execucao dos testes de integracao, validacao de cenarios de borda, teste de carga do Rate Limiter e fechamento da documentacao. | Todas as Pessoas (1 a 5) |
 
 ---
 
-## 3. Matriz de Entregaveis e Criterios de Aceite
+## 3. Matriz de Entregaveis e Criterios de Aceite Tecnico
 
-| Integrante | Funcao Principal | Componentes Chave | Criterio de Aceite Tecnico |
+| Integrante | Funcao no Backend | Modulos Principais | Criterio de Aceite Tecnico |
 | :--- | :--- | :--- | :--- |
-| **Pessoa 1** | DevOps & Core | `server.js`, `rateLimiter.js`, `logger.js` | O servidor inicia sem erros; requisicoes excedentes recebem HTTP 429; logs gravam acessos e falhas. |
-| **Pessoa 2** | DBA & Data Layer | `database.js`, `subscription.repository.js` | Conexao estavel; consultas e insercoes executam sem violacoes de integridade no banco. |
-| **Pessoa 3** | QA & Security | `subscription.schema.js`, `errorHandler.js` | Entradas fora do padrao retornam HTTP 400 com descricao clara; erros 500 ocultam dados internos do servidor. |
-| **Pessoa 4** | Feature Lead | `subscription.service.js`, `subscription.controller.js` | Cadastros duplicados sao bloqueados; inscricoes validas sao registradas com retorno HTTP 201. |
-| **Pessoa 5** | Frontend & UX | `index.html`, `styles.css`, `app.js` | Formulario se comunica com a API, trata todos os codigos de retorno e mantem layout responsivo. |
+| **Pessoa 1** | Core & Seguranca | `server.js`, `rateLimiter.js`, `logger.js` | Servidor roda estavel na porta configurada; IP e bloqueado com status HTTP 429 apos exceder o limite de requisicoes; logs registram eventos. |
+| **Pessoa 2** | Persistencia & Banco | `database.js`, `subscription.repository.js` | Conexao resiliente com pool ativo; dados sao gravados e consultados sem falhas de integridade ou vulnerabilidade a SQL Injection. |
+| **Pessoa 3** | Validacao & Erros | `subscription.schema.js`, `errorHandler.js` | Payloads fora do padrao sao barrados com HTTP 400 antes da regra de negocio; falhas nao tratadas resultam em HTTP 500 sem stack trace exposto. |
+| **Pessoa 4** | Regras de Negocio | `subscription.service.js`, `AppError.js` | Cadastros duplicados (mesmo CPF ou e-mail) sao rejeitados; limite de vagas por categoria e respeitado; gera protocolo unico por inscricao. |
+| **Pessoa 5** | Controller & Testes | `subscription.controller.js`, `subscription.routes.js`, testes e docs | Rotas respondem nos contratos JSON definidos; respostas HTTP 201/400/409/429/500 corretas; suite de testes automatizada validando o fluxo. |
 
 ---
 
 ## 4. Padrao de Versionamento e Fluxo Git
 
-1. **Branch Principal:** `main` (codigo estavel, pronto para producao).
-2. **Branches por Integrante/Funcionalidade:**
-   - Pessoa 1: `feature/core-setup-and-security`
+1. **Branch Principal:** `main` (codigo de backend estavel, homologado e testado).
+2. **Branches por Integrante/Modulo:**
+   - Pessoa 1: `feature/core-server-and-security`
    - Pessoa 2: `feature/database-and-repository`
    - Pessoa 3: `feature/schemas-and-error-handling`
-   - Pessoa 4: `feature/subscription-service-controller`
-   - Pessoa 5: `feature/frontend-subscription-form`
-3. **Politica de Integracao:** Qualquer alteracao deve ser submetida via Pull Request (PR), acompanhada de descricao detalhada dos modulos alterados e aprovada antes do merge.
+   - Pessoa 4: `feature/subscription-service-rules`
+   - Pessoa 5: `feature/controller-routes-and-tests`
+3. **Politica de Integracao:** Qualquer alteracao devera ser submetida via Pull Request (PR), passando por revisao cruzada entre camadas adjacentes antes do merge na branch principal.
