@@ -16,7 +16,7 @@ class AppError extends Error {
   }
 }
 
-/** Conflito com um registro existente, como CPF ou e-mail duplicado. */
+/** Conflito com um registro existente, como e-mail duplicado. */
 class ConflictError extends AppError {
   constructor(message = 'Já existe um registro com os dados informados.') {
     super(message, 409);
