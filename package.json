@@ -1,0 +1,25 @@
+{
+  "name": "mostra-profissoes-fans",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MOSTRA-FANS/mostra-profissoes-fans.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MOSTRA-FANS/mostra-profissoes-fans/issues"
+  },
+  "homepage": "https://github.com/MOSTRA-FANS/mostra-profissoes-fans#readme",
+  "dependencies": {
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "express": "^5.2.1"
+  }
+}
