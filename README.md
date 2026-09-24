@@ -1,6 +1,6 @@
-# Arquitetura do Backend — Amostra de Profissões
+# Arquitetura do Backend — Mostra de Profissões
 
-Este documento descreve a arquitetura do backend para a aplicação de inscrição da Amostra de Profissões, utilizando **Node.js** e **Express**.
+Este documento descreve a arquitetura do backend para a aplicação de inscrição da Mostra de Profissões, utilizando **Node.js** e **Express**.
 
 ---
 
@@ -43,7 +43,7 @@ src/
 | :--- | :--- | :--- |
 | **Routes** | `subscription.routes.js` | Define as rotas HTTP (`POST /api/subscriptions`) e aplica os middlewares específicos. |
 | **Controller** | `subscription.controller.js` | Recebe a requisição, extrai o corpo (`req.body`), aciona a camada de serviço e retorna o status HTTP + JSON. |
-| **Service** | `subscription.service.js` | Contém a regra de negócio (ex: verificar duplicidade de e-mail/CPF, validar vagas disponíveis). |
+| **Service** | `subscription.service.js` | Contém a regra de negócio (ex: bloquear e-mail repetido e validar escolhas de cursos). |
 | **Repository** | `subscription.repository.js` | Contém as consultas SQL ou chamadas do ORM/ODM (ex: Prisma, TypeORM, Mongoose). |
 | **Schema** | `subscription.schema.js` | Valida a estrutura dos dados recebidos no formulário antes de prosseguir. |
 
@@ -60,3 +60,8 @@ src/
 
 3. **Tratamento Global de Erros:**
    - Evita a exposição de stack traces em ambiente de produção através do middleware `errorHandler.js`.
+## Formulario de interesse em cursos
+
+Um curso atual obrigatorio, no maximo um curso novo opcional e uma resposta por e-mail. Os catalogos ficam no banco. Consulte [banco e migracao](docs/database.md).
+
+Execute os testes isolados com `node --test tests/*.test.js`. O backend HTTP e a validacao completa do payload ainda dependem das Pessoas 1, 3 e 5.
