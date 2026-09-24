@@ -114,19 +114,6 @@ if (subscriptionRoutes) {
   logger.warn('subscription.routes.js ainda não disponível — rotas de inscrição não montadas.');
 }
 
-// Rota informativa na raiz para facilitar acesso pelo navegador
-app.get('/', (req, res) => {
-  res.json({
-    status: 'ok',
-    message: 'Backend da Mostra de Profissões está online!',
-    endpoints: {
-      health: '/api/health',
-      courses: '/api/courses',
-      subscriptions: '/api/subscriptions',
-    },
-  });
-});
-
 // 404 para rotas inexistentes
 app.use((req, res) => {
   res.status(404).json({ status: 'error', message: 'Rota não encontrada.' });
