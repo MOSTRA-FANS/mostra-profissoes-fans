@@ -1,0 +1,122 @@
+{
+  "info": {
+    "_postman_id": "mostra-profissoes-api-v1",
+    "name": "Mostra de Profissões - Backend API",
+    "description": "Coleção de testes para validação dos endpoints REST da Mostra de Profissões (Pessoa 5)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check (Diagnóstico)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/health",
+          "host": ["{{base_url}}"],
+          "path": ["api", "health"]
+        },
+        "description": "Verifica a saúde do backend e a conexão com o banco de dados MySQL"
+      }
+    },
+    {
+      "name": "Catálogo de Cursos",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/courses",
+          "host": ["{{base_url}}"],
+          "path": ["api", "courses"]
+        },
+        "description": "Lista os cursos válidos e homologados"
+      }
+    },
+    {
+      "name": "Criar Inscrição - Sucesso (201)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Mariana Costa Ribeiro\",\n  \"email\": \"mariana.costa@exemplo.com\",\n  \"telefone\": \"(31) 98765-4321\",\n  \"curso\": \"Engenharia de Software\",\n  \"idade\": 19,\n  \"novidade\": 1,\n  \"saber\": \"Instagram\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/subscriptions",
+          "host": ["{{base_url}}"],
+          "path": ["api", "subscriptions"]
+        },
+        "description": "Submete o formulário com dados válidos gerando registro com status 201"
+      }
+    },
+    {
+      "name": "Criar Inscrição - Dados Inválidos (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Jo\",\n  \"email\": \"email-invalido\",\n  \"telefone\": \"12345\",\n  \"curso\": \"Curso Inexistente\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/subscriptions",
+          "host": ["{{base_url}}"],
+          "path": ["api", "subscriptions"]
+        },
+        "description": "Envia payload inconsistente para verificar o retorno de erro 400 com lista de inconsistências do Zod"
+      }
+    },
+    {
+      "name": "Criar Inscrição - E-mail Duplicado (409)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Outro Participante\",\n  \"email\": \"mariana.costa@exemplo.com\",\n  \"telefone\": \"(31) 98765-4321\",\n  \"curso\": \"Direito\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/subscriptions",
+          "host": ["{{base_url}}"],
+          "path": ["api", "subscriptions"]
+        },
+        "description": "Tenta cadastrar novamente um e-mail já existente para validar o status 409 Conflict"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
