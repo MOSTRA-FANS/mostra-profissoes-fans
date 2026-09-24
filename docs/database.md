@@ -107,3 +107,27 @@ inspecione o estado antes de continuar. Não há rollback destrutivo automático
 create retorna id e dados gravados; findById retorna também data_inscricao.
 Execute os testes isolados com `node --test tests/*.test.js`. Eles não substituem
 execução das migrations nem testes de integridade em MySQL real.
+
+## Teste automatizado com MySQL real
+
+Em 23/09/2026, a suite foi validada em MySQL Community 8.4.9 no Windows,
+com instância temporária limitada a 127.0.0.1:3307. As migrations 002–005,
+os oito cursos atuais, o catálogo novo inicialmente vazio, persistência com
+ID/data gerados pelo banco, normalização, UNIQUE e ambas as FKs passaram.
+Dois INSERTs concorrentes após consultas sem registro produziram uma gravação
+e um ConflictError com statusCode 409. Isso valida o service, não a resposta HTTP.
+
+Para repetir, disponibilize MySQL de testes e mysql2 no ambiente Node.js.
+Configure DB_HOST, DB_PORT, DB_USER e DB_PASSWORD. O usuário precisa poder
+criar e remover bancos de testes. Execute no PowerShell:
+
+```powershell
+$env:RUN_MYSQL_TESTS = '1'
+node --test tests/integration/mysql.test.js
+```
+
+A suite gera um banco `mostra_test_<aleatorio>`, aplica as migrations nele
+e remove somente esse banco ao finalizar. DB_NAME não seleciona uma base
+existente para os testes. Sem RUN_MYSQL_TESTS=1, a suite é ignorada.
+Os erros SQL de duplicidade e FK exibidos nos logs são esperados nos casos
+de rejeição. Testes HTTP permanecem pendentes da integração das outras camadas.

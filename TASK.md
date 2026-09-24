@@ -161,4 +161,4 @@ Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao
 
 ## Contrato atualizado do formulario
 
-Consulte `docs/database.md`. O catalogo de cursos novos comeca vazio; `novo` pode ser null. Validacao HTTP completa e testes com MySQL real ainda pendentes.
+Consulte `docs/database.md`. O catalogo de cursos novos comeca vazio; `novo` pode ser null. Migrations e regras do service validadas com MySQL real 8.4.9 pela suite `tests/integration/mysql.test.js`. Validacao HTTP completa ainda pendente.
