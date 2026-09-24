@@ -1,13 +1,16 @@
 const { z } = require('zod');
 
-// TODO: confirmar a lista oficial de profissoes com a equipe/banco de dados.
 const PROFISSOES = [
-  'Administracao',
+  // Graduacoes
+  'Administração',
   'Direito',
-  'Enfermagem',
+  'Ciências Contábeis',
   'Engenharia de Software',
   'Pedagogia',
   'Psicologia',
+  // Tecnicos
+  'Técnico em Enfermagem',
+  'Técnico em Segurança do Trabalho',
 ];
 
 // DDDs validos da ANATEL.

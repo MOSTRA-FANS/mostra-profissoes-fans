@@ -53,6 +53,10 @@ test('payload valido passa e e sanitizado', async () => {
   });
 });
 
+test('profissao com acento e aceita', async () => {
+  assert.equal((await post({ ...valid, profissao_interesse: 'Técnico em Segurança do Trabalho' })).status, 201);
+});
+
 test('fixo com 10 digitos e aceito', async () => {
   assert.equal((await post({ ...valid, telefone: '6132345678' })).status, 201);
 });
@@ -62,7 +66,7 @@ const invalidCases = {
   email: ['maria@', 'maria.exemplo.com'],
   cpf: ['529.982.247-24', '11111111111', '5299822472', '529-982-247.25'],
   telefone: ['(20) 98765-4321', '1188765432', '119876543', '11 98765-432a'],
-  profissao_interesse: ['Astronauta'],
+  profissao_interesse: ['Astronauta', 'Administracao'],
 };
 
 for (const [campo, values] of Object.entries(invalidCases)) {
