@@ -9,7 +9,6 @@ const errorHandler = require('../src/shared/middlewares/errorHandler');
 const valid = {
   nome: '  Maria   da Silva ',
   email: ' Maria@Exemplo.COM ',
-  cpf: '529.982.247-25',
   telefone: '(11) 98765-4321',
   profissao_interesse: 'Direito',
 };
@@ -25,7 +24,7 @@ before(async () => {
     throw new Error('segredo interno');
   });
   app.get('/conflict', () => {
-    throw Object.assign(new Error('CPF ja inscrito'), { statusCode: 409 });
+    throw Object.assign(new Error('E-mail ja inscrito'), { statusCode: 409 });
   });
   app.use(errorHandler);
   server = app.listen(0);
@@ -47,7 +46,6 @@ test('payload valido passa e e sanitizado', async () => {
   assert.deepEqual(await res.json(), {
     nome: 'Maria da Silva',
     email: 'maria@exemplo.com',
-    cpf: '52998224725',
     telefone: '11987654321',
     profissao_interesse: 'Direito',
   });
@@ -64,7 +62,6 @@ test('fixo com 10 digitos e aceito', async () => {
 const invalidCases = {
   nome: ['Maria', 'Jo', 'Maria 123'],
   email: ['maria@', 'maria.exemplo.com'],
-  cpf: ['529.982.247-24', '11111111111', '5299822472', '529-982-247.25'],
   telefone: ['(20) 98765-4321', '1188765432', '119876543', '11 98765-432a'],
   profissao_interesse: ['Astronauta', 'Administracao'],
 };
@@ -82,7 +79,7 @@ for (const [campo, values] of Object.entries(invalidCases)) {
 
 test('body vazio lista todos os campos obrigatorios', async () => {
   const body = await (await post({})).json();
-  assert.equal(body.errors.length, 5);
+  assert.equal(body.errors.length, 4);
 });
 
 test('JSON malformado -> 400', async () => {
@@ -111,5 +108,5 @@ test('erro async em producao -> 500 sem detalhes internos', async () => {
 test('erro com statusCode (AppError) mantem status e mensagem', async () => {
   const res = await fetch(`${baseUrl}/conflict`);
   assert.equal(res.status, 409);
-  assert.equal((await res.json()).message, 'CPF ja inscrito');
+  assert.equal((await res.json()).message, 'E-mail ja inscrito');
 });

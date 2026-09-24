@@ -24,19 +24,6 @@ const DDDS = new Set([
 
 const onlyDigits = (value) => value.replace(/\D/g, '');
 
-function isValidCpf(cpf) {
-  if (!/^\d{11}$/.test(cpf) || /^(\d)\1{10}$/.test(cpf)) return false;
-
-  const checkDigit = (length) => {
-    let sum = 0;
-    for (let i = 0; i < length; i++) sum += Number(cpf[i]) * (length + 1 - i);
-    const rest = (sum * 10) % 11;
-    return rest === 10 ? 0 : rest;
-  };
-
-  return checkDigit(9) === Number(cpf[9]) && checkDigit(10) === Number(cpf[10]);
-}
-
 // Fixo: DDD + 8 digitos (inicia em 2-5). Celular: DDD + 9 + 8 digitos.
 function isValidPhone(phone) {
   if (!DDDS.has(Number(phone.slice(0, 2)))) return false;
@@ -64,12 +51,6 @@ const subscriptionSchema = z.object({
     .toLowerCase()
     .pipe(z.email('E-mail invalido').max(320, 'E-mail muito longo')),
 
-  cpf: z
-    .string({ error: 'CPF e obrigatorio' })
-    .regex(/^(\d{11}|\d{3}\.\d{3}\.\d{3}-\d{2})$/, 'CPF deve ter o formato 00000000000 ou 000.000.000-00')
-    .transform(onlyDigits)
-    .refine(isValidCpf, 'CPF invalido'),
-
   telefone: z
     .string({ error: 'Telefone e obrigatorio' })
     .regex(/^[\d\s()-]+$/, 'Telefone deve conter apenas numeros, espacos, parenteses ou hifen')
@@ -81,4 +62,4 @@ const subscriptionSchema = z.object({
   }),
 });
 
-module.exports = { subscriptionSchema, PROFISSOES, isValidCpf, isValidPhone };
+module.exports = { subscriptionSchema, PROFISSOES, isValidPhone };
