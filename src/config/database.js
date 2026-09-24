@@ -48,15 +48,17 @@ async function query(sql, params = []) {
  */
 async function testConnection() {
   const startTime = Date.now();
+  let connection;
   try {
-    const connection = await pool.getConnection();
+    connection = await pool.getConnection();
     await connection.ping();
-    connection.release();
     const latencyMs = Date.now() - startTime;
     return { ok: true, latencyMs };
   } catch (error) {
     console.error('[Database Error] Falha ao conectar ao banco:', error.message);
     return { ok: false, latencyMs: Date.now() - startTime, error: error.message };
+  } finally {
+    connection?.release();
   }
 }
 

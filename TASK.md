@@ -1,6 +1,6 @@
-# Planejamento e Divisao de Tarefas do Backend — Amostra de Profissoes
+# Planejamento e Divisao de Tarefas do Backend — Mostra de Profissoes
 
-Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao de inscricoes da Amostra de Profissoes (Node.js/Express)** em etapas cronologicas e distribui as responsabilidades tecnicas exclusivamente no ecossistema do backend entre **5 integrantes**, assegurando separacao de conceitos (SRP), desacoplamento entre camadas e integracao fluida da API REST.
+Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao de inscricoes da Mostra de Profissoes (Node.js/Express)** em etapas cronologicas e distribui as responsabilidades tecnicas exclusivamente no ecossistema do backend entre **5 integrantes**, assegurando separacao de conceitos (SRP), desacoplamento entre camadas e integracao fluida da API REST.
 
 ---
 
@@ -53,16 +53,15 @@ Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao
 
 * **Arquivos sob responsabilidade:**
   * `src/config/database.js`
-  * Scripts de migracao/esquema SQL (ex: `migrations/` ou `schema.sql`)
+  * Migrations versionadas em `migrations/` e contrato em `docs/database.md`
   * `src/features/subscriptions/subscription.repository.js`
 * **Tarefas tecnicas:**
   - [x] Configurar o conector com o banco de dados em `src/config/database.js` (gerenciamento de pool de conexoes, tratamento de timeout e reconexao).
-  - [x] Elaborar a modelagem de dados da tabela `subscriptions` com campos: `id`, `nome`, `email`, `cpf`, `telefone`, `profissao_interesse`, `protocolo`, `criado_em`.
+  - [x] Elaborar a modelagem de dados da tabela `inscricoes` com campos: `id`, `nome`, `idade`, `email`, `telefone`, `curso`, `novo`, `outro`, `novidade`, `feedback`, `saber`, `data_inscricao`; catalogos `cursos_atuais` e `cursos_novos`.
   - [x] Implementar a camada de persistencia em `subscription.repository.js`:
     - `create(subscriptionData)`: Persistencia do registro da inscricao no banco.
     - `findByEmail(email)`: Consulta de inscricao por endereco de e-mail.
-    - `findByCpf(cpf)`: Consulta de inscricao por CPF.
-    - `countByProfession(profissao)`: Contagem de inscritos para calculo de capacidade de vagas.
+    - `listCurrentCourses()` e `listNewCourses()`: Opcoes permitidas dos catalogos do banco.
     - `checkHealth()`: Funcao para verificar status ativo da conexao com a base.
 * **Criterio de Entrega:** Modulo de conexao estavel e repositorio com funcoes de consulta e escrita testadas, sem vulnerabilidades de injecao (SQL Injection).
 
@@ -80,9 +79,9 @@ Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao
   - [ ] Definir regras de validacao rigorosas em `subscription.schema.js`:
     - Nome completo (obrigatorio, minimo de caracteres, sanitizacao de espacos).
     - E-mail (formato de e-mail valido segundo especificacao RFC).
-    - CPF (formato numerico/formatado com validacao matematica de digitos verificadores).
+    - Idade (inteiro obrigatorio), campos opcionais e limites de tamanho conforme `docs/database.md` e migrations.
     - Telefone (codigo DDD valido e tamanho padrao nacional).
-    - Profissao de interesse (restrita a um conjunto predefinido de opcoes permitidas).
+    - Um curso atual obrigatorio e no maximo um curso novo opcional; rejeitar arrays. Catalogos mantidos no banco.
   - [ ] Implementar middleware reutilizavel `validateRequest.js` para interceptar payloads invalidos antes de chegarem aos controladores, retornando status `400 Bad Request` com array de inconsistencias.
   - [ ] Implementar middleware global `errorHandler.js` para capturar excecoes sincronas e assincronas, formatar a saida JSON e omitir detalhes internos em ambiente de producao.
 * **Criterio de Entrega:** Validacao robusta barrando entradas invalidas com mensagens claras e camada central de captura de erros operando em todas as rotas.
@@ -90,17 +89,17 @@ Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao
 ---
 
 ### Pessoa 4: Regras de Negocio e Camada de Servico (Service Layer)
-**Foco:** Implementacao da logica do dominio de inscricoes, validacoes de negocio, verificacao de concorrencia e regras de vagas.
+**Foco:** Implementacao da logica do dominio de inscricoes, validacoes de negocio, bloqueio de e-mail repetido e selecao de cursos.
 
 * **Arquivos sob responsabilidade:**
   * `src/features/subscriptions/subscription.service.js`
   * `src/shared/errors/AppError.js` (classes de erros personalizados)
 * **Tarefas tecnicas:**
-  - [ ] Criar classes de erros customizados (ex: `ConflictError`, `BusinessError`, `NotFoundError`) para mapeamento automatico de status HTTP.
-  - [ ] Implementar a logica de negocio em `subscription.service.js`:
-    - Validacao de duplicidade de inscricao: rejeitar cadastros com o mesmo CPF ou e-mail.
-    - Verificacao de lotacao: consultar total de inscritos via repositorio e barrar novas inscricoes caso o limite da profissao/oficina tenha sido atingido.
-    - Geracao de identificador unico/codigo de protocolo de inscricao para o participante.
+  - [x] Criar classes de erros customizados (ex: `ConflictError`, `BusinessError`, `NotFoundError`) para mapeamento automatico de status HTTP.
+  - [x] Implementar a logica de negocio em `subscription.service.js`:
+    - Normalizar e-mail com trim e lowercase e rejeitar novas respostas do mesmo e-mail, inclusive em envios simultaneos.
+    - Validar curso atual e curso novo contra os catalogos; sem reserva ou limite de vagas.
+    - Usar o id gerado pelo banco; CPF e protocolo nao fazem parte deste formulario.
     - Chamada ao repositorio para efetivacao da gravacao dos dados tratados.
 * **Criterio de Entrega:** Camada de servico contendo todas as regras de negocio isoladas, sem dependencia direta do protocolo HTTP (`req`/`res`), com testes de cenarios positivos e excecoes.
 
@@ -144,7 +143,7 @@ Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao
 | **Pessoa 1** | Core & Seguranca | `server.js`, `rateLimiter.js`, `logger.js` | Servidor roda estavel na porta configurada; IP e bloqueado com status HTTP 429 apos exceder o limite de requisicoes; logs registram eventos. |
 | **Pessoa 2** | Persistencia & Banco | `database.js`, `subscription.repository.js` | Conexao resiliente com pool ativo; dados sao gravados e consultados sem falhas de integridade ou vulnerabilidade a SQL Injection. |
 | **Pessoa 3** | Validacao & Erros | `subscription.schema.js`, `errorHandler.js` | Payloads fora do padrao sao barrados com HTTP 400 antes da regra de negocio; falhas nao tratadas resultam em HTTP 500 sem stack trace exposto. |
-| **Pessoa 4** | Regras de Negocio | `subscription.service.js`, `AppError.js` | Cadastros duplicados (mesmo CPF ou e-mail) sao rejeitados; limite de vagas por categoria e respeitado; gera protocolo unico por inscricao. |
+| **Pessoa 4** | Regras de Negocio | `subscription.service.js`, `AppError.js` | E-mail repetido retorna 409; aceita um curso atual e no maximo um curso novo dos catalogos; sem limite de vagas. |
 | **Pessoa 5** | Controller & Testes | `subscription.controller.js`, `subscription.routes.js`, testes e docs | Rotas respondem nos contratos JSON definidos; respostas HTTP 201/400/409/429/500 corretas; suite de testes automatizada validando o fluxo. |
 
 ---
@@ -159,3 +158,7 @@ Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao
    - Pessoa 4: `feature/subscription-service-rules`
    - Pessoa 5: `feature/controller-routes-and-tests`
 3. **Politica de Integracao:** Qualquer alteracao devera ser submetida via Pull Request (PR), passando por revisao cruzada entre camadas adjacentes antes do merge na branch principal.
+
+## Contrato atualizado do formulario
+
+Consulte `docs/database.md`. O catalogo de cursos novos comeca vazio; `novo` pode ser null. Migrations e regras do service validadas com MySQL real 8.4.9 pela suite `tests/integration/mysql.test.js`. Validacao HTTP completa ainda pendente.
