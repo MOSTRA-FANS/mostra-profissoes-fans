@@ -18,6 +18,7 @@ function buildLimiter(name, { windowMs, max, message }, extraOptions = {}) {
     limit: max,
     standardHeaders: 'draft-7', // envia RateLimit-* e Retry-After
     legacyHeaders: false,       // desativa X-RateLimit-*
+    validate: { trustProxy: false },
     ...extraOptions,
     handler: (req, res, _next, options) => {
       const resetTime = req.rateLimit && req.rateLimit.resetTime;

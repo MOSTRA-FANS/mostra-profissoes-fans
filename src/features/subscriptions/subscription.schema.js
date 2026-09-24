@@ -22,10 +22,11 @@ const DDDS = new Set([
   91, 92, 93, 94, 95, 96, 97, 98, 99,
 ]);
 
-const onlyDigits = (value) => value.replace(/\D/g, '');
+const onlyDigits = (value) => (typeof value === 'string' ? value.replace(/\D/g, '') : '');
 
 // Fixo: DDD + 8 digitos (inicia em 2-5). Celular: DDD + 9 + 8 digitos.
 function isValidPhone(phone) {
+  if (typeof phone !== 'string') return false;
   if (!DDDS.has(Number(phone.slice(0, 2)))) return false;
   if (phone.length === 11) return phone[2] === '9';
   if (phone.length === 10) return /[2-5]/.test(phone[2]);
@@ -34,7 +35,7 @@ function isValidPhone(phone) {
 
 const subscriptionSchema = z.object({
   nome: z
-    .string({ error: 'Nome e obrigatorio' })
+    .string({ required_error: 'Nome e obrigatorio', invalid_type_error: 'Nome e obrigatorio' })
     .transform((value) => value.trim().replace(/\s+/g, ' '))
     .pipe(
       z
@@ -46,20 +47,34 @@ const subscriptionSchema = z.object({
     ),
 
   email: z
-    .string({ error: 'E-mail e obrigatorio' })
+    .string({ required_error: 'E-mail e obrigatorio', invalid_type_error: 'E-mail e obrigatorio' })
     .trim()
     .toLowerCase()
-    .pipe(z.email('E-mail invalido').max(320, 'E-mail muito longo')),
+    .pipe(z.string().email('E-mail invalido').max(320, 'E-mail muito longo')),
 
   telefone: z
-    .string({ error: 'Telefone e obrigatorio' })
+    .string({ required_error: 'Telefone e obrigatorio', invalid_type_error: 'Telefone e obrigatorio' })
     .regex(/^[\d\s()-]+$/, 'Telefone deve conter apenas numeros, espacos, parenteses ou hifen')
     .transform(onlyDigits)
     .refine(isValidPhone, 'Telefone invalido: informe DDD valido + numero (10 ou 11 digitos)'),
 
   profissao_interesse: z.enum(PROFISSOES, {
-    error: `Profissao invalida. Opcoes: ${PROFISSOES.join(', ')}`,
+    errorMap: () => ({ message: `Profissao invalida. Opcoes: ${PROFISSOES.join(', ')}` }),
   }),
+
+  // Campos complementares opcionais (conforme modelagem e contrato de banco)
+  idade: z
+    .union([
+      z.number({ invalid_type_error: 'Idade deve ser um número' }).int().min(1).max(120),
+      z.string().regex(/^\d+$/).transform(Number),
+    ])
+    .optional(),
+  curso: z.string().optional(),
+  novo: z.string().max(100).nullable().optional(),
+  outro: z.string().max(100).nullable().optional(),
+  novidade: z.union([z.number(), z.boolean()]).transform((v) => (v ? 1 : 0)).optional(),
+  feedback: z.string().nullable().optional(),
+  saber: z.string().nullable().optional(),
 });
 
 module.exports = { subscriptionSchema, PROFISSOES, isValidPhone };

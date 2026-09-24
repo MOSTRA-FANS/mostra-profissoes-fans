@@ -20,8 +20,12 @@ before(async () => {
   const app = express();
   app.use(express.json());
   app.post('/sub', validateRequest(subscriptionSchema), (req, res) => res.status(201).json(req.body));
-  app.get('/boom', async () => {
-    throw new Error('segredo interno');
+  app.get('/boom', async (req, res, next) => {
+    try {
+      throw new Error('segredo interno');
+    } catch (err) {
+      next(err);
+    }
   });
   app.get('/conflict', () => {
     throw Object.assign(new Error('E-mail ja inscrito'), { statusCode: 409 });

@@ -114,13 +114,13 @@ Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao
   * `tests/` ou script de validacao de endpoints (ex: Jest/Supertest ou suite Postman/Insomnia)
   * `docs/api-spec.md` (ou especificacao OpenAPI/Swagger)
 * **Tarefas tecnicas:**
-  - [ ] Implementar `subscription.controller.js`:
+  - [x] Implementar `subscription.controller.js`:
     - Extrair dados do corpo (`req.body`), acionar o servico (`subscription.service.js`) e retornar status HTTP correspondente (`201 Created`, `200 OK`).
-  - [ ] Configurar o roteador `subscription.routes.js`:
+  - [x] Configurar o roteador `subscription.routes.js`:
     - Mapear a rota `POST /api/subscriptions` vinculando os middlewares de Rate Limiting, validacao de schema e o metodo do controller.
     - Mapear rota de diagnostico `GET /api/health` para monitoramento do backend e da conexao com o banco.
-  - [ ] Desenvolver suite de testes de integracao / colecao de testes de API cobrindo cenarios: sucesso (201), dados invalidos (400), cadastro duplicado (409), excesso de requisicoes (429) e erro interno (500).
-  - [ ] Elaborar a documentacao tecnica dos endpoints da API REST (metodos, URLs, cabeçalhos, payloads de requisicao e exemplos de respostas JSON).
+  - [x] Desenvolver suite de testes de integracao / colecao de testes de API cobrindo cenarios: sucesso (201), dados invalidos (400), cadastro duplicado (409), excesso de requisicoes (429) e erro interno (500).
+  - [x] Elaborar a documentacao tecnica dos endpoints da API REST (metodos, URLs, cabeçalhos, payloads de requisicao e exemplos de respostas JSON).
 * **Criterio de Entrega:** Endpoints expostos e funcionais, rotas integradas ao servidor principal, suite de testes comprovando o funcionamento da API e documentacao dos contratos para consumo pelo frontend.
 
 ---

@@ -1,7 +1,12 @@
 // Valida req.body contra um schema Zod. Em caso de sucesso, substitui o body
 // pelos dados sanitizados; em caso de falha, responde 400 com as inconsistencias.
 const validateRequest = (schema) => (req, res, next) => {
-  const result = schema.safeParse(req.body ?? {});
+  const data = req.body ?? {};
+  if (data && typeof data === 'object' && !data.profissao_interesse && data.curso) {
+    data.profissao_interesse = data.curso;
+  }
+
+  const result = schema.safeParse(data);
 
   if (!result.success) {
     return res.status(400).json({
