@@ -56,9 +56,9 @@ Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao
   * Scripts de migracao/esquema SQL (ex: `migrations/` ou `schema.sql`)
   * `src/features/subscriptions/subscription.repository.js`
 * **Tarefas tecnicas:**
-  - [ ] Configurar o conector com o banco de dados em `src/config/database.js` (gerenciamento de pool de conexoes, tratamento de timeout e reconexao).
-  - [ ] Elaborar a modelagem de dados da tabela `subscriptions` com campos: `id`, `nome`, `email`, `cpf`, `telefone`, `profissao_interesse`, `protocolo`, `criado_em`.
-  - [ ] Implementar a camada de persistencia em `subscription.repository.js`:
+  - [x] Configurar o conector com o banco de dados em `src/config/database.js` (gerenciamento de pool de conexoes, tratamento de timeout e reconexao).
+  - [x] Elaborar a modelagem de dados da tabela `subscriptions` com campos: `id`, `nome`, `email`, `cpf`, `telefone`, `profissao_interesse`, `protocolo`, `criado_em`.
+  - [x] Implementar a camada de persistencia em `subscription.repository.js`:
     - `create(subscriptionData)`: Persistencia do registro da inscricao no banco.
     - `findByEmail(email)`: Consulta de inscricao por endereco de e-mail.
     - `findByCpf(cpf)`: Consulta de inscricao por CPF.
