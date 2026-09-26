@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - FANS</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',
+                            blue: '#0066CC',
+                            light: '#F8FAFC',
+                            gray: '#4A5568',
+                            green: '#2F855A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fjalla One', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-primary { background: linear-gradient(135deg, #1F3546 0%, #0066CC 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <div id="header-placeholder"></div>
+
+    <section class="gradient-primary py-20 relative overflow-hidden">
+        <i class="fas fa-briefcase absolute -right-10 -bottom-10 text-[200px] text-white opacity-5"></i>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+                ADMINISTRAÇÃO<br>
+                <span class="text-blue-300">NA FANS</span>
+            </h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-8 font-light">
+                Liderança, inovação e visão estratégica para transformar negócios.
+            </p>
+            <a href="#vestibular" class="inline-block bg-white text-fans-dark font-bold py-4 px-8 rounded-full hover:bg-blue-50 transition transform hover:-translate-y-1 shadow-lg">
+                INSCREVA-SE AGORA
+                <i class="ml-2 fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <nav class="sticky top-[76px] z-40 bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100 transition-all">
+        <div class="max-w-6xl mx-auto px-4 py-3">
+            <div class="flex justify-start md:justify-center gap-3 overflow-x-auto hide-scrollbar whitespace-nowrap pb-1">
+                <a href="#perfil" class="flex items-center gap-2 px-6 py-2 rounded-full bg-gray-100 text-gray-600 font-semibold hover:bg-fans-blue hover:text-white transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-fans-blue">
+                    <i class="fas fa-user"></i> Perfil
+                </a>
+                <a href="#coordenador" class="flex items-center gap-2 px-6 py-2 rounded-full bg-gray-100 text-gray-600 font-semibold hover:bg-fans-blue hover:text-white transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-fans-blue">
+                    <i class="fas fa-chalkboard-teacher"></i> Docentes
+                </a>
+                <a href="#mercado" class="flex items-center gap-2 px-6 py-2 rounded-full bg-gray-100 text-gray-600 font-semibold hover:bg-fans-blue hover:text-white transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-fans-blue">
+                    <i class="fas fa-briefcase"></i> Mercado
+                </a>
+                <a href="#documentos" class="flex items-center gap-2 px-6 py-2 rounded-full bg-gray-100 text-gray-600 font-semibold hover:bg-fans-blue hover:text-white transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-fans-blue">
+                    <i class="fas fa-file-alt"></i> Documentos
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-16">
+        <div class="container mx-auto px-4">
+            
+            <section id="perfil" class="mb-20 scroll-mt-48">
+                <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="grid md:grid-cols-2">
+                        
+                        <div class="p-8 md:p-12 flex flex-col justify-center">
+                            <h2 class="font-display text-3xl text-fans-dark mb-4">LIDERANÇA E GESTÃO</h2>
+                            <div class="w-20 h-1 bg-fans-blue mb-6"></div>
+                            <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                                Ter iniciativa, facilidade para trabalhar em equipe e assumir liderança diante dos desafios. Se você possui esse perfil, são grandes as chances de se tornar um bom administrador.
+                            </p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-fans-blue shrink-0 mt-1">
+                                        <i class="fas fa-users text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-fans-dark text-base mb-1">Visão Integrada</h4>
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            Capacidade de entender as organizações e seus processos, suas relações internas e externas, sempre aptos a resolver problemas de forma ética e criativa.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-fans-blue shrink-0 mt-1">
+                                        <i class="fas fa-road text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-fans-dark text-base mb-1">Trajetória Flexível</h4>
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            O currículo flexibilizado permite ao aluno elaborar uma trajetória variada, de acordo com os próprios interesses, preparando o gestor para lidar com processos reais.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-fans-blue shrink-0 mt-1">
+                                        <i class="fas fa-briefcase text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-fans-dark text-base mb-1">Prática Real</h4>
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            Estágio obrigatório a partir do 7º período e desenvolvimento de projetos de gestão e consultoria integrados.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative h-64 md:h-auto min-h-[400px]">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Equipe de administração em reunião estratégica" 
+                                 class="absolute inset-0 w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-fans-dark opacity-30"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="coordenador" class="mb-20 scroll-mt-48">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="font-display text-3xl text-fans-dark mb-4">CORPO DOCENTE</h2>
+                        <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                            Professores com ampla experiência acadêmica e de mercado.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-blue-50 rounded-xl p-6 border border-blue-100 flex items-center gap-4 shadow-sm hover:shadow-md transition">
+                            <div class="w-14 h-14 bg-fans-blue text-white rounded-full flex items-center justify-center text-xl font-bold shrink-0">
+                                CA
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Ciro Antonio Pereira Lemos</h4>
+                                <p class="text-sm text-fans-blue font-semibold">Coordenador</p>
+                                <p class="text-xs text-gray-500 mt-1">Mestre</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 rounded-xl p-6 border border-blue-100 flex items-center gap-4 shadow-sm hover:shadow-md transition">
+                            <div class="w-14 h-14 bg-fans-blue text-white rounded-full flex items-center justify-center text-xl font-bold shrink-0">
+                                HW
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Hilton Wayner Júnior</h4>
+                                <p class="text-sm text-fans-blue font-semibold">Coordenador Adjunto</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-gray-100 flex items-center gap-4 shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold shrink-0">HM</div>
+                            <div><h4 class="font-bold text-gray-800">Hélder Mendonça Duarte</h4></div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-gray-100 flex items-center gap-4 shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold shrink-0">TC</div>
+                            <div><h4 class="font-bold text-gray-800">Thiago Casemiro Mendes</h4></div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-gray-100 flex items-center gap-4 shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold shrink-0">CC</div>
+                            <div><h4 class="font-bold text-gray-800">Carlos Correa de Lacerda Jr.</h4></div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-gray-100 flex items-center gap-4 shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold shrink-0">DM</div>
+                            <div><h4 class="font-bold text-gray-800">Daniel de Mello Machado</h4></div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 border border-gray-100 flex items-center gap-4 shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold shrink-0">GF</div>
+                            <div><h4 class="font-bold text-gray-800">Geraldo da Costa Ferreira</h4></div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-gray-100 flex items-center gap-4 shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold shrink-0">MA</div>
+                            <div><h4 class="font-bold text-gray-800">Marcelo Agenor Espíndola</h4></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="mercado" class="mb-20 scroll-mt-48">
+                <div class="max-w-6xl mx-auto">
+                    <div class="gradient-primary rounded-2xl p-8 text-center mb-12 shadow-lg">
+                        <div class="text-blue-200 text-lg mb-2 font-semibold tracking-wider">BACHARELADO</div>
+                        <div class="w-16 h-1 bg-blue-300 mx-auto mb-6"></div>
+                        <div class="text-white text-xl flex flex-col md:flex-row justify-center gap-4 md:gap-8">
+                            <span><i class="fas fa-clock mr-2"></i> Duração: 4 anos</span>
+                            <span class="hidden md:inline text-blue-400">|</span>
+                            <span><i class="fas fa-calendar-alt mr-2"></i> Início: Jan/2002</span>
+                        </div>
+                    </div>
+                    
+                    <h2 class="font-display text-3xl text-fans-dark mb-8 pb-4 border-b-2 border-gray-200 inline-block">
+                        Áreas de Atuação
+                    </h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mb-12">
+                        <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-600">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 text-fans-blue">
+                                <i class="fas fa-building text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-fans-dark mb-3">Gestão Corporativa</h3>
+                            <p class="text-gray-600">Liderança em grandes empresas, gerenciando recursos, pessoas e processos.</p>
+                        </div>
+                        
+                        <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-700">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 text-fans-blue">
+                                <i class="fas fa-lightbulb text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-fans-dark mb-3">Empreendedorismo</h3>
+                            <p class="text-gray-600">Criação e gestão do próprio negócio com visão inovadora e sustentável.</p>
+                        </div>
+                        
+                        <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-900">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 text-fans-blue">
+                                <i class="fas fa-chart-line text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-fans-dark mb-3">Consultoria</h3>
+                            <p class="text-gray-600">Diagnóstico e soluções estratégicas para otimizar resultados de organizações.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="documentos" class="mb-20 scroll-mt-48 text-center">
+                <div class="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-10 border border-gray-200">
+                    <h2 class="font-display text-3xl text-fans-dark mb-8">DOCUMENTOS E REGULAMENTOS</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 text-left">
+                        
+                        <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-100">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4 group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Portaria Renovação Administração</span>
+                        </a>
+
+                        <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-100">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4 group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Periódicos Digitais</span>
+                        </a>
+
+                        <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-100">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4 group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Manual TCC</span>
+                        </a>
+
+                        <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-100">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4 group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700 group-hover:text-fans-blue">PPC Administração 2024</span>
+                        </a>
+
+                        <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-100">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4 group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Regulamento Ativ. Complementares</span>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

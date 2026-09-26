@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pós-Graduação - FANS</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/main.js"></script> 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',   /* Azul Escuro Institucional */
+                            blue: '#0066CC',   /* Azul Vibrante */
+                            light: '#F8FAFC',  /* Fundo Claro */
+                            gray: '#4A5568',   /* Texto Secundário */
+                            green: '#2F855A'   /* Verde para Técnicos */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<div id="header-placeholder"></div>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+    <div id="header-placeholder"></div>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 space-y-20 flex-grow w-full">
+
+        <section id="pos-graduacao" class="scroll-mt-48">
+            <div class="flex items-center gap-3 mb-8 border-l-4 border-fans-blue pl-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-fans-dark">Pós-Graduação</h2>
+                    <p class="text-fans-gray text-sm mt-1">Especialize-se e alcance novos patamares na sua carreira profissional.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">Especialização</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors">Criminologia</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Estudo interdisciplinar do crime, análise do comportamento criminoso e controle social.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> ?? Anos</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-laptop text-fans-blue"></i> Híbrido</span>
+                            </div>
+                            <a href="pos/criminonologia.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DA PÓS</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">MBA</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors">Gestão Estratégica</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Desenvolvimento de liderança, planejamento organizacional e otimização de resultados.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> ?? Anos</span>
+                                <span class="flex items-center gap-1"><i class="far fa-moon text-fans-blue"></i> Noturno</span>
+                            </div>
+                            <a href="pos/gestaoestrategica.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DA PÓS</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">Corporativo</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors text-lg">Gestão Fiscal, Auditoria e Tributária</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Foco em normas tributárias vigentes, processos de auditoria e conformidade fiscal.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> ?? Anos</span>
+                                <span class="flex items-center gap-1"><i class="far fa-moon text-fans-blue"></i> Noturno</span>
+                            </div>
+                            <a href="pos/gestaofiscal.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DA PÓS</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">Educação</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors">Gestão Pedagógica: Supervisão e Orientação</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Formação para atuação na coordenação educacional e orientação pedagógica institucional.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> 1 Ano</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-users text-fans-blue"></i> Presencial</span>
+                            </div>
+                            <a href="pos/gestaopedagogica.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DA PÓS</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">Educação e Saúde</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors">Neurociências aplicada a Educação</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Compreensão dos processos biológicos do cérebro aplicados à aprendizagem e ensino.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> ?? Anos</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-brain text-fans-blue"></i> Especializado</span>
+                            </div>
+                            <a href="pos/neurociencia.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DA PÓS</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">Clínico</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors">Psicopedagogia clínica e Institucional</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Diagnóstico e intervenção em dificuldades de aprendizagem em contextos clínicos e escolares.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> ?? Anos</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-stethoscope text-fans-blue"></i> Prática Real</span>
+                            </div>
+                            <a href="pos/psicopedagogia.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DA PÓS</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+    </script>
+</body>
+</html>

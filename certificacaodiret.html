@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificação de Diretores - FANS</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/main.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',
+                            blue: '#0066CC',
+                            light: '#F8FAFC',
+                            gray: '#4A5568',
+                            green: '#2F855A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fjalla One', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-primary { background: linear-gradient(135deg, #1F3546 0%, #0066CC 100%); }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <div id="header-placeholder"></div>
+
+    <section class="gradient-primary py-20 relative overflow-hidden">
+        <i class="fas fa-certificate absolute -right-10 -bottom-10 text-[200px] text-white opacity-5"></i>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="font-display text-3xl md:text-5xl text-white mb-6 leading-tight">
+                CERTIFICAÇÃO PARA<br>
+                <span class="text-blue-300">DIRETORES E VICE-DIRETORES</span>
+            </h1>
+            <p class="text-lg text-blue-100 max-w-3xl mx-auto font-light">
+                Processo de Certificação Ocupacional para Instituições de Ensino Municipais.
+            </p>
+        </div>
+    </section>
+
+    <nav class="bg-white border-b border-gray-100 shadow-sm relative z-30">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-start md:justify-center gap-3 overflow-x-auto whitespace-nowrap">
+                <a href="#sobre" class="flex items-center gap-2 px-6 py-2 rounded-full bg-gray-100 text-gray-600 font-semibold hover:bg-fans-blue hover:text-white transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-fans-blue">
+                    <i class="fas fa-info-circle"></i> Sobre
+                </a>
+                <a href="#documentos" class="flex items-center gap-2 px-6 py-2 rounded-full bg-gray-100 text-gray-600 font-semibold hover:bg-fans-blue hover:text-white transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-fans-blue">
+                    <i class="fas fa-file-alt"></i> Documentos
+                </a>
+                <a href="#cronograma" class="flex items-center gap-2 px-6 py-2 rounded-full bg-gray-100 text-gray-600 font-semibold hover:bg-fans-blue hover:text-white transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-fans-blue">
+                    <i class="fas fa-history"></i> Cronograma
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-16">
+        <div class="container mx-auto px-4">
+            
+            <section id="sobre" class="max-w-4xl mx-auto mb-16 scroll-mt-48">
+                <div class="bg-white rounded-2xl shadow-lg border-t-4 border-fans-blue p-8 md:p-10 text-center">
+                    
+                    <div class="inline-block bg-red-100 text-red-600 font-bold px-6 py-2 rounded-full mb-6 text-sm">
+                        <i class="fas fa-lock mr-2"></i> INSCRIÇÕES ENCERRADAS
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-fans-dark mb-4">Sobre o Processo</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Certificação Ocupacional de profissionais para o exercício dos Cargos em Comissão de Diretor Escolar, Diretor de Centros Municipais de Educação Infantil, Vice-Diretores, Diretor e Vice-Diretor do Centro de Referência e Apoio à Educação Inclusiva Cláudio e Alexandre Bonifácio (CRAEI).
+                    </p>
+                    
+                    <div class="bg-blue-50 rounded-lg p-4 inline-block">
+                        <p class="text-fans-blue font-bold">
+                            <i class="far fa-calendar-alt mr-2"></i> Período de Inscrições:
+                            <span class="font-normal text-gray-700 ml-1">04/04/2025 a 08/04/2025</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="documentos" class="max-w-5xl mx-auto mb-16 scroll-mt-48">
+                <h2 class="font-display text-3xl text-fans-dark mb-8 text-center">DOCUMENTOS E RESULTADOS</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <a href="#" class="group flex items-center p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-fans-blue transition">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-full flex items-center justify-center text-xl mr-4 group-hover:bg-fans-blue group-hover:text-white transition shrink-0">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 group-hover:text-fans-blue transition">Edital</h4>
+                            <p class="text-xs text-gray-500">Baixar PDF</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group flex items-center p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-fans-blue transition">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-full flex items-center justify-center text-xl mr-4 group-hover:bg-fans-blue group-hover:text-white transition shrink-0">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 group-hover:text-fans-blue transition">Caderno de Provas</h4>
+                            <p class="text-xs text-gray-500">Baixar Arquivo</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group flex items-center p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-fans-blue transition">
+                        <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center text-xl mr-4 group-hover:bg-yellow-600 group-hover:text-white transition shrink-0">
+                            <i class="fas fa-check-square"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 group-hover:text-fans-blue transition">Gabarito Preliminar</h4>
+                            <p class="text-xs text-gray-500">Consultar</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group flex items-center p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-fans-blue transition">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl mr-4 group-hover:bg-green-600 group-hover:text-white transition shrink-0">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 group-hover:text-fans-blue transition">Gabarito Definitivo</h4>
+                            <p class="text-xs text-gray-500">Consultar</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group flex items-center p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-fans-blue transition">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xl mr-4 group-hover:bg-purple-600 group-hover:text-white transition shrink-0">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 group-hover:text-fans-blue transition">Análise de Recursos</h4>
+                            <p class="text-xs text-gray-500">Resultado</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group flex items-center p-4 bg-fans-dark border border-gray-800 rounded-xl hover:shadow-xl hover:-translate-y-1 transition text-white">
+                        <div class="w-12 h-12 bg-white/20 text-white rounded-full flex items-center justify-center text-xl mr-4 shrink-0">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">RESULTADO FINAL</h4>
+                            <p class="text-xs text-blue-200">Lista de Aprovados</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section id="cronograma" class="max-w-4xl mx-auto scroll-mt-48">
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <h3 class="font-bold text-xl text-fans-dark mb-6 flex items-center gap-2">
+                        <i class="fas fa-history text-fans-blue"></i> Histórico de Publicações
+                    </h3>
+                    
+                    <div class="space-y-6 relative border-l-2 border-gray-200 ml-3 pl-8 pb-2">
+                        
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-fans-blue border-4 border-white shadow-sm"></span>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">09/05/2025</p>
+                            <a href="#" class="text-gray-800 font-bold hover:text-fans-blue hover:underline transition">RESULTADO FINAL</a>
+                        </div>
+                        
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gray-300 border-4 border-white"></span>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">06/05/2025</p>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition block">RESULTADO DAS ANÁLISES DOS RECURSOS</a>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition block mt-1">GABARITO DEFINITIVO</a>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gray-300 border-4 border-white"></span>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">28/04/2025</p>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition block">GABARITO PRELIMINAR</a>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition block mt-1">CADERNO DE PROVAS</a>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gray-300 border-4 border-white"></span>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">15/04/2025</p>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition">INSCRIÇÕES HOMOLOGADAS - SALAS DE PROVA</a>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gray-300 border-4 border-white"></span>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">10/04/2025</p>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition block">RESULTADO PRELIMINAR DAS INSCRIÇÕES HOMOLOGADAS</a>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition block mt-1">RETIFICAÇÃO DO CRONOGRAMA DO EDITAL</a>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gray-300 border-4 border-white"></span>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">03/04/2025</p>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition block">2ª ERRATA AO EDITAL SEMEC nº 01-2025</a>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition block mt-1">2ª RETIFICAÇÃO - DECRETO MUNICIPAL</a>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gray-300 border-4 border-white"></span>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">02/04/2025</p>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition">RETIFICAÇÃO - DECRETO MUNICIPAL</a>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gray-300 border-4 border-white"></span>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">01/04/2025</p>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition">ERRATA AO EDITAL SEMEC nº 01-2025</a>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gray-300 border-4 border-white"></span>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">31/03/2025</p>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition">Publicação do Edital</a>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gray-300 border-4 border-white"></span>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">Documento Base</p>
+                            <a href="#" class="text-gray-700 font-medium hover:text-fans-blue hover:underline transition">DECRETO MUNICIPAL</a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

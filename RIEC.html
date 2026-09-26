@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revista RIEC - FANS</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/main.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',
+                            blue: '#0066CC',
+                            light: '#F8FAFC',
+                            gray: '#4A5568',
+                            green: '#2F855A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fjalla One', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-primary { background: linear-gradient(135deg, #1F3546 0%, #0066CC 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <div id="header-placeholder"></div>
+
+    <section class="gradient-primary py-20 relative overflow-hidden">
+        <i class="fas fa-book-reader absolute -right-10 -bottom-10 text-[200px] text-white opacity-5"></i>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+                REVISTA<br>
+                <span class="text-blue-300">RIEC-FANS</span>
+            </h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-8 font-light">
+                Revista Interdisciplinar de Estudos Contemporâneos.
+            </p>
+        </div>
+    </section>
+
+
+
+    <main class="py-16">
+        <div class="container mx-auto px-4">
+            
+            <section id="apresentacao" class="mb-20 scroll-mt-48">
+                <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-12">
+                    <div class="flex flex-col md:flex-row gap-10 items-start">
+                        
+                        <div class="md:w-1/3  top-24">
+                            <h2 class="font-display text-4xl text-fans-dark mb-4 leading-tight">
+                                PRODUÇÃO <br><span class="text-fans-blue">CIENTÍFICA</span>
+                            </h2>
+                            <div class="w-16 h-1.5 bg-fans-blue mb-6"></div>
+                            <p class="text-lg font-medium text-gray-800 italic">
+                                "Um espaço ímpar na produção acadêmico-científica da região."
+                            </p>
+                        </div>
+
+                        <div class="md:w-2/3 space-y-6 text-gray-600 leading-relaxed text-justify">
+                            <p>
+                                A <strong>Revista Interdisciplinar de Estudos Contemporâneos (RIEC-FANS)</strong> nasce da proposta de divulgar a produção acadêmico-científica dos docentes, corpo administrativo, alunos de graduação e demais membros da comunidade acadêmica que têm como referência de Ensino Superior a FANS.
+                            </p>
+                            <p>
+                                É, neste âmbito, um espaço de apresentação de resultados de trabalhos acadêmicos que tem repercussão no cenário social, financeiro, jurídico e psicológico da <strong>Região Centro-Oeste de Minas Gerais</strong>, abrangendo problemáticas e diferentes matizes conceituais que balizam a sua própria estruturação interdisciplinar e contemporânea.
+                            </p>
+                            <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-fans-blue">
+                                <h4 class="font-bold text-fans-dark mb-2">Objetivo Visionário</h4>
+                                <p class="text-sm">
+                                    Ser reconhecida pela excelência das publicações acadêmicas interdisciplinares, na região, a curto prazo, e nacionalmente a longo prazo, engendrando o conhecimento e a prática e promovendo a aproximação entre saberes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="submissao" class="mb-20 scroll-mt-48">
+                <div class="max-w-6xl mx-auto">
+                    <div class="bg-fans-dark text-white rounded-3xl p-10 md:p-14 relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h2 class="font-display text-3xl mb-6 flex items-center gap-3">
+                                <i class="fas fa-edit text-blue-400"></i> SUBMISSÃO DE ARTIGOS
+                            </h2>
+                            <p class="text-blue-100 mb-8 max-w-3xl">
+                                A RIEC-FANS é publicada <strong>semestralmente</strong> em formato virtual. Os interessados podem enviar artigos inéditos, comunicações de pesquisa, resenhas e ensaios para a equipe editorial.
+                            </p>
+
+                            <div class="bg-white/10 p-6 rounded-xl border border-white/20 mb-8 inline-block">
+                                <p class="text-sm text-gray-300 mb-1 uppercase tracking-wider">Envie seus escritos para:</p>
+                                <a href="mailto:coordproex@fans.edu.br" class="text-xl md:text-2xl font-bold text-white hover:text-blue-300 transition">
+                                    <i class="far fa-envelope mr-2"></i> coordproex@fans.edu.br
+                                </a>
+                            </div>
+
+                            <div class="mt-8">
+                                <h3 class="text-xl font-bold text-white mb-4">Critérios de Avaliação (Blind Review)</h3>
+                                <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
+                                    <ul class="space-y-2">
+                                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Relevância do tema</li>
+                                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Clareza de objetivos</li>
+                                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Consistência conceitual e propriedade</li>
+                                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Estado-da-arte do tema estudado</li>
+                                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Metodologia clara e adequada</li>
+                                    </ul>
+                                    <ul class="space-y-2">
+                                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Resultados claros e objetivos</li>
+                                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Contribuição para a área de conhecimento</li>
+                                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Linguagem clara (Normas ABNT)</li>
+                                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Validade extra-temporal</li>
+                                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Contribuição científica na área</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fas fa-pen-fancy absolute -right-10 -bottom-10 text-[250px] text-white opacity-5"></i>
+                    </div>
+                </div>
+            </section>
+
+            <section id="edicoes" class="mb-20 scroll-mt-48 text-center">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="font-display text-3xl text-fans-dark mb-2">EDIÇÕES DA REVISTA</h2>
+                    <div class="w-16 h-1 bg-fans-blue mx-auto mb-10"></div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Primeira Edição</h4>
+                            <p class="text-xs text-gray-500">Acesse o PDF</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Segunda Edição</h4>
+                            <p class="text-xs text-gray-500">2013 – Set/Dez</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Terceira Edição</h4>
+                            <p class="text-xs text-gray-500">2014</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Quarta Edição</h4>
+                            <p class="text-xs text-gray-500">Acesse o PDF</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Sexta Edição</h4>
+                            <p class="text-xs text-gray-500">Acesse o PDF</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Sétima Edição</h4>
+                            <p class="text-xs text-gray-500">Acesse o PDF</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Oitava Edição</h4>
+                            <p class="text-xs text-gray-500">Acesse o PDF</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Nona Edição</h4>
+                            <p class="text-xs text-gray-500">Acesse o PDF</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">DÉCIMA EDIÇÃO</h4>
+                            <p class="text-xs text-gray-500">Acesse o PDF</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">11ª Edição</h4>
+                            <p class="text-xs text-gray-500">Acesse o PDF</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">12ª Edição</h4>
+                            <p class="text-xs text-gray-500">Acesse o PDF</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">13ª Edição</h4>
+                            <p class="text-xs text-gray-500">Acesse o PDF</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-50 text-fans-blue rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-fans-blue group-hover:text-white transition">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">14ª Edição</h4>
+                            <p class="text-xs text-gray-500">Acesse o PDF</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="anuario" class="mb-20 scroll-mt-48 text-center">
+                <div class="max-w-6xl mx-auto bg-gray-50 rounded-2xl p-10 border border-gray-200">
+                    <h2 class="font-display text-3xl text-fans-dark mb-2">ANUÁRIO</h2>
+                    <div class="w-16 h-1 bg-fans-blue mx-auto mb-10"></div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-600 group-hover:text-white transition">
+                                <i class="fas fa-calendar text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Primeira Edição</h4>
+                            <p class="text-xs text-gray-500">Anuário</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-600 group-hover:text-white transition">
+                                <i class="fas fa-calendar text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Segunda Edição</h4>
+                            <p class="text-xs text-gray-500">Anuário</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-600 group-hover:text-white transition">
+                                <i class="fas fa-calendar text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Terceira Edição</h4>
+                            <p class="text-xs text-gray-500">Anuário</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-600 group-hover:text-white transition">
+                                <i class="fas fa-calendar text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Quarta Edição</h4>
+                            <p class="text-xs text-gray-500">Anuário</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-600 group-hover:text-white transition">
+                                <i class="fas fa-calendar text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Quinta Edição</h4>
+                            <p class="text-xs text-gray-500">Anuário</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-600 group-hover:text-white transition">
+                                <i class="fas fa-calendar text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Sexta Edição</h4>
+                            <p class="text-xs text-gray-500">Anuário</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-600 group-hover:text-white transition">
+                                <i class="fas fa-calendar text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Sétima Edição</h4>
+                            <p class="text-xs text-gray-500">Anuário</p>
+                        </a>
+
+                        <a href="#" class="group block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-green-600 group-hover:text-white transition">
+                                <i class="fas fa-calendar text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1">Oitava Edição</h4>
+                            <p class="text-xs text-gray-500">Anuário</p>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

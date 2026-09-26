@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituição - FANS</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/main.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',
+                            blue: '#0066CC',
+                            light: '#F8FAFC',
+                            gray: '#4A5568',
+                            green: '#2F855A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <div id="header-placeholder"></div>
+
+    <div class="relative text-white py-24 overflow-hidden min-h-[40vh] flex items-center">
+    
+    <div class="absolute inset-0 z-0">
+        <img src="images/faculdade.png" 
+             alt="Sobre a FANS" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#1F3546]/95 to-[#0066CC]/80 mix-blend-multiply"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10 text-center md:text-left">
+        <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">Sobre a Instituição</h1>
+            <div class="h-1 w-20 bg-blue-400 mb-6 hidden md:block"></div> <p class="text-xl md:text-2xl text-blue-100 font-medium">Tradição, compromisso e desenvolvimento para Nova Serrana e região.</p>
+        </div>
+    </div>
+
+    <i class="fas fa-university absolute -right-10 -bottom-10 text-[150px] md:text-[250px] text-white opacity-10 pointer-events-none"></i>
+</div>
+
+    <main class="container mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-20">
+
+        <section class="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
+            <div class="space-y-6 text-gray-600 text-justify leading-relaxed">
+                <h2 class="text-3xl font-bold text-fans-dark mb-4 border-l-4 border-fans-blue pl-4">Histórico da FANS</h2>
+                <p>
+                    Criada em novembro de 2000, a <strong>FANS – Faculdade de Nova Serrana</strong> tem como objetivo atender as necessidades locais e regionais no que se refere ao Ensino Superior, Pesquisa e Extensão. Uma instituição séria e compromissada com as exigências do MEC e com as demandas sociais da cidade.
+                </p>
+                <p>
+                    Oferece os cursos de Administração, Ciências Contábeis, Pedagogia, Psicologia, Direito e Engenharia de Software, além de pós-graduação, fortalecendo o vínculo com a comunidade através da formação de cidadãos proativos e empreendedores.
+                </p>
+            </div>
+            
+            <div class="bg-blue-50 p-6 md:p-8 rounded-2xl border border-blue-100">
+                <h3 class="text-xl font-bold text-fans-blue mb-4 flex items-center">
+                    <i class="fas fa-landmark mr-2"></i> A Fundação
+                </h3>
+                <p class="text-gray-700 text-sm mb-4">
+                    A <strong>Fundação Fausto Pinto da Fonseca</strong>, instituída em 09 de novembro de 2000, é uma pessoa jurídica de direito privado, sem fins lucrativos, com autonomia administrativa e financeira.
+                </p>
+                <p class="text-gray-700 text-sm">
+                    Sua finalidade é promover a educação priorizando o ensino superior, objetivando benefício geral à comunidade de Nova Serrana – MG. Para cumprir suas finalidades, a Fundação organiza-se em unidades de prestação de serviços e pode firmar convênios com entidades públicas ou privadas.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl font-bold text-fans-dark mb-10 text-center">Nossa Identidade</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-fans-blue mb-4">
+                        <i class="fas fa-bullseye text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-fans-dark">Missão</h3>
+                    <p class="text-gray-600 text-sm">Promover a transformação de pessoas por meio do conhecimento, respeitando a diversidade e as relações culturais.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center text-fans-dark mb-4">
+                        <i class="fas fa-eye text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-fans-dark">Visão</h3>
+                    <p class="text-gray-600 text-sm">Ser referência na promoção do conhecimento como instituição que respeita e interage com a sociedade.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-fans-blue mb-4">
+                        <i class="fas fa-gem text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-fans-dark">Valores</h3>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li><i class="fas fa-check text-xs text-green-500 mr-1"></i> Ética e Qualidade</li>
+                        <li><i class="fas fa-check text-xs text-green-500 mr-1"></i> Compromisso</li>
+                        <li><i class="fas fa-check text-xs text-green-500 mr-1"></i> Respeito</li>
+                        <li><i class="fas fa-check text-xs text-green-500 mr-1"></i> Transparência</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center text-fans-dark mb-4">
+                        <i class="fas fa-briefcase text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-fans-dark">Negócio</h3>
+                    <p class="text-gray-600 text-sm">Propiciar experiência acadêmica marcante por meio de um ambiente de aprendizagem transformador.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-100 rounded-3xl p-8 md:p-12">
+            <h2 class="text-3xl font-bold text-fans-dark mb-8">Objetivos Institucionais</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="flex gap-3">
+                        <i class="fas fa-check-circle text-fans-blue mt-1 flex-shrink-0"></i>
+                        <p class="text-gray-700 text-sm">Formar profissionais em diversas áreas, aptos para a inserção no mundo do trabalho.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fas fa-check-circle text-fans-blue mt-1 flex-shrink-0"></i>
+                        <p class="text-gray-700 text-sm">Incentivar a pesquisa e a investigação científica, visando o desenvolvimento da ciência e cultura.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fas fa-check-circle text-fans-blue mt-1 flex-shrink-0"></i>
+                        <p class="text-gray-700 text-sm">Promover a divulgação de conhecimentos culturais e científicos.</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-3">
+                        <i class="fas fa-check-circle text-fans-blue mt-1 flex-shrink-0"></i>
+                        <p class="text-gray-700 text-sm">Estimular o conhecimento dos problemas do mundo presente e regionais.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fas fa-check-circle text-fans-blue mt-1 flex-shrink-0"></i>
+                        <p class="text-gray-700 text-sm">Promover a extensão, aberta à participação da população.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fas fa-check-circle text-fans-blue mt-1 flex-shrink-0"></i>
+                        <p class="text-gray-700 text-sm">Estimular a criação cultural e o desenvolvimento do espírito científico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-fans-dark">Corpo Diretivo</h2>
+                <p class="text-blue-600 font-semibold mt-2 text-sm md:text-base">Fundação Fausto Pinto da Fonseca • Mandato 2025 – 2028</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow border border-gray-100 p-6">
+                    <h3 class="text-lg font-bold text-fans-dark border-b pb-2 mb-4">Conselho Curador</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li>
+                            <span class="block text-gray-500 text-xs uppercase">Presidente</span>
+                            <span class="font-semibold text-gray-800">José Maria Scaldini Garcia</span>
+                        </li>
+                        <li>
+                            <span class="block text-gray-500 text-xs uppercase">Secretária</span>
+                            <span class="font-semibold text-gray-800">Sibelle Soares Pereira</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow border border-gray-100 p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-600 w-16 h-16 transform translate-x-8 -translate-y-8 rotate-45"></div>
+                    <h3 class="text-lg font-bold text-fans-dark border-b pb-2 mb-4">Diretoria Executiva</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li>
+                            <span class="block text-gray-500 text-xs uppercase">Presidente</span>
+                            <span class="font-semibold text-gray-800">Sr. Júnior César Silva</span>
+                        </li>
+                        <li>
+                            <span class="block text-gray-500 text-xs uppercase">Vice–Presidente</span>
+                            <span class="font-semibold text-gray-800">Sr. Roney Pedro Soares da Silva</span>
+                        </li>
+                        <li>
+                            <span class="block text-gray-500 text-xs uppercase">1º Secretário</span>
+                            <span class="font-semibold text-gray-800">Sr. Moacir de Freitas Júnior</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow border border-gray-100 p-6">
+                    <h3 class="text-lg font-bold text-fans-dark border-b pb-2 mb-4">Conselho Fiscal</h3>
+                    <div class="mb-4">
+                        <span class="text-xs font-bold text-blue-600 uppercase mb-2 block">Efetivos</span>
+                        <ul class="space-y-1 text-sm text-gray-800">
+                            <li>Sr. Geraldo Dias Cordeiro</li>
+                            <li>Sra. Soraya de Oliveira Silva</li>
+                            <li>Sr. Leonardo Custódio do Amaral</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-gray-500 uppercase mb-2 block">Suplentes</span>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li>Sra. Jaqueline Silva Dutra Souza</li>
+                            <li>Sr. Pedro Gomes da Silva</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
