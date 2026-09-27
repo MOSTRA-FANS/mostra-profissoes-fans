@@ -119,10 +119,8 @@ test('POST /api/subscriptions -> 201 Created quando o formulário é válido', a
   assert.equal(res.body.status, 'success');
   assert.equal(res.body.message, 'Inscrição realizada com sucesso.');
   assert.equal(res.body.data.id, 101);
-  assert.equal(res.body.data.nome, 'Mariana Costa Ribeiro');
-  assert.equal(res.body.data.email, 'mariana.costa@exemplo.com');
-  assert.equal(res.body.data.telefone, '31987654321');
-  assert.equal(res.body.data.curso, 'Engenharia de Software');
+  assert.ok(res.body.data.data_inscricao);
+  assert.deepEqual(Object.keys(res.body.data).sort(), ['data_inscricao', 'id']);
 });
 
 test('POST /api/subscriptions -> 201 Created aceita profissao_interesse como alias de curso', async () => {
@@ -141,7 +139,8 @@ test('POST /api/subscriptions -> 201 Created aceita profissao_interesse como ali
     .expect(201);
 
   assert.equal(res.body.status, 'success');
-  assert.equal(res.body.data.curso, 'Direito');
+  assert.equal(res.body.data.id, 101);
+  assert.equal(res.body.data.email, undefined);
 });
 
 /* -------------------------------------------------------------------------- */

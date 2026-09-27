@@ -2,9 +2,8 @@
 
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { readFile } = require('node:fs/promises');
-const path = require('node:path');
 const { randomBytes } = require('node:crypto');
+const { migrate } = require('../../scripts/migrate');
 
 // Opt-in: cria e remove somente um banco aleatório desta execução.
 test('integração com MySQL real', { skip: process.env.RUN_MYSQL_TESTS !== '1' }, async t => {
@@ -24,11 +23,8 @@ test('integração com MySQL real', { skip: process.env.RUN_MYSQL_TESTS !== '1' 
     await admin.query(`CREATE DATABASE ${database} CHARACTER SET utf8mb4`);
     created = true;
     await admin.query(`USE ${database}`);
-    for (const file of ['002_create_course_catalogs.sql', '003_seed_current_courses.sql',
-      '004_create_inscricoes.sql', '005_add_inscricoes_constraints.sql']) {
-      await admin.query(await readFile(path.join(__dirname, '../../migrations', file), 'utf8'));
-    }
     process.env.DB_NAME = database;
+    await migrate();
     db = require('../../src/config/database');
     const { createRepository } = require('../../src/features/subscriptions/subscription.repository');
     const { createService } = require('../../src/features/subscriptions/subscription.service');
@@ -37,7 +33,7 @@ test('integração com MySQL real', { skip: process.env.RUN_MYSQL_TESTS !== '1' 
     const payload = { nome: 'Teste integração', idade: 18, telefone: '31999999999',
       email: ' NORMALIZADO@example.com ', curso: 'Direito' };
     const [[version]] = await admin.query('SELECT VERSION() AS version');
-    t.diagnostic(`MySQL ${version.version}; migrations 002–005 aplicadas`);
+    t.diagnostic(`MySQL ${version.version}; executor aplicou migrations 002–005`);
 
     await t.test('conexão, catálogos e restrições criados pelas migrations', async () => {
       assert.equal((await db.testConnection()).ok, true);
@@ -45,6 +41,10 @@ test('integração com MySQL real', { skip: process.env.RUN_MYSQL_TESTS !== '1' 
       assert.equal((await repo.listCurrentCourses()).length, 8);
       assert.ok((await repo.listCurrentCourses()).includes('Administração'));
       assert.deepEqual(await repo.listNewCourses(), []);
+      const [[migrationCount]] = await admin.query(
+        'SELECT COUNT(*) AS total FROM schema_migrations'
+      );
+      assert.equal(migrationCount.total, 4);
       const [[row]] = await admin.query('SHOW CREATE TABLE inscricoes');
       for (const name of ['uk_inscricoes_email', 'fk_inscricoes_curso', 'fk_inscricoes_novo']) {
         assert.ok(row['Create Table'].includes(name));

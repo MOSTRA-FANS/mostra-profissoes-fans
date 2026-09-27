@@ -21,6 +21,10 @@ function requireDatabaseConfig() {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     charset: 'utf8mb4',
+    // As migrations são arquivos versionados e confiáveis do repositório.
+    // Esta opção fica restrita a esta conexão administrativa; o pool da
+    // aplicação continua aceitando somente uma instrução por chamada.
+    multipleStatements: true,
   };
 }
 
@@ -63,7 +67,11 @@ async function migrate() {
   }
 }
 
-migrate().catch((error) => {
-  console.error(`Falha ao aplicar migrations: ${error.message}`);
-  process.exitCode = 1;
-});
+if (require.main === module) {
+  migrate().catch((error) => {
+    console.error(`Falha ao aplicar migrations: ${error.message}`);
+    process.exitCode = 1;
+  });
+}
+
+module.exports = { migrate, requireDatabaseConfig };

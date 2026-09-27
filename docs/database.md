@@ -104,7 +104,9 @@ inspecione o estado antes de continuar. Não há rollback destrutivo automático
 - Pessoa 4: normalização, duplicidade e escolhas válidas no service.
 - Pessoa 5: rotas, controller, exposição das listas de cursos e testes HTTP.
 
-create retorna id e dados gravados; findById retorna também data_inscricao.
+O repositório `create` retorna internamente os dados gravados para uso do
+domínio. A API expõe somente `id` e `data_inscricao`; `findById` retorna a linha
+completa apenas dentro da camada de persistência.
 Execute os testes isolados com `npm test`. Eles não substituem
 execução das migrations nem testes de integridade em MySQL real.
 

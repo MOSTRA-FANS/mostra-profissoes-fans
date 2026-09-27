@@ -4,6 +4,13 @@ const defaultService = require('./subscription.service');
 const defaultRepository = require('./subscription.repository');
 const logger = require('../../shared/utils/logger');
 
+function toPublicSubscription(result) {
+  return {
+    id: result.id,
+    ...(result.data_inscricao != null && { data_inscricao: result.data_inscricao }),
+  };
+}
+
 /**
  * Controller responsável por receber requisições HTTP,
  * coordenar a chamada aos serviços e retornar os status e dados apropriados.
@@ -35,7 +42,7 @@ function createController({
         return res.status(201).json({
           status: 'success',
           message: 'Inscrição realizada com sucesso.',
-          data: result,
+          data: toPublicSubscription(result),
         });
       } catch (error) {
         return next(error);
@@ -112,3 +119,4 @@ function createController({
 const controller = createController();
 module.exports = controller;
 module.exports.createController = createController;
+module.exports.toPublicSubscription = toPublicSubscription;

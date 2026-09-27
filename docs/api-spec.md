@@ -170,20 +170,14 @@ Retornado quando a validação estrutural passa e o registro é gravado com suce
   "message": "Inscrição realizada com sucesso.",
   "data": {
     "id": 101,
-    "nome": "Mariana Costa Ribeiro",
-    "idade": 19,
-    "telefone": "31987654321",
-    "email": "mariana.costa@exemplo.com",
-    "curso": "Engenharia de Software",
-    "novo": null,
-    "outro": null,
-    "novidade": 1,
-    "feedback": "Muito empolgada para o evento!",
-    "saber": "Instagram",
     "data_inscricao": "2026-09-24T14:59:54.480Z"
   }
 }
 ```
+
+A resposta não repete nome, e-mail, telefone nem as escolhas enviadas. Esses
+dados pessoais permanecem somente no banco; o cliente recebe o identificador e
+a data gerados pelo servidor.
 
 ### 5.2. 400 Bad Request (Dados Inválidos)
 Retornado pelo middleware `validateRequest` quando o payload viola regras de schema, ou pelo `express.json` em caso de sintaxe JSON corrompida.

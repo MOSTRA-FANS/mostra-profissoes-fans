@@ -87,3 +87,13 @@ js/subscription.js                # Integração frontend/API
 4. Inicie a API com `NODE_ENV=production` e configure `TRUST_PROXY` conforme a
    quantidade real de proxies reversos.
 5. Confira `/api/health` e envie uma inscrição de homologação antes de liberar.
+
+O processo Express entrega somente a API. Publique os arquivos HTML, CSS,
+JavaScript e imagens em um servidor estático e encaminhe `/api` para o processo
+Node, ou configure `window.MOSTRA_API_BASE_URL` quando estiverem em origens
+diferentes. Não exponha a raiz inteira do repositório como diretório público.
+
+Os limites de requisição usam memória local e são adequados para uma única
+instância. Em uma implantação com múltiplas réplicas, configure um store
+compartilhado compatível com `express-rate-limit` antes de escalar o processo;
+caso contrário, cada réplica manterá uma contagem independente.
