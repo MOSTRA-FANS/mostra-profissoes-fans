@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito - FANS</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="../../js/main.js"></script> 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',
+                            blue: '#0066CC',
+                            light: '#F8FAFC',
+                            gray: '#4A5568',
+                            green: '#2F855A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fjalla One', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-primary {
+            background: linear-gradient(135deg, #1F3546 0%, #0066CC 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .hero-background {
+            background-image: linear-gradient(rgba(31, 53, 70, 0.9), rgba(31, 53, 70, 0.7)), url('https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<div id="header-placeholder"></div>
+        <!-- HERO SECTION -->
+        <section class="hero-background py-24 md:py-32 relative overflow-hidden">
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+                    DIREITO
+                </h1>
+                <p class="text-2xl text-blue-100 max-w-3xl mx-auto mb-8 font-light">
+                    Excelência acadêmica para a busca de soluções justas
+                </p>
+                <p class="text-xl text-blue-200 max-w-2xl mx-auto mb-10">
+                    Formação ética e crítica para atuação nas diversas carreiras jurídicas
+                </p>
+                <a href="vestibular.html" class="inline-block bg-white text-fans-dark font-bold py-4 px-10 rounded-full hover:bg-blue-50 transition transform hover:-translate-y-1 shadow-lg text-lg">
+                    INSCREVA-SE AGORA
+                    <i class="ml-2 fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- VISÃO GERAL DO CURSO -->
+        <section id="visao" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Visão Geral do Curso
+                    </h2>
+                    <div class="w-20 h-1 bg-fans-blue mx-auto mb-6"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            O curso de <strong>Direito da FANS</strong> destaca-se pela excelência do corpo docente, pelo projeto acadêmico inovador e pela localização e infraestrutura de seu campus.
+                        </p>
+                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            Além disto, o Curso de Direito da FANS abre um leque muito grande de opções para o estudante, que poderá adquirir conhecimentos para o ingresso na própria carreira do Magistério Superior, transitando por vários setores do Serviço público e privado e, também, para atingir a carreira diplomática.
+                        </p>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            O profissional do Direito deve se pautar na <strong>ética e na busca de soluções justas para os conflitos sociais</strong>. Além da sala de aula, o aluno atua no Núcleo de Prática Jurídica na assistência judiciária gratuita e solução pacífica de conflitos.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Biblioteca de Direito" 
+                             class="rounded-2xl shadow-2xl">
+                        <div class="absolute -bottom-4 -right-4 bg-fans-blue text-white p-4 rounded-xl shadow-lg">
+                            <div class="text-2xl font-bold">5 anos</div>
+                            <div class="text-sm">Duração do curso</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POR QUE ESCOLHER ESTE CURSO? -->
+        <section id="diferenciais" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Por que escolher Direito na FANS?
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Conheça os pontos-chave que diferenciam nosso curso e maximizam sua formação
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-blue">
+                            <i class="fas fa-award text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Nota 4 no MEC</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Excelente desempenho nas avaliações do Ministério da Educação, garantindo qualidade e reconhecimento nacional.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark">
+                        <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-dark">
+                            <i class="fas fa-balance-scale text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Núcleo de Prática Jurídica</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Atuação real em assistência judiciária gratuita e solução pacífica de conflitos durante o curso.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-blue">
+                            <i class="fas fa-chalkboard-teacher text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Corpo Docente Qualificado</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Professores mestres com ampla experiência acadêmica e profissional nas diversas áreas do Direito.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark">
+                        <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-dark">
+                            <i class="fas fa-gavel text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Formação Ética e Crítica</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Preparação para atuar com ética e buscar soluções justas para os conflitos sociais.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COORDENADOR -->
+        <section id="coordenador" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Coordenação do Curso
+                    </h2>
+                    <div class="w-20 h-1 bg-fans-blue mx-auto mb-6"></div>
+                </div>
+                
+                <!-- Coordenador -->
+                <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden p-8 border border-gray-100">
+                    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+                        <div class="text-center lg:text-left flex-shrink-0">
+                            <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-blue-50 shadow-xl mx-auto lg:mx-0">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Professor Harley Christian do Valle Silva" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="mt-6">
+                                <h3 class="font-display text-2xl text-fans-dark">Prof. Me. Harley Christian do Valle Silva</h3>
+                                <p class="text-fans-blue font-medium text-sm md:text-base">Coordenador do Curso de Direito</p>
+                                <p class="text-gray-600 text-sm mt-2">Mestre em Direito</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-1">
+                            <div class="mb-6 bg-gray-50 p-6 rounded-xl border-l-4 border-fans-blue">
+                                <p class="text-gray-700 mb-4">
+                                    Mestre em Direito com vasta experiência acadêmica e profissional. Coordena o curso de Direito da FANS com dedicação à excelência no ensino jurídico.
+                                </p>
+                                <p class="text-gray-700">
+                                    Especialista em Direito Civil e Processual Civil, com atuação destacada na formação de novos profissionais do Direito, preparando-os para os desafios do mercado jurídico.
+                                </p>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 md:gap-6 mt-8">
+                                <div class="bg-blue-50 p-4 md:p-6 rounded-xl text-center">
+                                    <div class="text-xs md:text-sm text-fans-blue font-semibold uppercase mb-2">EXPERIÊNCIA PROFISSIONAL</div>
+                                    <div class="text-2xl md:text-3xl font-bold text-fans-dark">+15 anos</div>
+                                    <div class="text-sm md:text-base text-gray-600">Atuação Jurídica</div>
+                                </div>
+                                <div class="bg-blue-50 p-4 md:p-6 rounded-xl text-center">
+                                    <div class="text-xs md:text-sm text-fans-blue font-semibold uppercase mb-2">DOCÊNCIA</div>
+                                    <div class="text-2xl md:text-3xl font-bold text-fans-dark">+10 anos</div>
+                                    <div class="text-sm md:text-base text-gray-600">Ensino Superior</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÁREAS DE ATUAÇÃO -->
+        <section id="atuacao" class="py-12 md:py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="font-display text-2xl md:text-4xl text-fans-dark mb-4">
+                        Onde Você Poderá Atuar
+                    </h2>
+                    <p class="text-gray-600 text-sm md:text-lg max-w-3xl mx-auto">
+                        Conheça as diversas oportunidades profissionais para bacharéis em Direito formados pela FANS
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-fans-blue mx-auto md:mx-0">
+                            <i class="fas fa-balance-scale text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Advocacia</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Advocacia Privada</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Advocacia Pública</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Consultoria Jurídica</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-green-600 mx-auto md:mx-0">
+                            <i class="fas fa-gavel text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Magistratura</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Juiz Estadual/Federal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Juiz do Trabalho</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Juiz Militar</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-purple-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-purple-600 mx-auto md:mx-0">
+                            <i class="fas fa-landmark text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Ministério Público</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Promotor de Justiça</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Procurador da República</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Procurador do Trabalho</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-yellow-600 mx-auto md:mx-0">
+                            <i class="fas fa-user-shield text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Delegacia</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Delegado de Polícia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Polícia Federal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Polícia Civil</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-red-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-red-600 mx-auto md:mx-0">
+                            <i class="fas fa-user-tie text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Carreira Diplomática</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Diplomata</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Relações Internacionais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Conselheiro Diplomático</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-indigo-600 mx-auto md:mx-0">
+                            <i class="fas fa-chalkboard-teacher text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Docência</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Professor Universitário</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Pesquisador Jurídico</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 hidden md:block"></i>
+                                <span>Autor de Obras Jurídicas</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRADE CURRICULAR -->
+        <section id="grade" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Grade Curricular
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Conheça a estrutura completa do curso de Direito da FANS
+                    </p>
+                </div>
+
+                <!-- Grade em abas -->
+                <div class="mb-8">
+                    <div class="flex flex-wrap gap-2 mb-6 border-b border-gray-200">
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="1">1º Período</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="2">2º Período</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="3">3º Período</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="4">4º Período</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="5">5º Período</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="6">6º Período</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="7">7º Período</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="8">8º Período</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="9">9º Período</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="10">10º Período</button>
+                    </div>
+
+                    <!-- Conteúdo das abas -->
+                    <div class="tab-content" id="tab-1">
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <h3 class="text-xl font-bold text-fans-dark mb-4">1º Período</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-fans-blue mr-3 mt-1"></i>
+                                    <span>Introdução ao Estudo do Direito</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-fans-blue mr-3 mt-1"></i>
+                                    <span>Sociologia Jurídica</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-fans-blue mr-3 mt-1"></i>
+                                    <span>Filosofia do Direito</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-fans-blue mr-3 mt-1"></i>
+                                    <span>Português Jurídico</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-fans-blue mr-3 mt-1"></i>
+                                    <span>Teoria Geral do Estado</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <div class="bg-fans-blue/10 border-l-4 border-fans-blue p-4 rounded-r">
+                            <p class="text-fans-dark font-semibold">
+                                <i class="fas fa-info-circle mr-2"></i>
+                                A grade completa está disponível na secretaria acadêmica. Entre em contato para mais detalhes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carga horária -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-bold text-fans-dark mb-6 text-center">Carga Horária Total</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-3xl font-bold text-fans-blue">3.780h</div>
+                            <div class="text-gray-600">Disciplinas</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <div class="text-3xl font-bold text-green-600">200h</div>
+                            <div class="text-gray-600">Atividades Extensão</div>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-lg">
+                            <div class="text-3xl font-bold text-purple-600">360h</div>
+                            <div class="text-gray-600">Estágio + TCC</div>
+                        </div>
+                        <div class="text-center p-4 bg-fans-dark text-white rounded-lg">
+                            <div class="text-3xl font-bold">4.340h</div>
+                            <div class="">TOTAL GERAL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOIMENTOS -->
+        <section id="depoimentos" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Depoimentos
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Veja o que nossos alunos e ex-alunos falam sobre o curso de Direito da FANS
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Aluno" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Marcelo Costa</h4>
+                                <p class="text-gray-500 text-sm">Ex-aluno, formado em 2021</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "A FANS me proporcionou uma base sólida para ingressar na carreira pública. Hoje sou promotor de justiça e devo muito à formação que recebi."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Aluna" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Juliana Almeida</h4>
+                                <p class="text-gray-500 text-sm">Aluna do 8º período</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "O Núcleo de Prática Jurídica foi fundamental para minha formação. Pude aplicar na prática tudo que aprendi em sala de aula, atendendo a comunidade."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Egresso" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Roberto Mendes</h4>
+                                <p class="text-gray-500 text-sm">Advogado Criminalista</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "A qualidade do corpo docente e a infraestrutura da FANS foram decisivas para minha formação. Hoje tenho meu próprio escritório e atuo com sucesso na área criminal."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCUMENTOS -->
+        <section id="documentos" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Documentos e Regulamentos
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Acesse os documentos oficiais do curso de Direito da FANS
+                    </p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-8 md:p-10 border border-gray-200">
+                    <div class="grid md:grid-cols-2 gap-4 text-left">
+                        <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-100">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4 group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Periódicos Digitais Jurídicos</span>
+                        </a>
+
+                        <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-100">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4 group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Portaria Autorização Direito</span>
+                        </a>
+
+                        <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-100">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4 group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Regulamento Atividades Complementares</span>
+                        </a>
+
+                        <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-100">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4 group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700 group-hover:text-fans-blue">PPC Curso de Direito 2023</span>
+                        </a>
+
+                        <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-100">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4 group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Regulamento TCC Direito</span>
+                        </a>
+
+                        <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-100">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded flex items-center justify-center mr-4 group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Manual TCC – Versão 2023</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mt-12 bg-fans-blue text-white p-8 rounded-2xl text-center">
+                    <h3 class="text-2xl font-bold mb-4">Pronto para começar sua jornada no Direito?</h3>
+                    <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
+                        Inscreva-se agora no vestibular de Direito da FANS e dê o primeiro passo para uma carreira jurídica de sucesso.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#vestibular" class="bg-white text-fans-blue font-bold py-3 px-8 rounded-full hover:bg-blue-50 transition">
+                            INSCREVA-SE AGORA
+                        </a>
+                        <a href="tel:3732268200" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transition">
+                            <i class="fas fa-phone mr-2"></i> (37) 3226-8200
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+        
+        document.getElementById('closeMobileMenu').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('hidden');
+        });
+        
+        // Tab functionality for curriculum
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all tabs
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('border-fans-blue', 'text-fans-blue');
+                    btn.classList.add('border-transparent', 'text-gray-600');
+                });
+                
+                // Add active class to clicked tab
+                button.classList.remove('border-transparent', 'text-gray-600');
+                button.classList.add('border-fans-blue', 'text-fans-blue');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show selected tab content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+            });
+        });
+        
+        // Initialize first tab as active
+        document.querySelector('.tab-button').click();
+    </script>
+
+</body>
+</html>

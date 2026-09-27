@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Pedagógica: Supervisão e Orientação - FANS</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../../js/main.js"></script> 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',
+                            blue: '#0066CC',
+                            light: '#F8FAFC',
+                            gray: '#4A5568',
+                            green: '#2F855A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fjalla One', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-primary {
+            background: linear-gradient(135deg, #1F3546 0%, #0066CC 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .hero-background {
+            background-image: linear-gradient(rgba(31, 53, 70, 0.9), rgba(31, 53, 70, 0.7)), url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+     <div id="header-placeholder"></div>
+
+    <main class="flex-grow">
+
+        <!-- HERO SECTION -->
+        <section class="hero-background py-24 md:py-32 relative overflow-hidden">
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+                    GESTÃO PEDAGÓGICA: SUPERVISÃO E ORIENTAÇÃO
+                </h1>
+                <p class="text-2xl text-blue-100 max-w-3xl mx-auto mb-8 font-light">
+                    Formação para liderar processos educacionais com excelência
+                </p>
+                <p class="text-xl text-blue-200 max-w-2xl mx-auto mb-10">
+                    Especialize-se na supervisão pedagógica e orientação educacional
+                </p>
+                <a href="../vestibular.html" class="inline-block bg-white text-fans-dark font-bold py-4 px-10 rounded-full hover:bg-blue-50 transition transform hover:-translate-y-1 shadow-lg text-lg">
+                    INSCREVA-SE AGORA
+                    <i class="ml-2 fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- VISÃO GERAL DO CURSO -->
+        <section id="visao" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Sobre o Curso
+                    </h2>
+                    <div class="w-20 h-1 bg-fans-blue mx-auto mb-6"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            O curso de <strong>Gestão Pedagógica: Supervisão e Orientação da FANS</strong> forma profissionais para atuar na supervisão, orientação e coordenação pedagógica em instituições de ensino.
+                        </p>
+                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            Desenvolvido para capacitar educadores a <strong>liderar equipes pedagógicas</strong>, acompanhar processos de ensino-aprendizagem e implementar práticas educacionais inovadoras.
+                        </p>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            Ideal para professores, coordenadores, diretores e profissionais da educação que buscam <strong>aperfeiçoar sua atuação na gestão pedagógica</strong> e contribuir para a qualidade do ensino.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Educadores em reunião pedagógica" 
+                             class="rounded-2xl shadow-2xl">
+                        <div class="absolute -bottom-4 -right-4 bg-fans-blue text-white p-4 rounded-xl shadow-lg">
+                            <div class="text-2xl font-bold">18 meses</div>
+                            <div class="text-sm">Duração do curso</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POR QUE ESCOLHER ESTE CURSO? -->
+        <section id="diferenciais" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Por que escolher Gestão Pedagógica na FANS?
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Conheça os pontos-chave que diferenciam nosso curso e maximizam sua formação
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-blue">
+                            <i class="fas fa-chalkboard-teacher text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Corpo Docente Experiente</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Professores com ampla experiência em gestão educacional e atuação prática em instituições de ensino.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark">
+                        <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-dark">
+                            <i class="fas fa-handshake text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Parcerias com Escolas</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Convênios com instituições de ensino para visitas técnicas e estágios supervisionados.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-blue">
+                            <i class="fas fa-book-open text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Metodologia Ativa</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Abordagem prática com estudos de caso reais e simulação de situações da gestão pedagógica.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark">
+                        <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-dark">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Networking Educacional</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Conexões com profissionais da educação de diferentes níveis e redes de ensino.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPETÊNCIAS DESENVOLVIDAS -->
+        <section id="competencias" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="font-display text-2xl md:text-4xl text-fans-dark mb-4">
+                        Habilidades Desenvolvidas
+                    </h2>
+                    <p class="text-gray-600 text-sm md:text-lg max-w-3xl mx-auto">
+                        O que você aprenderá durante o curso
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-fans-blue mx-auto md:mx-0">
+                            <i class="fas fa-eye text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Supervisão Pedagógica</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Acompanhamento de práticas docentes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Orientación para melhorias</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Avaliação do processo ensino</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-green-600 mx-auto md:mx-0">
+                            <i class="fas fa-comments text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Orientação Educacional</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Acompanhamento de alunos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Mediação de conflitos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Orientação vocacional</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-purple-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-purple-600 mx-auto md:mx-0">
+                            <i class="fas fa-tasks text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Coordenação Pedagógica</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Planejamento curricular</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Formação continuada</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Gestão de projetos educacionais</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-yellow-600 mx-auto md:mx-0">
+                            <i class="fas fa-chart-line text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Avaliação Institucional</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Indicadores educacionais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Avaliação de desempenho</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Plano de melhorias</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-red-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-red-600 mx-auto md:mx-0">
+                            <i class="fas fa-lightbulb text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Inovação Educacional</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Tecnologias educacionais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Metodologias ativas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Práticas inclusivas</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-indigo-600 mx-auto md:mx-0">
+                            <i class="fas fa-handshake text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Gestão de Pessoas</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Liderança de equipes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Motivação docente</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Desenvolvimento profissional</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOIMENTOS -->
+        <section id="depoimentos" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Depoimentos
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Veja o que nossos alunos e ex-alunos falam sobre o curso
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Aluno" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Carlos Eduardo</h4>
+                                <p class="text-gray-500 text-sm">Coordenador Pedagógico, formado em 2022</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "O curso me deu as ferramentas necessárias para coordenar melhor minha equipe de professores e implementar melhorias significativas na escola."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Aluna" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Mariana Santos</h4>
+                                <p class="text-gray-500 text-sm">Supervisora Educacional, aluna do curso</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "A abordagem prática sobre supervisão pedagógica transformou minha forma de acompanhar os professores e ajudá-los em seu desenvolvimento."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Egresso" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Roberto Fernandes</h4>
+                                <p class="text-gray-500 text-sm">Diretor Escolar, ex-aluno</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "Como diretor, o curso me ajudou a compreender melhor as necessidades pedagógicas da escola e a liderar com mais eficiência."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCUMENTOS -->
+        <section id="documentos" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Documentos e Regulamentos
+                    </h2>
+                    <div class="w-20 h-1 bg-fans-blue mx-auto mb-6"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <a href="#" class="flex items-center p-4 bg-gray-50 rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Portaria de Autorização do Curso</span>
+                    </a>
+
+                    <a href="#" class="flex items-center p-4 bg-gray-50 rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Bibliografia Recomendada</span>
+                    </a>
+
+                    <a href="#" class="flex items-center p-4 bg-gray-50 rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Manual do Aluno</span>
+                    </a>
+
+                    <a href="#" class="flex items-center p-4 bg-gray-50 rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Projeto Pedagógico do Curso</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA PARA AÇÃO FINAL -->
+        <section id="cta" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="bg-fans-blue text-white p-8 md:p-12 rounded-2xl text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Pronto para liderar na educação?</h3>
+                    <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
+                        Inscreva-se agora no curso de Gestão Pedagógica: Supervisão e Orientação da FANS e torne-se um especialista em gestão educacional.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#vestibular" class="bg-white text-fans-blue font-bold py-3 px-8 rounded-full hover:bg-blue-50 transition">
+                            INSCREVA-SE AGORA
+                        </a>
+                        <a href="tel:3732268200" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transition">
+                            <i class="fas fa-phone mr-2"></i> (37) 3226-8200
+                        </a>
+                    </div>
+               
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuButton')?.addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+        
+        document.getElementById('closeMobileMenu')?.addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('hidden');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+/* Container da Página de Cursos */
+.courses-page-container {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background-color: #fff;
+    padding-bottom: 80px;
+}
+
+/* Hero Section */
+.page-hero {
+    background-color: #1F3546; /* Azul Escuro Institucional */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.hero-inner h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.hero-inner p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Menu de Navegação Fixo (Sticky) */
+.course-anchor-nav {
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: sticky; /* O segredo do menu fixo */
+    top: 0; /* Cola no topo */
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+}
+
+/* Ajuste se tiver cabeçalho do site fixo */
+/* .course-anchor-nav { top: 80px; } */
+
+.anchor-btn {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 30px;
+    background: #f8f9fa;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+    border: 1px solid #e2e8f0;
+}
+
+.anchor-btn:hover {
+    background: #0066CC;
+    color: #fff;
+    transform: translateY(-2px);
+    border-color: #0066CC;
+}
+
+.anchor-btn i { margin-right: 8px; }
+
+/* Blocos de Seção */
+.course-section-block {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    scroll-margin-top: 80px; /* Para o menu não tampar o título ao clicar */
+}
+
+.course-section-block.bg-light {
+    background-color: #f8fafc;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.block-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #1F3546;
+    margin-bottom: 40px;
+    border-left: 6px solid #0066CC;
+    padding-left: 20px;
+}
+
+/* Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Cards Profissionais */
+.course-card-pro {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.course-card-pro:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #0066CC;
+}
+
+/* Tiras Coloridas */
+.card-top-strip { height: 6px; width: 100%; text-indent: -9999px; }
+.grad-strip { background: #0066CC; } /* Azul */
+.pos-strip { background: #4A5568; } /* Cinza Escuro */
+.tec-strip { background: #2F855A; } /* Verde */
+
+.card-body {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h3 {
+    color: #1F3546;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.card-body p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Empurra o botão para o final */
+    line-height: 1.6;
+}
+
+.card-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85rem;
+    color: #718096;
+    margin-bottom: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f1f1;
+    font-weight: 600;
+}
+
+.card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card-meta i { color: #0066CC; }
+
+/* Botão do Card */
+.btn-card {
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border: 1px solid #0066CC;
+    color: #0066CC;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-card:hover {
+    background: #0066CC;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,102,204,0.3);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .course-anchor-nav {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 15px;
+    }
+    
+    .hero-inner h1 { font-size: 2rem; }
+    
+    .courses-grid { grid-template-columns: 1fr; }
+}
+/* =========================================
+   CORREÇÃO DE QUEBRA NO MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Evita que a página balance para os lados */
+    .courses-page-container {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* 2. Menu de Navegação (Rolagem Horizontal Suave) */
+    .course-anchor-nav {
+        justify-content: flex-start; /* Alinha no começo */
+        overflow-x: auto; /* Permite rolar para o lado */
+        white-space: nowrap; /* Não deixa os botões caírem de linha */
+        padding: 15px 20px;
+        gap: 10px;
+        -webkit-overflow-scrolling: touch; /* Rolagem nativa no iPhone */
+    }
+
+    /* Estilo da barra de rolagem do menu (opcional) */
+    .course-anchor-nav::-webkit-scrollbar {
+        height: 4px;
+    }
+    .course-anchor-nav::-webkit-scrollbar-thumb {
+        background: #ddd;
+        border-radius: 10px;
+    }
+
+    /* 3. Grid de Cursos: Forçar 1 Coluna */
+    .courses-grid {
+        display: grid;
+        grid-template-columns: 1fr !important; /* Força uma coluna única */
+        gap: 20px;
+        width: 100%;
+    }
+
+    /* 4. Ajuste de Tamanho dos Cards e Fontes */
+    .course-section-block {
+        padding: 30px 15px; /* Menos espaço nas laterais */
+    }
+
+    .page-hero {
+        padding: 40px 15px;
+    }
+
+    .hero-inner h1 {
+        font-size: 1.8rem; /* Título menor para não quebrar */
+    }
+
+    .block-title {
+        font-size: 1.5rem;
+        padding-left: 15px;
+        margin-bottom: 25px;
+    }
+
+    /* Garante que o card não estoure a tela */
+    .course-card-pro {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+}

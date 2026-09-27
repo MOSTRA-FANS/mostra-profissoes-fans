@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FANS - Faculdade de Nova Serrana</title>
+    <meta name="description" content="A maior e mais tradicional faculdade de Nova Serrana">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="js/main.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #0066CC;
+        }
+        
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 90px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-date-box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 70px;
+            height: 70px;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+        
+        .timeline-content {
+            padding-left: 20px;
+            border-left: 2px dashed #e2e8f0;
+            padding-bottom: 20px;
+        }
+        
+        .timeline-item:last-child .timeline-content {
+            border-left: 2px solid transparent;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+    
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .whatsapp-float {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Smooth transitions */
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        /* Tab active state */
+        .tab-btn.active {
+            background-color: #0066CC;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-[#1F3546] text-white shadow-lg sticky top-0 z-50">
+        <div class="border-b border-gray-700 bg-[#15232d] hidden lg:block">
+            <div class="container mx-auto px-4 py-2">
+                <div class="flex justify-center items-center text-xs space-x-4 text-gray-300 overflow-x-auto whitespace-nowrap">
+                    <a href="https://modular2.mentorweb.ws/modular2MWFlutterWeb/" class="hover:text-blue-400 transition"><i class="fas fa-user mr-1"></i> Acesso Mentor</a>
+                    <a href="https://fans.sellostecnlogia.com.br/webgiz/" class="hover:text-blue-400 transition"><i class="fas fa-laptop mr-1"></i> Acesso WebGiz</a>
+                    <a href="https://elibro.net/pt/lc/fans/login_usuario/?next=/pt/lc/fans/inicio/" class="hover:text-blue-400 transition"><i class="fas fa-book mr-1"></i> Biblioteca Virtual</a>
+                    <a href="certificacaodiret.html" class="hover:text-blue-400 transition"><i class="fas fa-file-alt mr-1"></i> Concursos</a>
+                    <a href="comissao.html" class="hover:text-blue-400 transition"><i class="fas fa-chart-bar mr-1"></i> CPA</a>
+                    <a href="https://modular2.mentorweb.ws/modular2MentorWebG5/jsf/diplomadigital/visualizadiplomadigital.jsf#edusub" class="hover:text-blue-400 transition"><i class="fas fa-certificate mr-1"></i> Diploma Mentor></a>
+                    <a href="https://diplomadigital.aix.com.br/validacao/diploma" class="hover:text-blue-400 transition"><i class="fas fa-certificate mr-1"></i> Diploma GIZ</a>
+                    <a href="https://gestaobit.com/naap/" class="hover:text-blue-400 transition"><i class="fas fa-comments mr-1"></i> NAAP Ouvidoria</a>
+                    <a href="RIEC.html" class="hover:text-blue-400 transition"><i class="fas fa-newspaper mr-1"></i> Revista Ciec</a>
+                </div>
+            </div>
+        </div>
+
+            <div class="container mx-auto px-4 md:px-0"> 
+    <div class="flex justify-between items-center h-24 md:h-32"> <div class="flex items-center">
+            <a href="index.html" class="hover:opacity-90 transition block">
+                <img src="images/logo3.png" alt="FANS" class="h-16 md:h-20 w-auto object-contain">
+            </a>
+        </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold uppercase tracking-wide">
+                    <a href="#" class="hover:text-blue-400 transition py-2">Home</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="instituicao.html" class="hover:text-blue-400 transition py-2">Instituição</a>
+                    <span class="text-gray-600">|</span>
+                    <div class="relative group">
+                        <a href="cursos.html" class="hover:text-blue-400 transition flex items-center gap-1 py-2">
+                            Graduação <i class="f text-xs"></i></a>
+                    </div>
+                    <span class="text-gray-600">|</span>
+                    <a href="cursostec.html" class="hover:text-blue-400 transition py-2">Cursos Técnicos</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="cursospos.html" class="hover:text-blue-400 transition py-2">Pós Graduação</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="vestibular.html" class="hover:text-blue-400 transition py-2">Vestibular</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="vestibular.html" class="hover:text-blue-400 transition py-2">Rel.Int.</a>
+                    
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <div class="hidden lg:flex items-center space-x-4 pl-6 border-l border-gray-700">
+                        <button class="hover:text-blue-400 transition">
+                            <i class="fas fa-search text-lg"></i>
+                        </button>
+                        <a href="vestibular.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-bold transition">
+                            INSCREVA-SE
+                        </a>
+                    </div>
+
+                    <button id="mobileMenuButton" class="lg:hidden text-2xl p-2 focus:outline-none hover:text-blue-400 transition">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu lg:hidden fixed inset-0 z-40 bg-white hidden">
+        <div class="absolute top-0 left-0 right-0 bg-[#1F3546] text-white p-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <i class="fas fa-graduation-cap text-2xl"></i>
+                <span class="text-2xl font-bold">FANS</span>
+            </div>
+            <button id="closeMobileMenu" class="text-2xl p-2">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="pt-20 h-full overflow-y-auto pb-24">
+            <div class="container mx-auto px-4 py-6 space-y-2">
+                <a href="" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg">
+                    <i class="fas fa-home mr-3 text-blue-600"></i> Home
+                </a>
+                <a href="instituicao.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg">
+                    <i class="fas fa-university mr-3 text-blue-600"></i> Instituição
+                </a>
+                <div class="p-4">
+                    <div class="flex items-center text-lg font-bold text-gray-800 mb-2">
+                            <a href="cursos.html" class="flex items-center hover:text-blue-600 transition-colors">
+                                <i class="fas fa-graduation-cap mr-3 text-blue-600"></i>
+                                Cursos
+                            </a>
+                    </div>
+                
+                </div>
+                <a href="pos" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg">
+                    <i class="fas fa-user-graduate mr-3 text-blue-600"></i> Pós Graduação
+                </a>
+                <a href="vestibular.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg">
+                    <i class="fas fa-pen-alt mr-3 text-blue-600"></i> Vestibular
+                </a>
+                 <a href="relinternacionais.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg">
+                    <i class="fas fa-pen-alt mr-3 text-blue-600"></i> Rel Internacionais
+                </a>
+                
+                
+                
+                <div class="mt-8 p-4 bg-gray-50 rounded-lg">
+                    <p class="text-sm font-bold text-gray-500 uppercase mb-4 tracking-wider">Acesso Rápido</p>
+                    <div class="grid grid-cols-3 gap-3">
+                        <a href="https://modular2.mentorweb.ws/modular2MWFlutterWeb/" class="text-sm text-gray-600 hover:text-blue-600 p-2 bg-white rounded"><i class="fas fa-user mr-2"></i> Mentor</a>
+                        <a href="https://fans.sellostecnlogia.com.br/webgiz/" class="text-sm text-gray-600 hover:text-blue-600 p-2 bg-white rounded"><i class="fas fa-laptop mr-2"></i> WebGiz</a>
+                        <a href="https://elibro.net/pt/lc/fans/login_usuario/?next=/pt/lc/fans/inicio/" class="text-sm text-gray-600 hover:text-blue-600 p-2 bg-white rounded"><i class="fas fa-book mr-2"></i> Biblioteca</a>
+                        <a href="certificacaodiret.html" class="text-sm text-gray-600 hover:text-blue-600 p-2 bg-white rounded"><i class="fas fa-file-alt mr-2"></i>Concursos</a>
+                        <a href="comissao.html" class="text-sm text-gray-600 hover:text-blue-600 p-2 bg-white rounded"><i class="fas fa-file-alt mr-2"></i> CPA</a>
+                        <a href="https://modular2.mentorweb.ws/modular2MentorWebG5/jsf/diplomadigital/visualizadiplomadigital.jsf#edusub" class="text-sm text-gray-600 hover:text-blue-600 p-2 bg-white rounded"><i class="fas fa-file-alt mr-2"></i> DiplomaMentor</a>
+                        <a href="https://diplomadigital.aix.com.br/validacao/diploma" class="text-sm text-gray-600 hover:text-blue-600 p-2 bg-white rounded" class="text-sm text-gray-600 hover:text-blue-600 p-2 bg-white rounded"><i class="fas fa-file-alt mr-2"></i> Diploma GIZ</a>
+                        <a href="https://gestaobit.com/naap/" class="text-sm text-gray-600 hover:text-blue-600 p-2 bg-white rounded"><i class="fas fa-file-alt mr-2"></i> Naap Ouvidoria</a>
+                        <a href="RIEC.html" class="text-sm text-gray-600 hover:text-blue-600 p-2 bg-white rounded"><i class="fas fa-file-alt mr-2"></i> Revista Ciec</a>
+                    </div>
+                </div>
+
+                <div class="mt-8 p-4">
+                    <a href="vestibular.html" class="block w-full bg-blue-600 text-white px-6 py-4 rounded-full font-bold text-center hover:bg-blue-700 transition shadow-lg">
+                        <i class="fas fa-pen-alt mr-2"></i> INSCREVA-SE AGORA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <section class="hero relative text-white min-h-[85vh] flex items-center overflow-hidden">
+    
+    <div class="absolute inset-0 z-0">
+        <img src="images/fanscelular.jpg" alt="Vestibular FANS" class="w-full h-full object-cover block lg:hidden">
+        
+        <img src="images/fans-vestibular-verao-2026.jpg" alt="Campus FANS" class="w-full h-full object-cover hidden lg:block">
+
+        <div class="absolute inset-0 bg-gradient-to-r from-[#1F3546]/92 to-[#0066CC]/85 mix-blend-multiply"></div>
+    </div>
+
+    <div class="container mx-auto px-4 py-20 relative z-10 text-center">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="vestibular.html" class="group bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold py-4 px-10 rounded-full transition-all shadow-lg flex items-center gap-3">
+                Inscreva-se no Vestibular
+                <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+            </a>
+            <a href="#cursos" class="bg-black/20 hover:bg-black/40 text-white border-2 border-white/50 text-lg font-bold py-4 px-10 rounded-full transition-all backdrop-blur-sm flex items-center justify-center shadow-lg">
+                <i class="fas fa-graduation-cap mr-2"></i> Conheça os Cursos
+            </a>
+        </div>
+    </div>
+</section>
+
+  <section id="cursos" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-900 inline-block">Nossos Cursos</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    Escolha o caminho para o seu futuro com nossa ampla gama de cursos presenciais
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="openTab(event, 'graduacao')" class="tab-btn active bg-blue-600 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-md hover:shadow-lg">
+                    <i class="fas fa-graduation-cap mr-2"></i> Graduação
+                </button>
+                <button onclick="openTab(event, 'pos')" class="tab-btn bg-white text-gray-700 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-all shadow-sm hover:shadow-md">
+                    <i class="fas fa-user-graduate mr-2"></i> Pós-Graduação
+                </button>
+                <button onclick="openTab(event, 'tecnicos')" class="tab-btn bg-white text-gray-700 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-all shadow-sm hover:shadow-md">
+                    <i class="fas fa-tools mr-2"></i> Cursos Técnicos
+                </button>
+            </div>
+
+            <div id="graduacao" class="tab-content active-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop" alt="Administração" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur text-blue-800 px-3 py-1 rounded-full text-sm font-bold shadow-sm"><i class="fas fa-moon mr-1"></i> Noturno</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 text-blue-600 text-xl"><i class="fas fa-briefcase"></i></div>
+                                <h3 class="text-xl font-bold text-gray-900">Administração</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4 text-sm">Formação de líderes e gestores estratégicos para o mercado empresarial.</p>
+                            <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                                <a href="graduacao/administracao.html" class="text-blue-600 font-bold hover:text-blue-800 text-sm">SAIBA MAIS <i class="fas fa-arrow-right ml-1"></i></a>
+                                <span class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 rounded">8 semestres</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1472&auto=format&fit=crop" alt="Ciências Contábeis" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur text-blue-800 px-3 py-1 rounded-full text-sm font-bold shadow-sm"><i class="fas fa-moon mr-1"></i> Noturno</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 text-green-600 text-xl"><i class="fas fa-calculator"></i></div>
+                                <h3 class="text-xl font-bold text-gray-900">Ciências Contábeis</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4 text-sm">Gestão financeira, auditoria e perícia com foco no mercado atual.</p>
+                            <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                                <a href="graduacao/cienciascontabeis.html" class="text-blue-600 font-bold hover:text-blue-800 text-sm">SAIBA MAIS <i class="fas fa-arrow-right ml-1"></i></a>
+                                <span class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 rounded">8 semestres</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1470&auto=format&fit=crop" alt="Direito" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur text-blue-800 px-3 py-1 rounded-full text-sm font-bold shadow-sm"><i class="fas fa-moon mr-1"></i> Noturno</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-600 text-xl"><i class="fas fa-balance-scale"></i></div>
+                                <h3 class="text-xl font-bold text-gray-900">Direito</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4 text-sm">Excelência jurídica com núcleo de prática real e corpo docente mestre.</p>
+                            <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                                <a href="graduacao/direito.html" class="text-blue-600 font-bold hover:text-blue-800 text-sm">SAIBA MAIS <i class="fas fa-arrow-right ml-1"></i></a>
+                                <span class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 rounded">10 semestres</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1470&auto=format&fit=crop" alt="Engenharia de Software" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur text-blue-800 px-3 py-1 rounded-full text-sm font-bold shadow-sm"><i class="fas fa-moon mr-1"></i> Noturno</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 text-purple-600 text-xl"><i class="fas fa-code"></i></div>
+                                <h3 class="text-xl font-bold text-gray-900">Eng. de Software</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4 text-sm">Desenvolvimento de sistemas, apps e soluções tecnológicas inovadoras.</p>
+                            <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                                <a href="graduacao/engenhariasoftware.html" class="text-blue-600 font-bold hover:text-blue-800 text-sm">SAIBA MAIS <i class="fas fa-arrow-right ml-1"></i></a>
+                                <span class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 rounded">8 semestres</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1418&auto=format&fit=crop" alt="Pedagogia" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur text-blue-800 px-3 py-1 rounded-full text-sm font-bold shadow-sm"><i class="fas fa-moon mr-1"></i> Noturno</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4 text-yellow-600 text-xl"><i class="fas fa-shapes"></i></div>
+                                <h3 class="text-xl font-bold text-gray-900">Pedagogia</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4 text-sm">Formação de educadores e gestores para transformar o ensino.</p>
+                            <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                                <a href="graduacao/pedagogia.html" class="text-blue-600 font-bold hover:text-blue-800 text-sm">SAIBA MAIS <i class="fas fa-arrow-right ml-1"></i></a>
+                                <span class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 rounded">8 semestres</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1374&auto=format&fit=crop" alt="Psicologia" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur text-blue-800 px-3 py-1 rounded-full text-sm font-bold shadow-sm"><i class="fas fa-moon mr-1"></i> Noturno</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mr-4 text-teal-600 text-xl"><i class="fas fa-brain"></i></div>
+                                <h3 class="text-xl font-bold text-gray-900">Psicologia</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4 text-sm">Compreensão do comportamento humano e promoção da saúde mental.</p>
+                            <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                                <a href="graduacao/psicologia.html" class="text-blue-600 font-bold hover:text-blue-800 text-sm">SAIBA MAIS <i class="fas fa-arrow-right ml-1"></i></a>
+                                <span class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 rounded">10 semestres</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="pos" class="tab-content hidden">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1470&auto=format&fit=crop" 
+                                 alt="Criminologia" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-l-4 border-red-600">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Criminologia</h3>
+                            <p class="text-gray-600 text-sm mb-4">Análise do fenômeno criminal e segurança pública.</p>
+                            <a href="pos/criminonologia.html" class="text-red-600 text-sm font-bold hover:underline">SAIBA MAIS</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop" 
+                                 alt="Gestão Estratégica" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-l-4 border-blue-600">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Gestão Estratégica</h3>
+                            <p class="text-gray-600 text-sm mb-4">Liderança e competitividade para gestores.</p>
+                            <a href="pos/gestaoestrategica.html" class="text-blue-600 text-sm font-bold hover:underline">SAIBA MAIS</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1470&auto=format&fit=crop" 
+                                 alt="Gestão Fiscal" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-l-4 border-green-600">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Gestão Fiscal e Tributária</h3>
+                            <p class="text-gray-600 text-sm mb-4">Especialização em auditoria e planejamento fiscal.</p>
+                            <a href="pos/gestaofiscal.html" class="text-green-600 text-sm font-bold hover:underline">SAIBA MAIS</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1532&auto=format&fit=crop" 
+                                 alt="Gestão Pedagógica" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-l-4 border-yellow-500">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Gestão Pedagógica</h3>
+                            <p class="text-gray-600 text-sm mb-4">Supervisão e orientação educacional escolar.</p>
+                            <a href="pos/gestaopedagogica.html" class="text-yellow-600 text-sm font-bold hover:underline">SAIBA MAIS</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=1470&auto=format&fit=crop" 
+                                 alt="Neurociências" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-l-4 border-purple-600">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Neurociências na Educação</h3>
+                            <p class="text-gray-600 text-sm mb-4">Processos cognitivos aplicados à aprendizagem.</p>
+                            <a href="pos/neurociencia.html" class="text-purple-600 text-sm font-bold hover:underline">SAIBA MAIS</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1372&auto=format&fit=crop" 
+                                 alt="Psicopedagogia" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-l-4 border-teal-600">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Psicopedagogia</h3>
+                            <p class="text-gray-600 text-sm mb-4">Atuação clínica e institucional nas dificuldades de aprendizagem.</p>
+                            <a href="pos/psicopedagogia.html" class="text-teal-600 text-sm font-bold hover:underline">SAIBA MAIS</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="tecnicos" class="tab-content hidden">
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1453&auto=format&fit=crop" alt="Enfermagem" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mr-4 text-pink-600 text-xl"><i class="fas fa-user-nurse"></i></div>
+                                <h3 class="text-xl font-bold text-gray-900">Técnico em Enfermagem</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Formação prática para atuação em hospitais e clínicas.</p>
+                            <a href="tecnicos/tecenfermagem.html" class="text-pink-600 font-bold hover:text-pink-800 text-sm flex items-center">SAIBA MAIS <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1470&auto=format&fit=crop" alt="Segurança do Trabalho" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4 text-orange-600 text-xl"><i class="fas fa-hard-hat"></i></div>
+                                <h3 class="text-xl font-bold text-gray-900">Segurança do Trabalho</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Prevenção de acidentes e gestão de riscos ocupacionais.</p>
+                            <a href="tecnicos/tecsegtrabalho.html" class="text-orange-600 font-bold hover:text-orange-800 text-sm flex items-center">SAIBA MAIS <i class="fas fa-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-900 mb-6">Venha para a FANS</h2>
+                    <p class="text-blue-600 text-xl font-semibold mb-6">
+                        A maior e mais tradicional faculdade de Nova Serrana
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        Há mais de 20 anos formando profissionais de excelência. Na FANS, você encontra ensino presencial de verdade, com professores mestres e doutores, laboratórios equipados e uma estrutura pensada para o seu sucesso profissional.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <span class="text-gray-700">Nota máxima no MEC em todos os cursos</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <span class="text-gray-700">Professores mestres e doutores com experiência</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <span class="text-gray-700">Bolsa de até 100% pelo ProUni e FIES</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <span class="text-gray-700">Infraestrutura completa e laboratórios modernos</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold inline-flex items-center transition-all shadow-lg hover:shadow-xl">
+                        <i class="fas fa-history mr-3"></i> Conheça Nossa História
+                    </a>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=1470&auto=format&fit=crop" 
+                         alt="Estudantes da FANS" 
+                         class="rounded-2xl shadow-2xl w-full">
+                    <div class="absolute -bottom-6 -left-6 bg-blue-600 text-white p-6 rounded-2xl shadow-lg">
+                        <div class="text-4xl font-bold">20+</div>
+                        <div class="text-lg font-semibold">Anos de Excelência</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="vestibular" class="py-24 relative overflow-hidden">
+        
+        <div class="absolute inset-0 bg-gradient-to-r from-[#1F3546] to-[#0066CC] z-0"></div>
+        
+        <i class="fas fa-pen-nib absolute -left-10 -bottom-10 text-[250px] text-white opacity-5 z-0 transform rotate-12"></i>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-500/30 border border-blue-400/30 text-blue-200 text-sm font-bold mb-6 tracking-wider">
+                    VESTIBULAR 2026
+                </span>
+
+                <h2 class="font-display text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight font-bold">
+                    O SEU FUTURO <br>
+                    <span class="text-blue-300">COMEÇA NA FANS</span>
+                </h2>
+
+                <p class="text-lg md:text-xl text-blue-100 mb-10 leading-relaxed max-w-2xl mx-auto">
+                    Não espere mais para transformar sua carreira. Junte-se a uma instituição com mais de 20 anos de tradição, nota máxima no MEC e foco total na sua empregabilidade. As inscrições estão abertas!
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="vestibular.html" class="group bg-white text-[#1F3546] font-bold py-4 px-10 rounded-full text-lg shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                        QUERO ME INSCREVER
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform text-blue-600"></i>
+                    </a>
+                    
+                    <a href="https://wa.me/553732268200" target="_blank" class="text-white hover:text-blue-300 font-semibold py-4 px-6 transition flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Calendário e Eventos -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Calendário -->
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-200">Calendário Escolar</h2>
+                    
+                    <div class="space-y-8">
+                        <!-- Evento 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-date-box">
+                                <span class="t-day text-2xl font-bold">14</span>
+                                <span class="t-month text-sm font-semibold text-gray-500">JAN</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4 class="font-bold text-gray-900 mb-2">Matrículas Pós-Graduação</h4>
+                                <p class="text-gray-700">
+                                    Data-limite de matrícula on-line (regular e eletiva) para o 1º período letivo de 2026.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Evento 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-date-box">
+                                <span class="t-day text-2xl font-bold">16</span>
+                                <span class="t-month text-sm font-semibold text-gray-500">JAN</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4 class="font-bold text-gray-900 mb-2">Atividades Curriculares</h4>
+                                <p class="text-gray-700">
+                                    Data-limite para a efetivação da matrícula em atividades acadêmicas curriculares.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Evento 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-date-box">
+                                <span class="t-day text-2xl font-bold">23</span>
+                                <span class="t-month text-sm font-semibold text-gray-500">JAN</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4 class="font-bold text-gray-900 mb-2">Matrícula Antecipada</h4>
+                                <p class="text-gray-700">
+                                    Término do período para requerimento de matrícula antecipada em atividades a serem ofertadas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Eventos -->
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-200">Próximos Eventos</h2>
+                    
+                    <!-- Evento Destaque -->
+                    <div class="mb-8 bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                        <div class="h-48 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1470&auto=format&fit=crop" 
+                                 alt="Semana de Engenharia" 
+                                 class="w-full h-full object-cover">
+                            <div class="absolute top-6 left-0 bg-blue-600 text-white px-4 py-2 rounded-r">
+                                <div class="text-2xl font-bold">09</div>
+                                <div class="text-sm">MAR</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Semana de Engenharia de Software</h3>
+                            <p class="text-gray-600 mb-4">
+                                Palestras, workshops e competições de programação para alunos e profissionais.
+                            </p>
+                            <div class="flex items-center text-gray-500">
+                                <i class="far fa-calendar mr-2"></i>
+                                <span class="mr-4">09 a 15 de março de 2026</span>
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Auditório Principal</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Outros Eventos -->
+                    <div class="space-y-6">
+                        <div class="bg-gray-50 p-6 rounded-2xl shadow-sm flex items-start hover:bg-gray-100 transition-all">
+                            <div class="bg-blue-100 text-blue-600 px-4 py-3 rounded-lg mr-4">
+                                <div class="text-center">
+                                    <div class="text-xl font-bold">01</div>
+                                    <div class="text-sm font-semibold">DEZ</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Inscrições para Especialização</h4>
+                                <p class="text-gray-600 text-sm mb-2">Departamento de Engenharia Elétrica</p>
+                                <div class="text-gray-500 text-sm">
+                                    <i class="far fa-calendar mr-1"></i> Até 27 de fevereiro
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vestibular Section -->
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Coluna 1 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fas fa-graduation-cap text-3xl text-blue-400"></i>
+                        <div>
+                            <h4 class="text-white text-xl font-bold">FANS</h4>
+                            <p class="text-sm text-gray-400">Faculdade de Nova Serrana</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-white font-semibold">Campus José Silva de Almeida</p>
+                        <p class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-400 mr-2 mt-1"></i>
+                            <span>Rua Lígia Rodrigues, 600 - São Geraldo<br>Nova Serrana - MG</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Coluna 2 -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6 pb-3 border-b border-gray-700">Contato</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-blue-400 mr-3"></i>
+                            <div>
+                                <span class="font-semibold text-white">(37) 3226-8200</span>
+                                <p class="text-sm text-gray-400">Atendimento</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="far fa-envelope text-blue-400 mr-3"></i>
+                            <div>
+                                <span>secretaria@fans.edu.br</span>
+                                <p class="text-sm text-gray-400">E-mail</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="far fa-clock text-blue-400 mr-3"></i>
+                            <div>
+                                <span>Segunda a Sexta</span>
+                                <p class="text-sm text-gray-400">8h às 22h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coluna 3 -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6 pb-3 border-b border-gray-700">Acesso Rápido</h4>
+                    <div class="space-y-3">
+                        <a href="#cursos" class="block hover:text-white transition pl-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4"><i class="fas fa-chevron-right mr-2 text-xs"></i> Cursos</a>
+                        <a href="#sobre" class="block hover:text-white transition pl-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4"><i class="fas fa-chevron-right mr-2 text-xs"></i> A Faculdade</a>
+                        <a href="#" class="block hover:text-white transition pl-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4"><i class="fas fa-chevron-right mr-2 text-xs"></i> Serviços Online</a>
+                        <a href="#" class="block hover:text-white transition pl-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4"><i class="fas fa-chevron-right mr-2 text-xs"></i> Calendário</a>
+                        <a href="#" class="block hover:text-white transition pl-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4"><i class="fas fa-chevron-right mr-2 text-xs"></i> Área do Aluno</a>
+                    </div>
+                </div>
+                
+                <!-- Coluna 4 -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6 pb-3 border-b border-gray-700">Redes Sociais</h4>
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-pink-600 rounded-full flex items-center justify-center transition transform hover:-translate-y-1">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition transform hover:-translate-y-1">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-red-600 rounded-full flex items-center justify-center transition transform hover:-translate-y-1">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-blue-400 rounded-full flex items-center justify-center transition transform hover:-translate-y-1">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                    
+                    <div>
+                        <p class="font-semibold text-white mb-3">Receba nossas novidades</p>
+                        <div class="flex">
+                            <input type="email" 
+                                   placeholder="Seu e-mail" 
+                                   class="bg-gray-800 text-white px-4 py-3 rounded-l-lg flex-grow focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-700">
+                            <button class="bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-r-lg transition">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 FANS - Faculdade de Nova Serrana. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/553732268200" 
+       class="whatsapp-float fixed bottom-8 right-8 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-lg z-50"
+       target="_blank" 
+       title="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // --- 1. MENU MOBILE ---
+        const mobileBtn = document.getElementById('mobileMenuButton');
+        const closeMobileBtn = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        // Abrir menu mobile
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu.classList.add('active');
+                }, 10);
+                document.body.style.overflow = 'hidden'; // Impede scroll do body
+            });
+        }
+        
+        // Fechar menu mobile
+        if (closeMobileBtn && mobileMenu) {
+            closeMobileBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+                document.body.style.overflow = ''; // Restaura scroll do body
+            });
+        }
+        
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', function(event) {
+            if (mobileMenu && !mobileMenu.classList.contains('hidden') && 
+                !mobileMenu.contains(event.target) && 
+                !mobileBtn.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Fechar menu ao pressionar ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('active');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+                document.body.style.overflow = '';
+            }
+        });
+
+        // --- 2. SISTEMA DE ABAS (TABS) ---
+        window.openTab = function(evt, tabName) {
+            // Esconde todo o conteúdo
+            const tabcontents = document.querySelectorAll('.tab-content');
+            tabcontents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('active-content');
+            });
+
+            // Reseta a cor de todos os botões
+            const tabbuttons = document.querySelectorAll('.tab-btn');
+            tabbuttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-blue-600', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+            });
+
+            // Mostra a aba clicada e pinta o botão
+            const activeTab = document.getElementById(tabName);
+            if (activeTab) {
+                activeTab.classList.remove('hidden');
+                activeTab.classList.add('active-content');
+            }
+            
+            // Ativa o botão clicado
+            evt.currentTarget.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+            evt.currentTarget.classList.add('active', 'bg-blue-600', 'text-white');
+        };
+
+        // Clica na primeira aba automaticamente ao carregar
+        const firstTabBtn = document.querySelector('.tab-btn.active');
+        if (firstTabBtn) {
+            // Já está ativa pelo HTML
+        }
+
+        // --- 3. SCROLL SUAVE (LINKS INTERNOS) ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                
+                // Ignora links que são apenas "#"
+                if(targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                
+                if(targetElement) {
+                    e.preventDefault();
+                    // Fecha o menu mobile se estiver aberto
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('active');
+                        setTimeout(() => {
+                            mobileMenu.classList.add('hidden');
+                        }, 300);
+                        document.body.style.overflow = '';
+                    }
+
+                    // Calcula a posição considerando o header fixo
+                    const headerOffset = 100;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        // --- 4. ANIMAÇÃO AO SCROLL ---
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observa elementos para animação
+        document.querySelectorAll('.stat-card, .course-card, .timeline-item').forEach((el) => {
+            observer.observe(el);
+        });
+
+    });
+</script>
+</body>
+</html>

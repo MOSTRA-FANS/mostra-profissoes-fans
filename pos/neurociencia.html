@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurociências Aplicada à Educação - FANS</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../../js/main.js"></script> 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',
+                            blue: '#0066CC',
+                            light: '#F8FAFC',
+                            gray: '#4A5568',
+                            green: '#2F855A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fjalla One', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-primary {
+            background: linear-gradient(135deg, #1F3546 0%, #0066CC 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .hero-background {
+            background-image: linear-gradient(rgba(31, 53, 70, 0.9), rgba(31, 53, 70, 0.7)), url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+     <div id="header-placeholder"></div>
+
+    <main class="flex-grow">
+
+        <!-- HERO SECTION -->
+        <section class="hero-background py-24 md:py-32 relative overflow-hidden">
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+                    NEUROCIÊNCIAS APLICADA À EDUCAÇÃO
+                </h1>
+                <p class="text-2xl text-blue-100 max-w-3xl mx-auto mb-8 font-light">
+                    Compreensão dos processos biológicos do cérebro aplicados à aprendizagem e ensino
+                </p>
+                <p class="text-xl text-blue-200 max-w-2xl mx-auto mb-10">
+                    Integrando conhecimentos neurocientíficos às práticas educacionais
+                </p>
+                <a href="#vestibular" class="inline-block bg-white text-fans-dark font-bold py-4 px-10 rounded-full hover:bg-blue-50 transition transform hover:-translate-y-1 shadow-lg text-lg">
+                    INSCREVA-SE AGORA
+                    <i class="ml-2 fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- VISÃO GERAL DO CURSO -->
+        <section id="visao" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Sobre o Curso
+                    </h2>
+                    <div class="w-20 h-1 bg-fans-blue mx-auto mb-6"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            O curso de <strong>Neurociências Aplicada à Educação da FANS</strong> oferece uma compreensão profunda dos processos biológicos do cérebro e suas aplicações práticas no contexto da aprendizagem e ensino.
+                        </p>
+                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            Desenvolvido para capacitar educadores, psicólogos e profissionais da saúde a <strong>integrar conhecimentos neurocientíficos</strong> em suas práticas profissionais, promovendo estratégias educacionais mais eficazes e inclusivas.
+                        </p>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            Através de uma abordagem interdisciplinar, o curso conecta teoria e prática, permitindo que os participantes <strong>desenvolvam intervenções educacionais baseadas em evidências científicas</strong> sobre o funcionamento cerebral.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Cérebro humano e elementos educacionais" 
+                             class="rounded-2xl shadow-2xl">
+                        <div class="absolute -bottom-4 -right-4 bg-fans-blue text-white p-4 rounded-xl shadow-lg">
+                            <div class="text-2xl font-bold">18 meses</div>
+                            <div class="text-sm">Duração do curso</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POR QUE ESCOLHER ESTE CURSO? -->
+        <section id="diferenciais" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Por que escolher Neurociências Aplicada à Educação na FANS?
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Conheça os pontos-chave que diferenciam nosso curso e maximizam sua formação
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-blue">
+                            <i class="fas fa-brain text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Base Científica Sólida</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Conteúdo fundamentado nas mais recentes pesquisas em neurociências e educação.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark">
+                        <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-dark">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Abordagem Interdisciplinar</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Integração de conhecimentos da educação, psicologia, biologia e neurociências.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-blue">
+                            <i class="fas fa-flask text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Aplicação Prática</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Estratégias concretas para aplicar os conhecimentos neurocientíficos em sala de aula.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark">
+                        <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-dark">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Inclusão e Diversidade</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Abordagem neurocientífica para educação inclusiva e atendimento à diversidade.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPETÊNCIAS DESENVOLVIDAS -->
+        <section id="competencias" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="font-display text-2xl md:text-4xl text-fans-dark mb-4">
+                        Habilidades Desenvolvidas
+                    </h2>
+                    <p class="text-gray-600 text-sm md:text-lg max-w-3xl mx-auto">
+                        O que você aprenderá durante o curso
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-fans-blue mx-auto md:mx-0">
+                            <i class="fas fa-memory text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Processos Cognitivos</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Memória e aprendizagem</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Atenção e concentração</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Processamento de informações</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-green-600 mx-auto md:mx-0">
+                            <i class="fas fa-child text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Neurodesenvolvimento</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Desenvolvimento cerebral</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Plasticidade neural</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Fases do desenvolvimento</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-purple-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-purple-600 mx-auto md:mx-0">
+                            <i class="fas fa-heart text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Neurociência Afetiva</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Emoções e aprendizagem</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Motivação cerebral</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Estresse e desempenho</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-yellow-600 mx-auto md:mx-0">
+                            <i class="fas fa-universal-access text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Educação Inclusiva</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Transtornos de aprendizagem</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Dificuldades específicas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Adaptações pedagógicas</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-red-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-red-600 mx-auto md:mx-0">
+                            <i class="fas fa-lightbulb text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Metodologias Neuroeducativas</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Estratégias baseadas em evidências</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Tecnologias educacionais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Ambientes de aprendizagem</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-indigo-600 mx-auto md:mx-0">
+                            <i class="fas fa-stethoscope text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Saúde e Bem-estar</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Sono e aprendizagem</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Nutrição cerebral</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Saúde mental escolar</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOIMENTOS -->
+        <section id="depoimentos" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Depoimentos
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Veja o que nossos alunos e ex-alunos falam sobre o curso
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Aluno" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Dr. Rafael Costa</h4>
+                                <p class="text-gray-500 text-sm">Psicólogo Escolar, formado em 2022</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "O curso transformou minha prática profissional. Hoje entendo melhor como o cérebro aprende e consigo desenvolver intervenções muito mais eficazes."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Aluna" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Profa. Isabela Martins</h4>
+                                <p class="text-gray-500 text-sm">Coordenadora Pedagógica, aluna do curso</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "A neurociência aplicada à educação mudou minha forma de planejar as formações de professores. Agora temos bases científicas para nossas estratégias."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Egresso" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Dra. Carla Mendes</h4>
+                                <p class="text-gray-500 text-sm">Neuropsicóloga, ex-aluna</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "Como neuropsicóloga, o curso me deu ferramentas para melhor comunicar meus diagnósticos aos educadores e sugerir intervenções pedagógicas adequadas."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCUMENTOS -->
+        <section id="documentos" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Documentos e Regulamentos
+                    </h2>
+                    <div class="w-20 h-1 bg-fans-blue mx-auto mb-6"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <a href="#" class="flex items-center p-4 bg-gray-50 rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Portaria de Autorização do Curso</span>
+                    </a>
+
+                    <a href="#" class="flex items-center p-4 bg-gray-50 rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Bibliografia Recomendada</span>
+                    </a>
+
+                    <a href="#" class="flex items-center p-4 bg-gray-50 rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Manual do Aluno</span>
+                    </a>
+
+                    <a href="#" class="flex items-center p-4 bg-gray-50 rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Projeto Pedagógico do Curso</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA PARA AÇÃO FINAL -->
+        <section id="cta" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="bg-fans-blue text-white p-8 md:p-12 rounded-2xl text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Pronto para transformar sua prática educacional?</h3>
+                    <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
+                        Inscreva-se agora no curso de Neurociências Aplicada à Educação da FANS e descubra como o conhecimento do cérebro pode revolucionar o ensino e a aprendizagem.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#vestibular" class="bg-white text-fans-blue font-bold py-3 px-8 rounded-full hover:bg-blue-50 transition">
+                            INSCREVA-SE AGORA
+                        </a>
+                        <a href="tel:3732268200" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transition">
+                            <i class="fas fa-phone mr-2"></i> (37) 3226-8200
+                        </a>
+                    </div>
+          
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuButton')?.addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+        
+        document.getElementById('closeMobileMenu')?.addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('hidden');
+        });
+    </script>
+
+</body>
+</html>

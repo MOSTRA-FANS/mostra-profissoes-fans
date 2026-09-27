@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialização em Criminologia - FANS</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="../../js/main.js"></script> 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',
+                            blue: '#0066CC',
+                            light: '#F8FAFC',
+                            gray: '#4A5568',
+                            green: '#2F855A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fjalla One', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-primary {
+            background: linear-gradient(135deg, #1F3546 0%, #0066CC 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .hero-background {
+            background-image: linear-gradient(rgba(31, 53, 70, 0.9), rgba(31, 53, 70, 0.7)), url('https://images.unsplash.com/photo-1526374965328-7f5ae4e8b12f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+     <div id="header-placeholder"></div>
+
+    <main class="flex-grow">
+
+        <!-- HERO SECTION -->
+        <section class="hero-background py-24 md:py-32 relative overflow-hidden">
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+                    ESPECIALIZAÇÃO EM CRIMINOLOGIA
+                </h1>
+                <p class="text-2xl text-blue-100 max-w-3xl mx-auto mb-8 font-light">
+                    Análise científica da criminalidade e controle social
+                </p>
+                <p class="text-xl text-blue-200 max-w-2xl mx-auto mb-10">
+                    Estudo aprofundado do crime, violência e sistemas de justiça
+                </p>
+                <a href="#vestibular" class="inline-block bg-white text-fans-dark font-bold py-4 px-10 rounded-full hover:bg-blue-50 transition transform hover:-translate-y-1 shadow-lg text-lg">
+                    INSCREVA-SE AGORA
+                    <i class="ml-2 fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- VISÃO GERAL DO CURSO -->
+        <section id="visao" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Sobre o Curso
+                    </h2>
+                    <div class="w-20 h-1 bg-fans-blue mx-auto mb-6"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            A <strong>Especialização em Criminologia da FANS</strong> oferece informação científica fundamental sobre criminalidade e controle social nas sociedades contemporâneas, abordando o problema da violência, do crime e do criminoso.
+                        </p>
+                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            O curso proporciona <strong>ensino prático e experimental</strong> em criminologia, direito penal, direito processual penal, técnica policial e investigação criminal, capacitando profissionais para atuação qualificada no sistema de justiça.
+                        </p>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            Com uma abordagem <strong>multidisciplinar e crítica</strong>, o programa prepara especialistas para análise, prevenção e enfrentamento da criminalidade em diferentes contextos sociais e institucionais.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f5ae4e8b12f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Estudo em Criminologia" 
+                             class="rounded-2xl shadow-2xl">
+                        <div class="absolute -bottom-4 -right-4 bg-fans-blue text-white p-4 rounded-xl shadow-lg">
+                            <div class="text-2xl font-bold">18 meses</div>
+                            <div class="text-sm">Duração do curso</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POR QUE ESCOLHER ESTE CURSO? -->
+        <section id="diferenciais" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Por que escolher Criminologia na FANS?
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Conheça os pontos-chave que diferenciam nosso curso e maximizam sua formação
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-blue">
+                            <i class="fas fa-balance-scale text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Abordagem Multidisciplinar</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Integração de conhecimentos de direito, psicologia, sociologia e ciências forenses.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark">
+                        <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-dark">
+                            <i class="fas fa-user-shield text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Professores Atuantes</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Corpo docente com experiência prática em segurança pública, justiça e investigação.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-blue">
+                            <i class="fas fa-microscope text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Metodologia Prática</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Estudos de caso reais, simulações e análise de processos criminais.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark">
+                        <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-dark">
+                            <i class="fas fa-network-wired text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Rede de Contatos</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Conexão com profissionais do sistema de justiça, segurança e academia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÁREAS DE ATUAÇÃO -->
+        <section id="atuacao" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="font-display text-2xl md:text-4xl text-fans-dark mb-4">
+                        Onde Você Poderá Atuar
+                    </h2>
+                    <p class="text-gray-600 text-sm md:text-lg max-w-3xl mx-auto">
+                        Conheça as diversas oportunidades profissionais para especialistas em criminologia
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-fans-blue mx-auto md:mx-0">
+                            <i class="fas fa-shield-alt text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Segurança Pública</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Órgãos de polícia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Investigação criminal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Inteligência policial</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-green-600 mx-auto md:mx-0">
+                            <i class="fas fa-gavel text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Poder Judiciário</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Tribunais de justiça</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Ministério público</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Defensoria pública</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-purple-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-purple-600 mx-auto md:mx-0">
+                            <i class="fas fa-building text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Administração Penitenciária</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Gestão prisional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Segurança carcerária</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Reinserção social</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-yellow-600 mx-auto md:mx-0">
+                            <i class="fas fa-search text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Investigação Particular</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Agências de detetives</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Consultoria criminal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Perícia privada</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-red-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-red-600 mx-auto md:mx-0">
+                            <i class="fas fa-graduation-cap text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Pesquisa e Docência</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Instituições de ensino</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Centros de pesquisa</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Produção científica</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-3 md:p-6 rounded-xl shadow-sm md:shadow-lg h-full border border-gray-100">
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-indigo-600 mx-auto md:mx-0">
+                            <i class="fas fa-chart-bar text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-xl font-bold text-fans-dark mb-2 md:mb-3 text-center md:text-left">Consultoria e Análise</h3>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-xs md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Análise criminal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Prevenção da criminalidade</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Políticas de segurança</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFORMAÇÕES DO CURSO -->
+        <section id="informacoes" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Informações do Curso
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Conheça a estrutura completa da Especialização em Criminologia
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-bold text-fans-dark mb-6 text-center">Detalhes do Programa</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-3xl font-bold text-fans-blue">18 meses</div>
+                            <div class="text-gray-600">Duração</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <div class="text-3xl font-bold text-green-600">660h</div>
+                            <div class="text-gray-600">Carga Horária</div>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-lg">
+                            <div class="text-3xl font-bold text-purple-600">Noturno</div>
+                            <div class="text-gray-600">Modalidade</div>
+                        </div>
+                        <div class="text-center p-4 bg-fans-dark text-white rounded-lg">
+                            <div class="text-3xl font-bold">MEC</div>
+                            <div class="">Credenciado</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <div class="bg-fans-blue/10 border-l-4 border-fans-blue p-4 rounded-r">
+                        <p class="text-fans-dark font-semibold">
+                            <i class="fas fa-info-circle mr-2 text-fans-blue"></i>
+                            Para informações detalhadas sobre a grade curricular, entre em contato com a secretaria acadêmica.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOIMENTOS -->
+        <section id="depoimentos" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Depoimentos
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Veja o que nossos alunos e ex-alunos falam sobre a Especialização em Criminologia
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Aluno" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Carlos Mendes</h4>
+                                <p class="text-gray-500 text-sm">Delegado, formado em 2022</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "O curso me deu base teórica sólida para atuar na investigação criminal. A abordagem multidisciplinar foi essencial para minha formação."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Aluna" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Ana Paula Silva</h4>
+                                <p class="text-gray-500 text-sm">Perita Criminal, aluna do curso</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "Os estudos de caso reais e a experiência dos professores transformaram minha forma de analisar evidências criminais."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Egresso" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Roberto Santos</h4>
+                                <p class="text-gray-500 text-sm">Analista de Segurança, ex-aluno</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "A especialização abriu portas para minha atuação em consultoria de segurança. O networking com profissionais da área foi fundamental."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCUMENTOS -->
+        <section id="documentos" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Documentos e Regulamentos
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Acesse os documentos oficiais da Especialização em Criminologia da FANS
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Portaria de Autorização do Curso</span>
+                    </a>
+
+                    <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Bibliografia Recomendada</span>
+                    </a>
+
+                    <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Manual do Aluno</span>
+                    </a>
+
+                    <a href="#" class="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition group border border-gray-200 hover:border-fans-blue">
+                        <div class="w-12 h-12 bg-blue-100 text-fans-blue rounded-lg flex items-center justify-center mr-4 group-hover:bg-fans-blue group-hover:text-white transition">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <span class="font-semibold text-gray-700 group-hover:text-fans-blue">Projeto Pedagógico do Curso</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA PARA AÇÃO FINAL -->
+        <section id="cta" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="bg-fans-blue text-white p-8 md:p-12 rounded-2xl text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Pronto para se especializar em Criminologia?</h3>
+                    <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
+                        Inscreva-se agora na Especialização em Criminologia da FANS e desenvolva competências para atuar na análise, prevenção e enfrentamento da criminalidade.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#vestibular" class="bg-white text-fans-blue font-bold py-3 px-8 rounded-full hover:bg-blue-50 transition">
+                            INSCREVA-SE AGORA
+                        </a>
+                        <a href="tel:3732268200" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transition">
+                            <i class="fas fa-phone mr-2"></i> (37) 3226-8200
+                        </a>
+                        <a href="https://wa.me/553732268200" class="bg-green-500 border-2 border-green-500 text-white font-bold py-3 px-8 rounded-full hover:bg-green-600 transition">
+                            <i class="fab fa-whatsapp mr-2"></i> WHATSAPP
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/553732268200" 
+       class="fixed bottom-8 right-8 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition z-50"
+       target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuButton')?.addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+        
+        document.getElementById('closeMobileMenu')?.addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('hidden');
+        });
+    </script>
+
+</body>
+</html>

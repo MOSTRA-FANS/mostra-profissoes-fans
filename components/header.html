@@ -1,0 +1,90 @@
+<header class="bg-[#1F3546] text-white shadow-lg sticky top-0 z-50 h-[76px]">
+    <div class="container mx-auto px-4 h-full">
+        <div class="flex justify-between items-center h-full">
+            
+                 <div class="container mx-auto px-4 md:px-0"> 
+                     <div class="flex justify-between items-center h-24 md:h-32"> <div class="flex items-center">
+                        <a href="index.html" class="hover:opacity-90 transition block">
+                <img src="images/logo3.png" alt="FANS" class="h-18 md:h-14 w-auto object-contain">
+            </a>
+        </div>
+
+            <nav class="hidden lg:flex items-center space-x-4 xl:space-x-6 text-sm font-semibold uppercase tracking-wide">
+                <a href="/index.html" class="hover:text-blue-400 transition py-2">Home</a>
+                <span class="text-gray-600">|</span>
+                <a href="/instituicao.html" class="hover:text-blue-400 transition py-2">Instituição</a>
+                <span class="text-gray-600">|</span>
+                
+                <a href="/cursos.html" class="hover:text-blue-400 transition flex items-center gap-1 cursor-pointer">
+                    Graduação
+                </a>
+                
+                <span class="text-gray-600">|</span>
+                <a href="/cursostec.html" class="hover:text-blue-400 transition py-2">Cursos Técnicos</a>
+                
+                <span class="text-gray-600">|</span>
+                <a href="/cursospos.html" class="hover:text-blue-400 transition py-2">Pós Graduação</a>
+                <span class="text-gray-600">|</span>
+                <a href="/vestibular.html" class="hover:text-blue-400 transition py-2">Vestibular</a>
+                <span class="text-gray-600">|</span>
+                <a href="/relinternacionais.html" class="hover:text-blue-400 transition py-2">Rel. Int.</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <div class="hidden lg:flex items-center space-x-4 pl-6 border-l border-gray-700">
+                    <button class="hover:text-blue-400 transition">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+                    <a href="/vestibular.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-bold transition">
+                        INSCREVA-SE
+                    </a>
+                </div>
+
+                <button id="mobileMenuButton" class="lg:hidden text-2xl p-2 focus:outline-none hover:text-blue-400 transition">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="mobileMenu" class="hidden fixed inset-0 z-[60] bg-white lg:hidden">
+    <div class="absolute top-0 left-0 right-0 bg-[#1F3546] text-white p-4 flex justify-between items-center h-[76px]">
+        <div class="flex items-center gap-4">
+            <i class="fas fa-graduation-cap text-2xl"></i>
+            <span class="text-2xl font-bold">FANS</span>
+        </div>
+        <button id="closeMobileMenu" class="text-2xl p-2 hover:text-red-400 transition focus:outline-none">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="pt-24 h-full overflow-y-auto pb-24 px-4 space-y-2">
+        <a href="/index.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg transition border-b border-gray-100">
+            <i class="fas fa-home mr-3 text-blue-600 w-6"></i> Home
+        </a>
+        <a href="/instituicao.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg transition border-b border-gray-100">
+            <i class="fas fa-university mr-3 text-blue-600 w-6"></i> Instituição
+        </a>
+        <a href="/cursos.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg transition border-b border-gray-100">
+            <i class="fas fa-graduation-cap mr-3 text-blue-600 w-6"></i> Graduação
+        </a>
+
+        <a href="/cursostec.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg transition border-b border-gray-100">
+            <i class="fas fa-tools mr-3 text-blue-600 w-6"></i> Cursos Técnicos
+        </a>
+
+        <a href="/cursospos.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg transition border-b border-gray-100">
+            <i class="fas fa-user-graduate mr-3 text-blue-600 w-6"></i> Pós Graduação
+        </a>
+        <a href="/relinternacionais.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg transition border-b border-gray-100">
+            <i class="fas fa-globe mr-3 text-blue-600 w-6"></i> Rel. Internacionais
+        </a>
+        
+        <div class="mt-8 p-4 border-t border-gray-100">
+            <a href="/vestibular.html" class="block w-full bg-blue-600 text-white px-6 py-4 rounded-full font-bold text-center hover:bg-blue-700 transition shadow-lg">
+                INSCREVA-SE AGORA
+            </a>
+        </div>
+    </div>
+</div>

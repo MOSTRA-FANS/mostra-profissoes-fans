@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos FANS - Graduação e Pós</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/main.js"></script> 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',   /* Azul Escuro Institucional */
+                            blue: '#0066CC',   /* Azul Vibrante */
+                            light: '#F8FAFC',  /* Fundo Claro */
+                            gray: '#4A5568',   /* Texto Secundário */
+                            green: '#2F855A'   /* Verde para Técnicos */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<div id="header-placeholder"></div>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <main class="max-w-7xl mx-auto px-4 py-12 space-y-20 flex-grow">
+
+        <section id="graduacao" class="scroll-mt-48">
+            <div class="flex items-center gap-3 mb-8 border-l-4 border-fans-blue pl-4">
+                <h2 class="text-3xl font-bold text-fans-dark">Graduação</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">Bacharelado</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors">Administração</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Formação de líderes e gestores estratégicos com visão empreendedora.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> 4 Anos</span>
+                                <span class="flex items-center gap-1"><i class="far fa-moon text-fans-blue"></i> Noturno</span>
+                            </div>
+                            <a href="graduacao/administracao.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DO CURSO</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">Bacharelado</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors">Direito</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Excelência no ensino jurídico com núcleo de prática real e convênios.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> 5 Anos</span>
+                                <span class="flex items-center gap-1"><i class="far fa-moon text-fans-blue"></i> Noturno</span>
+                            </div>
+                            <a href="graduacao/direito.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DO CURSO</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">Tecnologia</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors">Engenharia de Software</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Desenvolvimento de sistemas, gestão de TI e arquitetura de software moderna.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> 4 Anos</span>
+                                <span class="flex items-center gap-1"><i class="far fa-moon text-fans-blue"></i> Noturno</span>
+                            </div>
+                            <a href="graduacao/engenhariasoftware.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DO CURSO</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">Bacharelado</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors">Ciências Contábeis</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Auditoria, perícia, controladoria e gestão financeira de empresas.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> 4 Anos</span>
+                                <span class="flex items-center gap-1"><i class="far fa-moon text-fans-blue"></i> Noturno</span>
+                            </div>
+                            <a href="graduacao/cienciascontabeis.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DO CURSO</a>
+                        </div>
+                    </div>
+                </article>
+
+                 <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">Licenciatura</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors">Pedagogia</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Formação de educadores transformadores e gestão escolar.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> 4 Anos</span>
+                                <span class="flex items-center gap-1"><i class="far fa-moon text-fans-blue"></i> Noturno</span>
+                            </div>
+                            <a href="graduacao/pedagogia.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DO CURSO</a>
+                        </div>
+                    </div>
+                </article>
+
+                 <article class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                    <div class="h-2 w-full bg-fans-blue"></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-fans-blue uppercase tracking-wider mb-2">Bacharelado</span>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3 group-hover:text-fans-blue transition-colors">Psicologia</h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Saúde mental, clínica e comportamento humano.</p>
+                        <div class="border-t border-gray-100 pt-4 mt-auto">
+                            <div class="flex gap-4 text-sm text-fans-gray font-medium mb-4">
+                                <span class="flex items-center gap-1"><i class="far fa-clock text-fans-blue"></i> 5 Anos</span>
+                                <span class="flex items-center gap-1"><i class="far fa-moon text-fans-blue"></i> Noturno</span>
+                            </div>
+                            <a href="graduacao/psicologia.html" class="block w-full text-center py-2 border border-fans-blue text-fans-blue font-bold rounded-lg hover:bg-fans-blue hover:text-white transition-colors">DETALHES DO CURSO</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+<div id="footer-placeholder"></div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

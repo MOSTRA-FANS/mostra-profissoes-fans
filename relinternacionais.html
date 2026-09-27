@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relações Internacionais - FANS</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',
+                            blue: '#0066CC',
+                            light: '#F8FAFC',
+                            gray: '#4A5568',
+                            green: '#2F855A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fjalla One', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="js/main.js"></script>
+    <style>
+        .gradient-primary { background: linear-gradient(135deg, #1F3546 0%, #0066CC 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <div id="header-placeholder"></div>
+
+    <section class="gradient-primary py-20 relative overflow-hidden">
+        <i class="fas fa-globe-americas absolute -right-10 -bottom-10 text-[200px] text-white opacity-5"></i>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+                RELAÇÕES<br>
+                <span class="text-blue-300">INTERNACIONAIS</span>
+            </h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-8 font-light">
+                Conectando a FANS ao mundo: ensino, pesquisa e extensão sem fronteiras.
+            </p>
+        </div>
+    </section>
+
+    <main class="py-16">
+        <div class="container mx-auto px-4 space-y-20">
+
+            <section class="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                        <h2 class="font-display text-3xl text-fans-dark mb-4">SOBRE O DEPARTAMENTO</h2>
+                        <div class="w-20 h-1 bg-fans-blue mb-6"></div>
+                        <p class="text-gray-600 mb-4 text-justify leading-relaxed">
+                            O <strong>Departamento de Relações Internacionais da FANS</strong>, criado em 2019 (Portaria Nº 014/2019), congrega as atividades de ensino, pesquisa e extensão neste campo de conhecimento.
+                        </p>
+                        <p class="text-gray-600 text-justify leading-relaxed">
+                            Consolidou-se no cenário acadêmico pela busca constante por excelência, fruto de parcerias e convênios em projetos estratégicos da Faculdade, atendendo tanto à graduação quanto à pós-graduação.
+                        </p>
+                    </div>
+                    <div class="relative h-64 md:h-auto bg-blue-50">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Conexões Globais" 
+                             class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-fans-blue opacity-20"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl text-fans-dark mb-4">OPORTUNIDADES</h2>
+                    <p class="text-gray-600">O que o departamento oferece atualmente para você.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="card-hover bg-white p-8 rounded-xl shadow-lg border-t-4 border-fans-blue text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto text-fans-blue">
+                            <i class="fas fa-language text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3">Inglês Instrumental</h3>
+                        <p class="text-gray-600">Cursos de extensão focados no desenvolvimento da leitura e compreensão técnica em língua inglesa.</p>
+                    </div>
+
+                    <div class="card-hover bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-600 text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto text-green-600">
+                            <i class="fas fa-passport text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-fans-dark mb-3">Estágio Internacional</h3>
+                        <p class="text-gray-600">Oportunidades de estágio em outros países através de programas de intercâmbio e parcerias.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="max-w-5xl mx-auto">
+                <div class="bg-gradient-to-br from-gray-900 to-fans-dark rounded-3xl overflow-hidden shadow-2xl text-white">
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-10 md:p-14 flex flex-col justify-center">
+                            <div class="inline-flex items-center gap-2 bg-white/10 w-fit px-3 py-1 rounded-full text-xs font-bold mb-4">
+                                <span class="w-2 h-2 rounded-full bg-red-500"></span> INTERCÂMBIO ABERTO
+                            </div>
+                            <h2 class="font-display text-3xl md:text-4xl mb-4">Canadá Inesquecível</h2>
+                            <p class="text-gray-300 mb-6 leading-relaxed">
+                                Aproveite suas férias de janeiro para uma experiência transformadora! Realize um curso de inglês, visitas técnicas e estágios em hospitais canadenses.
+                            </p>
+                            
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-fans-blue"></i>
+                                    <span>Curso de Inglês Intensivo</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-fans-blue"></i>
+                                    <span>Visitas Técnicas na Área da Saúde</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-fans-blue"></i>
+                                    <span>Parceria Agência Canadá Inesquecível</span>
+                                </div>
+                            </div>
+
+                            <a href="#" class="bg-fans-blue hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full transition shadow-lg text-center md:w-fit flex items-center justify-center gap-2 group">
+                                <i class="fas fa-file-download group-hover:-translate-y-1 transition"></i>
+                                BAIXAR INFORMAÇÕES (PDF)
+                            </a>
+                        </div>
+                        
+                        <div class="relative h-64 md:h-auto">
+                            <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Cidade do Canadá no Inverno" 
+                                 class="absolute inset-0 w-full h-full object-cover opacity-80">
+                            <div class="absolute inset-0 bg-gradient-to-r from-fans-dark via-transparent to-transparent md:bg-gradient-to-r"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

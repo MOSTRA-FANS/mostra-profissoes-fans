@@ -1,0 +1,227 @@
+/* style.css */
+:root {
+    --azul-principal: #0066CC;
+    --azul-escuro: #004080;
+    --azul-claro: #4D9FFF;
+    --cinza-escuro: #2D3748;
+    --cinza-medio: #4A5568;
+    --cinza-claro: #718096;
+    --cinza-borda: #E2E8F0;
+    --cinza-fundo: #F7FAFC;
+    --branco: #FFFFFF;
+    --preto: #1A202C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Section Title Styles */
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--azul-principal);
+    border-radius: 2px;
+}
+
+.text-center .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Timeline Styles */
+.timeline-item {
+    position: relative;
+    padding-left: 90px;
+    margin-bottom: 30px;
+}
+
+.timeline-date-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 70px;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.t-day {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--cinza-escuro);
+    line-height: 1;
+}
+
+.t-month {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--cinza-claro);
+}
+
+.timeline-content {
+    padding-left: 20px;
+    border-left: 2px dashed var(--cinza-borda);
+    padding-bottom: 20px;
+}
+
+.timeline-item:last-child .timeline-content {
+    border-left: 2px solid transparent;
+}
+
+/* Mega Menu Styles */
+.megamenu-panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    width: 700px;
+    background: var(--branco);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border-top: 3px solid var(--azul-principal);
+    padding: 30px;
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.has-megamenu:hover .megamenu-panel {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tab Content Styles */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.tab-content.active-content {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Course Card Hover */
+.course-card {
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Hero Background */
+.hero {
+    background: linear-gradient(135deg, 
+                rgba(0, 64, 128, 0.92) 0%, 
+                rgba(0, 102, 204, 0.85) 100%), 
+                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Stat Card Hover */
+.stat-card {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Gallery Item Hover */
+.gallery-item img {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* WhatsApp Float Animation */
+.whatsapp-float {
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .megamenu-panel {
+        display: none !important;
+    }
+    
+    .timeline-item {
+        padding-left: 0;
+    }
+    
+    .timeline-date-box {
+        position: relative;
+        margin-bottom: 15px;
+    }
+    
+    .timeline-content {
+        padding-left: 0;
+        border-left: none;
+        padding-bottom: 0;
+    }
+}
+
+/* Accessibility */
+:focus-visible {
+    outline: 2px solid var(--azul-principal);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

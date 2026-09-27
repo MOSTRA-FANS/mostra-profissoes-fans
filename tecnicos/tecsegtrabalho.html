@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Técnico em Segurança do Trabalho - FANS</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="../js/main.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fans: {
+                            dark: '#1F3546',
+                            blue: '#0066CC',
+                            light: '#F8FAFC',
+                            gray: '#4A5568',
+                            green: '#2F855A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fjalla One', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-primary {
+            background: linear-gradient(135deg, #1F3546 0%, #0066CC 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .hero-background {
+            background-image: linear-gradient(rgba(31, 53, 70, 0.9), rgba(31, 53, 70, 0.7)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+     <div id="header-placeholder"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu lg:hidden fixed inset-0 z-[60] bg-white hidden">
+        <div class="absolute top-0 left-0 right-0 bg-[#1F3546] text-white p-4 flex justify-between items-center h-[76px]">
+            <div class="flex items-center gap-4">
+                <i class="fas fa-graduation-cap text-2xl"></i>
+                <span class="text-2xl font-bold">FANS</span>
+            </div>
+            <button id="closeMobileMenu" class="text-2xl p-2 hover:text-red-400 transition">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="pt-24 h-full overflow-y-auto pb-24 px-4 space-y-2">
+            <a href="index.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg"><i class="fas fa-home mr-3 text-blue-600"></i> Home</a>
+            <a href="instituicao.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg"><i class="fas fa-university mr-3 text-blue-600"></i> Instituição</a>
+            <a href="cursos.html" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg"><i class="fas fa-graduation-cap mr-3 text-blue-600"></i> Cursos</a>
+            <a href="#pos" class="flex items-center text-lg font-bold text-gray-800 hover:text-blue-600 p-4 hover:bg-gray-50 rounded-lg"><i class="fas fa-user-graduate mr-3 text-blue-600"></i> Cursos Técnicos</a>
+            
+            <div class="mt-8 p-4">
+                <a href="#" class="block w-full bg-fans-blue text-white px-6 py-4 rounded-full font-bold text-center hover:bg-blue-700 transition shadow-lg">INSCREVA-SE AGORA</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-grow">
+
+        <!-- HERO SECTION -->
+        <section class="hero-background py-24 md:py-32 relative overflow-hidden">
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+                    TÉCNICO EM SEGURANÇA DO TRABALHO
+                </h1>
+                <p class="text-2xl text-blue-100 max-w-3xl mx-auto mb-8 font-light">
+                    Formação para atuar na prevenção de acidentes e promoção da saúde ocupacional
+                </p>
+                <p class="text-xl text-blue-200 max-w-2xl mx-auto mb-10">
+                    Capacitação técnica para identificar riscos e implementar medidas de segurança no ambiente de trabalho
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <span class="inline-block bg-fans-blue text-white px-4 py-1 rounded-full text-sm font-bold">RECONHECIDO PELO MEC</span>
+                    <span class="inline-block bg-fans-green text-white px-4 py-1 rounded-full text-sm font-bold">DIPLOMA VÁLIDO EM TODO BRASIL</span>
+                </div>
+                <a href="#vestibular" class="mt-8 inline-block bg-white text-fans-dark font-bold py-4 px-10 rounded-full hover:bg-blue-50 transition transform hover:-translate-y-1 shadow-lg text-lg">
+                    INSCREVA-SE AGORA
+                    <i class="ml-2 fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- VISÃO GERAL DO CURSO -->
+        <section id="visao" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Sobre o Curso Técnico
+                    </h2>
+                    <div class="w-20 h-1 bg-fans-blue mx-auto mb-6"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            O Curso Técnico em <strong>Segurança do Trabalho da FANS</strong> prepara profissionais para atuar na prevenção de acidentes, doenças ocupacionais e na promoção da saúde e segurança nos ambientes de trabalho.
+                        </p>
+                        <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                            O técnico em segurança do trabalho é um profissional essencial em qualquer empresa, responsável por <strong>inspecionar condições de trabalho, identificar riscos</strong> e implementar medidas de controle, além de promover treinamentos e campanhas de prevenção.
+                        </p>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            Com uma formação <strong>prática e atualizada com as Normas Regulamentadoras (NRs)</strong>, nosso curso capacita para atuação em indústrias, construção civil, hospitais, comércio e diversos outros setores da economia.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Técnico em Segurança do Trabalho em inspeção" 
+                             class="rounded-2xl shadow-2xl">
+                        <div class="absolute -bottom-4 -right-4 bg-fans-blue text-white p-4 rounded-xl shadow-lg">
+                            <div class="text-2xl font-bold">18 meses</div>
+                            <div class="text-sm">Duração do curso</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center p-4">
+                        <div class="text-3xl font-bold text-fans-blue mb-2">+1.200h</div>
+                        <div class="text-gray-600">Carga horária</div>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="text-3xl font-bold text-fans-blue mb-2">100%</div>
+                        <div class="text-gray-600">Prático</div>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="text-3xl font-bold text-fans-blue mb-2">40</div>
+                        <div class="text-gray-600">Vagas por turma</div>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="text-3xl font-bold text-fans-blue mb-2">NRs</div>
+                        <div class="text-gray-600">Todas as NRs abordadas</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POR QUE ESCOLHER ESTE CURSO? -->
+        <section id="diferenciais" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Por que escolher Segurança do Trabalho na FANS?
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Conheça os pontos-chave que diferenciam nosso curso técnico e maximizam sua formação
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-blue">
+                            <i class="fas fa-hard-hat text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Laboratório de EPIs</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Estrutura completa com Equipamentos de Proteção Individual para aulas práticas de reconhecimento e uso correto.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark">
+                        <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-dark">
+                            <i class="fas fa-industry text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Visitas Técnicas</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Visitas a empresas e canteiros de obras para experiência real na aplicação das normas de segurança.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-blue">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-blue">
+                            <i class="fas fa-user-tie text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Instrutores Atuantes</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Corpo docente formado por técnicos e engenheiros de segurança atuantes no mercado, com experiência prática.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-fans-dark">
+                        <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-4 mx-auto text-fans-dark">
+                            <i class="fas fa-briefcase text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-fans-dark mb-2 text-center">Estágio Garantido</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed text-center">
+                            Parcerias com empresas para estágios supervisionados, facilitando a entrada no mercado de trabalho.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MERCADO DE TRABALHO -->
+        <section id="mercado" class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="font-display text-2xl md:text-4xl text-fans-dark mb-4">
+                        Mercado de Trabalho em Expansão
+                    </h2>
+                    <p class="text-gray-600 text-sm md:text-lg max-w-3xl mx-auto">
+                        A demanda por técnicos em segurança do trabalho cresce a cada ano com a maior fiscalização e conscientização
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-fans-blue mb-4">Por que a profissão está em alta?</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-fans-blue mr-3 mt-1"></i>
+                                <span><strong>Obrigatoriedade legal:</strong> Empresas com mais de 50 funcionários devem ter técnicos de segurança</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-fans-blue mr-3 mt-1"></i>
+                                <span><strong>Fiscalização crescente:</strong> Aumento das ações do Ministério do Trabalho e Previdência</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-fans-blue mr-3 mt-1"></i>
+                                <span><strong>Conscientização:</strong> Empresas buscam reduzir acidentes e doenças ocupacionais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-fans-blue mr-3 mt-1"></i>
+                                <span><strong>Setor diversificado:</strong> Atuação em indústrias, construção, hospitais, comércio, etc.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-fans-blue mr-3 mt-1"></i>
+                                <span><strong>Salários atrativos:</strong> Média salarial acima de R$ 2.500,00 para iniciantes</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-fans-blue">
+                        <h3 class="text-xl font-bold text-fans-dark mb-4">Onde Você Poderá Atuar</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <i class="fas fa-industry text-fans-blue text-lg mb-2"></i>
+                                <p class="font-medium">Indústrias</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <i class="fas fa-hard-hat text-fans-blue text-lg mb-2"></i>
+                                <p class="font-medium">Construção Civil</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <i class="fas fa-hospital text-fans-blue text-lg mb-2"></i>
+                                <p class="font-medium">Hospitais</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <i class="fas fa-store text-fans-blue text-lg mb-2"></i>
+                                <p class="font-medium">Comércio</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <i class="fas fa-truck text-fans-blue text-lg mb-2"></i>
+                                <p class="font-medium">Logística</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <i class="fas fa-oil-can text-fans-blue text-lg mb-2"></i>
+                                <p class="font-medium">Petroquímica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRADE CURRICULAR -->
+        <section id="grade" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Grade Curricular
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Conheça a estrutura completa do Curso Técnico em Segurança do Trabalho
+                    </p>
+                </div>
+
+                <!-- Grade em abas -->
+                <div class="mb-8">
+                    <div class="flex flex-wrap gap-2 mb-6 border-b border-gray-200">
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="1">1º Módulo</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="2">2º Módulo</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="3">3º Módulo</button>
+                        <button class="tab-button px-4 py-2 font-semibold text-gray-600 hover:text-fans-blue border-b-2 border-transparent hover:border-fans-blue transition" data-tab="4">4º Módulo</button>
+                    </div>
+
+                    <!-- Conteúdo das abas -->
+                    <div class="tab-content" id="tab-1">
+                        <div class="bg-white rounded-xl p-6 border border-fans-blue">
+                            <h3 class="text-xl font-bold text-fans-dark mb-4">1º Módulo - Fundamentos</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-fans-blue mr-3 mt-1"></i>
+                                    <span>Introdução à Segurança do Trabalho</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-fans-blue mr-3 mt-1"></i>
+                                    <span>Legislação e Normas Regulamentadoras (NRs)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-fans-blue mr-3 mt-1"></i>
+                                    <span>Higiene Ocupacional</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-fans-blue mr-3 mt-1"></i>
+                                    <span>Prevenção e Combate a Incêndios</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-book text-fans-blue mr-3 mt-1"></i>
+                                    <span>Equipamentos de Proteção Individual (EPI)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <div class="bg-blue-50 border-l-4 border-fans-blue p-4 rounded-r">
+                            <p class="text-fans-dark font-semibold">
+                                <i class="fas fa-info-circle mr-2 text-fans-blue"></i>
+                                A grade completa está disponível na secretaria acadêmica. Entre em contato para mais detalhes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Normas abordadas -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 mt-8">
+                    <h3 class="text-xl font-bold text-fans-dark mb-6 text-center">Normas Regulamentadoras Abordadas</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-fans-blue">NR-6</div>
+                            <div class="text-gray-600 text-sm">EPI</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-fans-blue">NR-10</div>
+                            <div class="text-gray-600 text-sm">Eletricidade</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-fans-blue">NR-12</div>
+                            <div class="text-gray-600 text-sm">Máquinas</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-fans-blue">NR-35</div>
+                            <div class="text-gray-600 text-sm">Trab. Altura</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-fans-blue">NR-18</div>
+                            <div class="text-gray-600 text-sm">Const. Civil</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-fans-blue">NR-33</div>
+                            <div class="text-gray-600 text-sm">Espaços Conf.</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-fans-blue">NR-17</div>
+                            <div class="text-gray-600 text-sm">Ergonomia</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-fans-blue">NR-5</div>
+                            <div class="text-gray-600 text-sm">CIPA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERFIL DO EGRESSO -->
+        <section id="perfil" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        O Que Você Vai Aprender
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Habilidades e competências desenvolvidas durante o curso
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-fans-blue">
+                        <h3 class="text-lg font-bold text-fans-dark mb-3">Identificação de Riscos</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Reconhecer riscos físicos, químicos e biológicos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Avaliar riscos ergonômicos e de acidentes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Elaborar mapas de riscos ambientais</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-fans-blue">
+                        <h3 class="text-lg font-bold text-fans-dark mb-3">Inspeções e Laudos</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Realizar inspeções de segurança</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Elaborar laudos técnicos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Preencher formulários e relatórios</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-fans-blue">
+                        <h3 class="text-lg font-bold text-fans-dark mb-3">Treinamentos</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Ministrar treinamentos de segurança</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Elaborar materiais educativos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Organizar SIPATs e campanhas</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-fans-blue">
+                        <h3 class="text-lg font-bold text-fans-dark mb-3">Investigação de Acidentes</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Investigar causas de acidentes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Elaborar relatórios de acidentes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Propor medidas corretivas</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-fans-blue">
+                        <h3 class="text-lg font-bold text-fans-dark mb-3">PPRA e PCMSO</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Elaborar PPRA (NR-9)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Implementar PCMSO (NR-7)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Acompanhar exames médicos</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-fans-blue">
+                        <h3 class="text-lg font-bold text-fans-dark mb-3">Gestão de EPIs</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Selecionar EPIs adequados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Controlar estoque e validade</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-fans-blue mr-2 mt-1"></i>
+                                <span>Treinar para uso correto</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOIMENTOS -->
+        <section id="depoimentos" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Depoimentos
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Veja o que nossos alunos e ex-alunos falam sobre o curso Técnico em Segurança do Trabalho da FANS
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Aluno" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">João Silva</h4>
+                                <p class="text-gray-500 text-sm">Ex-aluno, contratado na indústria</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "Consegui emprego antes mesmo de terminar o curso. As visitas técnicas e o estágio supervisionado foram decisivos para minha contratação."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Aluna" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Maria Oliveira</h4>
+                                <p class="text-gray-500 text-sm">Técnica em hospital, formada em 2023</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "O curso me deu base sólida para atuar na área hospitalar, onde os riscos biológicos são grandes. Os professores são excelentes e muito experientes."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Egresso" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-fans-dark">Carlos Santos</h4>
+                                <p class="text-gray-500 text-sm">Técnico na construção civil</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "Depois de 10 anos como pedreiro, fiz o curso e hoje sou técnico na mesma empresa. Tripliquei meu salário e trabalho em condições muito melhores."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INVESTIMENTO -->
+        <section id="investimento" class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="font-display text-3xl md:text-4xl text-fans-dark mb-4">
+                        Investimento
+                    </h2>
+                    <div class="w-20 h-1 bg-fans-blue mx-auto mb-6"></div>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gray-50 rounded-2xl p-8 border-2 border-fans-blue">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-bold text-fans-blue mb-4">Valor do Curso</h3>
+                                <div class="mb-6">
+                                    <div class="text-4xl font-bold text-fans-dark">18x <span class="text-fans-blue">R$ 289,90</span></div>
+                                    <p class="text-gray-600">ou R$ 4.900,00 à vista com 10% de desconto</p>
+                                </div>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check text-fans-blue mr-3 mt-1"></i>
+                                        <span>Material didático incluso</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check text-fans-blue mr-3 mt-1"></i>
+                                        <span>Certificado reconhecido pelo MEC</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check text-fans-blue mr-3 mt-1"></i>
+                                        <span>Acesso ao laboratório de EPIs</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check text-fans-blue mr-3 mt-1"></i>
+                                        <span>Visitas técnicas incluídas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-2xl font-bold text-fans-blue mb-4">Informações Importantes</h3>
+                                <div class="bg-white p-4 rounded-lg mb-4">
+                                    <p class="font-bold mb-2">Pré-requisitos:</p>
+                                    <ul class="text-gray-600 text-sm space-y-1">
+                                        <li>• Ensino Médio completo ou cursando</li>
+                                        <li>• Idade mínima: 16 anos</li>
+                                        <li>• Documentos: RG, CPF, comprovante de residência</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <p class="font-bold mb-2">Horários:</p>
+                                    <ul class="text-gray-600 text-sm space-y-1">
+                                        <li>• Matutino: 08h às 12h (3x por semana)</li>
+                                        <li>• Noturno: 19h às 22h30 (3x por semana)</li>
+                                        <li>• Sábado: 08h às 17h (quinzenal)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA PARA AÇÃO FINAL -->
+        <section id="cta" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="bg-fans-blue text-white p-8 md:p-12 rounded-2xl text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Pronto para uma profissão em alta demanda?</h3>
+                    <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
+                        Inscreva-se agora no Curso Técnico em Segurança do Trabalho da FANS e prepare-se para atuar em um mercado com amplas oportunidades.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#vestibular" class="bg-white text-fans-blue font-bold py-3 px-8 rounded-full hover:bg-blue-50 transition">
+                            QUERO ME INSCREVER
+                        </a>
+                        <a href="tel:3732268200" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transition">
+                            <i class="fas fa-phone mr-2"></i> (37) 3226-8200
+                        </a>
+                        <a href="https://wa.me/553732268200" class="bg-green-500 border-2 border-green-500 text-white font-bold py-3 px-8 rounded-full hover:bg-green-600 transition">
+                            <i class="fab fa-whatsapp mr-2"></i> WHATSAPP
+                        </a>
+                    </div>
+            
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuButton')?.addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+        
+        document.getElementById('closeMobileMenu')?.addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('hidden');
+        });
+        
+        // Tab functionality for curriculum
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all tabs
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('border-fans-blue', 'text-fans-blue');
+                    btn.classList.add('border-transparent', 'text-gray-600');
+                });
+                
+                // Add active class to clicked tab
+                button.classList.remove('border-transparent', 'text-gray-600');
+                button.classList.add('border-fans-blue', 'text-fans-blue');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show selected tab content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+            });
+        });
+        
+        // Initialize first tab as active
+        document.querySelector('.tab-button')?.click();
+    </script>
+
+</body>
+</html>
