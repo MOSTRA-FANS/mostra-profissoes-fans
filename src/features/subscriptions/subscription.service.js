@@ -2,6 +2,7 @@
 
 const { AppError, ConflictError } = require('../../shared/errors/AppError');
 const defaultRepository = require('./subscription.repository');
+const { SABER_OPTIONS } = require('./subscription.constants');
 
 function createService(repository = defaultRepository) {
   return {
@@ -15,6 +16,16 @@ function createService(repository = defaultRepository) {
       const email = data.email.trim().toLowerCase();
       if (email.length > 320 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         throw new AppError('Informe um e-mail válido.', 400);
+      }
+      if (!Number.isInteger(data.idade) || data.idade < 1 || data.idade > 120) {
+        throw new AppError('Informe uma idade entre 1 e 120.', 400);
+      }
+      const novidade = data.novidade === undefined ? 0 : data.novidade;
+      if (![0, 1].includes(novidade)) {
+        throw new AppError('Novidade deve ser 0 ou 1.', 400);
+      }
+      if (data.saber != null && !SABER_OPTIONS.includes(data.saber)) {
+        throw new AppError('Canal de conhecimento inválido.', 400);
       }
       if (typeof data.curso !== 'string') {
         throw new AppError('Escolha um único curso atual.', 400);
@@ -39,7 +50,7 @@ function createService(repository = defaultRepository) {
         throw new ConflictError('Este e-mail já respondeu ao formulário.');
       }
       try {
-        return await repository.create({ ...data, email, curso, novo: normalizedNew });
+        return await repository.create({ ...data, email, curso, novo: normalizedNew, novidade });
       } catch (error) {
         // Também cobre duas respostas simultâneas após a consulta inicial.
         if (error.code === 'ER_DUP_ENTRY') {

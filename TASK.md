@@ -39,11 +39,11 @@ Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao
   * `src/shared/middlewares/rateLimiter.js`
   * `src/shared/utils/logger.js`
 * **Tarefas tecnicas:**
-  - [ ] Inicializar o projeto Node.js (`npm init -y`) e configurar scripts no `package.json` (`start`, `dev` com nodemon).
-  - [ ] Instalar dependencias centrais de infraestrutura (`express`, `cors`, `dotenv`, `express-rate-limit`, `helmet`).
-  - [ ] Configurar o arquivo principal `src/server.js` com instanciacao do Express, parsing de JSON (`express.json`) e politicas de CORS restritas ao dominio cliente.
-  - [ ] Implementar e parametrizar o limitador de requisicoes (`src/config/rateLimiter.js` e `src/shared/middlewares/rateLimiter.js`) para mitigar abusos e ataques DoS.
-  - [ ] Desenvolver utilitario de logs (`src/shared/utils/logger.js`) para rastreamento de acessos, erros e tempo de resposta das chamadas.
+  - [x] Inicializar o projeto Node.js (`npm init -y`) e configurar scripts no `package.json` (`start`, `dev` com nodemon).
+  - [x] Instalar dependencias centrais de infraestrutura (`express`, `cors`, `dotenv`, `express-rate-limit`, `helmet`).
+  - [x] Configurar o arquivo principal `src/server.js` com instanciacao do Express, parsing de JSON (`express.json`) e politicas de CORS restritas ao dominio cliente.
+  - [x] Implementar e parametrizar o limitador de requisicoes (`src/config/rateLimiter.js` e `src/shared/middlewares/rateLimiter.js`) para mitigar abusos e ataques DoS.
+  - [x] Desenvolver utilitario de logs (`src/shared/utils/logger.js`) para rastreamento de acessos, erros e tempo de resposta das chamadas.
 * **Criterio de Entrega:** Servidor Express inicializando de forma resiliente na porta definida, com protecao por Rate Limit ativa, configuracao de variaveis de ambiente e logs operacionais.
 
 ---
@@ -75,15 +75,15 @@ Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao
   * `src/shared/middlewares/validateRequest.js`
   * `src/shared/middlewares/errorHandler.js`
 * **Tarefas tecnicas:**
-  - [ ] Integrar biblioteca de validacao de esquemas (ex: `Zod` ou `Joi`).
-  - [ ] Definir regras de validacao rigorosas em `subscription.schema.js`:
+  - [x] Integrar biblioteca de validacao de esquemas (Zod).
+  - [x] Definir regras de validacao rigorosas em `subscription.schema.js`:
     - Nome completo (obrigatorio, minimo de caracteres, sanitizacao de espacos).
     - E-mail (formato de e-mail valido segundo especificacao RFC).
     - Idade (inteiro obrigatorio), campos opcionais e limites de tamanho conforme `docs/database.md` e migrations.
     - Telefone (codigo DDD valido e tamanho padrao nacional).
     - Um curso atual obrigatorio e no maximo um curso novo opcional; rejeitar arrays. Catalogos mantidos no banco.
-  - [ ] Implementar middleware reutilizavel `validateRequest.js` para interceptar payloads invalidos antes de chegarem aos controladores, retornando status `400 Bad Request` com array de inconsistencias.
-  - [ ] Implementar middleware global `errorHandler.js` para capturar excecoes sincronas e assincronas, formatar a saida JSON e omitir detalhes internos em ambiente de producao.
+  - [x] Implementar middleware reutilizavel `validateRequest.js` para interceptar payloads invalidos antes de chegarem aos controladores, retornando status `400 Bad Request` com array de inconsistencias.
+  - [x] Implementar middleware global `errorHandler.js` para capturar excecoes sincronas e assincronas, formatar a saida JSON e omitir detalhes internos em ambiente de producao.
 * **Criterio de Entrega:** Validacao robusta barrando entradas invalidas com mensagens claras e camada central de captura de erros operando em todas as rotas.
 
 ---
@@ -161,4 +161,4 @@ Este documento estabelece a divisao do desenvolvimento do **Backend da aplicacao
 
 ## Contrato atualizado do formulario
 
-Consulte `docs/database.md`. O catalogo de cursos novos comeca vazio; `novo` pode ser null. Migrations e regras do service validadas com MySQL real 8.4.9 pela suite `tests/integration/mysql.test.js`. Validacao HTTP completa ainda pendente.
+Consulte `docs/database.md`. O catalogo de cursos novos comeca vazio; `novo` pode ser null. A validacao HTTP e os testes isolados estao implementados. A suite MySQL deve ser repetida no ambiente de homologacao antes de cada publicacao.

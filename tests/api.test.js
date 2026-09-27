@@ -130,6 +130,7 @@ test('POST /api/subscriptions -> 201 Created aceita profissao_interesse como ali
     nome: 'Lucas Gabriel Mendes',
     email: 'lucas.mendes@exemplo.com',
     telefone: '11987654321',
+    idade: 20,
     profissao_interesse: 'Direito',
   };
 
@@ -189,9 +190,24 @@ test('POST /api/subscriptions -> 400 Bad Request com curso inexistente no catál
     .expect(400);
 
   assert.equal(res.body.status, 'error');
-  assert.ok(
-    res.body.errors.some((err) => err.campo === 'curso' || err.campo === 'profissao_interesse')
-  );
+  assert.equal(res.body.message, 'Curso atual inválido.');
+});
+
+test('POST /api/subscriptions -> 400 para campos incompatíveis com o banco', async () => {
+  const cases = [
+    [{ ...validPayload, idade: 121 }, 'idade'],
+    [{ ...validPayload, idade: '999' }, 'idade'],
+    [{ ...validPayload, novidade: 2 }, 'novidade'],
+    [{ ...validPayload, saber: 'TikTok' }, 'saber'],
+  ];
+  for (const [index, [payload, field]] of cases.entries()) {
+    const res = await request(app)
+      .post('/api/subscriptions')
+      .set('X-Forwarded-For', `10.0.6.${index + 1}`)
+      .send(payload)
+      .expect(400);
+    assert.ok(res.body.errors.some((error) => error.campo === field));
+  }
 });
 
 test('POST /api/subscriptions -> 400 Bad Request quando o payload JSON é malformado', async () => {

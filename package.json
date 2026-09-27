@@ -1,7 +1,7 @@
 {
-  "name": "amostra-profissoes-backend",
+  "name": "mostra-profissoes-backend",
   "version": "1.0.0",
-  "description": "Backend da aplicação de inscrições da Amostra de Profissões (Node.js/Express)",
+  "description": "Backend da aplicação de inscrições da Mostra de Profissões (Node.js/Express)",
   "main": "src/server.js",
   "private": true,
   "engines": {
@@ -10,13 +10,16 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon --watch src --ext js,json src/server.js",
-    "test": "node --test tests/**/*.test.js"
+    "test": "node --test tests/*.test.js tests/integration/*.test.js",
+    "test:coverage": "node --test --experimental-test-coverage tests/*.test.js tests/integration/*.test.js",
+    "test:mysql": "node scripts/run-mysql-tests.js",
+    "db:migrate": "node scripts/migrate.js"
   },
   "keywords": [
     "express",
     "api-rest",
     "inscricoes",
-    "amostra-de-profissoes"
+    "mostra-de-profissoes"
   ],
   "license": "ISC",
   "dependencies": {

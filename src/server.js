@@ -1,5 +1,5 @@
 /**
- * Ponto de entrada do backend — Amostra de Profissões.
+ * Ponto de entrada do backend — Mostra de Profissões.
  *
  * Responsabilidades desta camada (Pessoa 1):
  *  - carregar variáveis de ambiente;
@@ -16,6 +16,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 
 const logger = require('./shared/utils/logger');
+const { closePool } = require('./config/database');
 const { requestLogger } = logger;
 const { globalLimiter } = require('./shared/middlewares/rateLimiter');
 
@@ -170,7 +171,8 @@ function start() {
     shuttingDown = true;
     logger.info(`Encerrando servidor (${reason})...`);
 
-    server.close(() => {
+    server.close(async () => {
+      await closePool();
       logger.info('Servidor encerrado.');
       process.exit(exitCode);
     });

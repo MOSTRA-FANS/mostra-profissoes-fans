@@ -26,18 +26,10 @@ function createController({
       try {
         const body = req.body || {};
 
-        // Garante compatibilidade caso venha curso ou profissao_interesse
-        const payload = {
-          ...body,
-          curso: body.curso || body.profissao_interesse,
-        };
-
-        const result = await service.create(payload);
+        const result = await service.create(body);
 
         logger.info('Inscrição criada com sucesso', {
           id: result.id,
-          email: result.email,
-          curso: result.curso,
         });
 
         return res.status(201).json({

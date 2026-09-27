@@ -80,7 +80,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"nome\": \"Jo\",\n  \"email\": \"email-invalido\",\n  \"telefone\": \"12345\",\n  \"curso\": \"Curso Inexistente\"\n}"
+          "raw": "{\n  \"nome\": \"Jo\",\n  \"idade\": 19,\n  \"email\": \"email-invalido\",\n  \"telefone\": \"12345\",\n  \"curso\": \"Curso Inexistente\"\n}"
         },
         "url": {
           "raw": "{{base_url}}/api/subscriptions",
@@ -102,7 +102,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"nome\": \"Outro Participante\",\n  \"email\": \"mariana.costa@exemplo.com\",\n  \"telefone\": \"(31) 98765-4321\",\n  \"curso\": \"Direito\"\n}"
+          "raw": "{\n  \"nome\": \"Outro Participante\",\n  \"idade\": 19,\n  \"email\": \"mariana.costa@exemplo.com\",\n  \"telefone\": \"(31) 98765-4321\",\n  \"curso\": \"Direito\"\n}"
         },
         "url": {
           "raw": "{{base_url}}/api/subscriptions",

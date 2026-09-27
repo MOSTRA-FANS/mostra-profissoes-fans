@@ -63,9 +63,9 @@ uma nova migration de dados, sem repetir a criação das tabelas.
 3. Execute 002, 003, 004 e 005 nessa ordem, uma vez cada. Pare ao primeiro erro;
    não use opções para ignorar erros. São arquivos SQL comuns, sem SOURCE ou
    outros comandos exclusivos de um cliente.
-4. Registre ambiente, arquivo aplicado, data e commit no controle de implantação.
-   Ainda não há executor automático ou tabela de histórico: a aplicação não
-   executa migrations na inicialização nem descobre quais já foram aplicadas.
+4. Configure `.env` e execute `npm run db:migrate`. O executor cria e consulta
+   `schema_migrations`, usa um lock do MySQL e aplica apenas arquivos ainda não
+   registrados. A aplicação não executa migrations automaticamente ao iniciar.
 5. Confira oito cursos atuais, catálogo novo vazio e a tabela inscricoes.
    Use SHOW CREATE TABLE inscricoes para conferir uk_inscricoes_email,
    fk_inscricoes_curso e fk_inscricoes_novo.
@@ -105,7 +105,7 @@ inspecione o estado antes de continuar. Não há rollback destrutivo automático
 - Pessoa 5: rotas, controller, exposição das listas de cursos e testes HTTP.
 
 create retorna id e dados gravados; findById retorna também data_inscricao.
-Execute os testes isolados com `node --test tests/*.test.js`. Eles não substituem
+Execute os testes isolados com `npm test`. Eles não substituem
 execução das migrations nem testes de integridade em MySQL real.
 
 ## Teste automatizado com MySQL real
@@ -119,15 +119,15 @@ e um ConflictError com statusCode 409. Isso valida o service, não a resposta HT
 
 Para repetir, disponibilize MySQL de testes e mysql2 no ambiente Node.js.
 Configure DB_HOST, DB_PORT, DB_USER e DB_PASSWORD. O usuário precisa poder
-criar e remover bancos de testes. Execute no PowerShell:
+criar e remover bancos de testes. Execute:
 
 ```powershell
-$env:RUN_MYSQL_TESTS = '1'
-node --test tests/integration/mysql.test.js
+npm run test:mysql
 ```
 
 A suite gera um banco `mostra_test_<aleatorio>`, aplica as migrations nele
 e remove somente esse banco ao finalizar. DB_NAME não seleciona uma base
 existente para os testes. Sem RUN_MYSQL_TESTS=1, a suite é ignorada.
 Os erros SQL de duplicidade e FK exibidos nos logs são esperados nos casos
-de rejeição. Testes HTTP permanecem pendentes da integração das outras camadas.
+de rejeição. Os testes HTTP usam um repositório isolado; antes da publicação,
+faça também uma chamada HTTP de homologação contra o MySQL migrado.

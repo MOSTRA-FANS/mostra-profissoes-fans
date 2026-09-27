@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // 2. Inicia as lógicas (Menu só se o header existir)
     if (headerLoaded) {
+        adjustLinks();
         initMenuLogic();
         highlightCurrentPage();
     }
@@ -136,21 +137,8 @@ function adjustLinks() {
         // Não altera links externos ou âncoras
         if (href && !href.startsWith('http') && !href.startsWith('#')) {
             // Remove ../ pré-existentes para evitar duplicidade e aplica o prefixo correto
-            const cleanHref = href.replace('../', '');
+            const cleanHref = href.replace(/^(\.\.\/|\.\/|\/)+/, '');
             link.setAttribute('href', prefix + cleanHref);
         }
     });
 }
-
-// === NO SEU DOMContentLoaded, CHAME A FUNÇÃO ===
-document.addEventListener('DOMContentLoaded', async function() {
-    const headerLoaded = await loadComponent('header-placeholder', 'header.html');
-    await loadComponent('footer-placeholder', 'footer.html');
-
-    if (headerLoaded) {
-        adjustLinks(); // <--- Adicione isso aqui!
-        initMenuLogic();
-        highlightCurrentPage();
-    }
-    // ... restante do código
-});

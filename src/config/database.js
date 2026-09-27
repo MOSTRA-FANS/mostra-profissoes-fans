@@ -1,5 +1,13 @@
 const mysql = require('mysql2/promise');
 
+if (process.env.NODE_ENV === 'production') {
+  const required = ['DB_HOST', 'DB_USER', 'DB_PASSWORD', 'DB_NAME'];
+  const missing = required.filter((name) => !process.env[name]);
+  if (missing.length > 0) {
+    throw new Error(`Variaveis obrigatorias do banco ausentes: ${missing.join(', ')}`);
+  }
+}
+
 /**
  * Configuração do Pool de Conexões com o Banco de Dados MySQL
  * Gerencia limites de conexão, timeouts, fila de espera e reconexões automáticas.

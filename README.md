@@ -1,67 +1,89 @@
-# Arquitetura do Backend — Mostra de Profissões
+# Mostra de Profissões FANS
 
-Este documento descreve a arquitetura do backend para a aplicação de inscrição da Mostra de Profissões, utilizando **Node.js** e **Express**.
+Site institucional e API do formulário de interesse da Mostra de Profissões.
+O frontend é HTML/CSS/JavaScript e o backend usa Node.js, Express e MySQL.
 
----
+## Funcionalidades
 
-## 1. Visão Geral e Princípios
-- **Arquitetura Baseada em Recursos (Feature Folder):** O código é organizado por módulos funcionais em vez de pastas genéricas.
-- **Responsabilidade Única (SRP em Camadas):** Separação clara entre roteamento, controle de requisições, regra de negócio e persistência de dados.
-- **Desacoplamento do Client (API REST):** A API aceita e responde estritamente no formato JSON, mantendo o frontend (HTML/CSS/JS) totalmente independente.
-- **Segurança e Resiliência:** Proteção contra abusos no envio do formulário através de limitador de requisições (Rate Limiting).
+- Formulário em `inscricao.html`, preenchido com os catálogos do banco.
+- Uma resposta por e-mail, inclusive sob envios simultâneos.
+- Curso atual obrigatório e, quando cadastrado, um curso novo opcional.
+- Validação e sanitização com Zod.
+- CORS, Helmet, limite global e limite específico para inscrições.
+- Health check do processo e do MySQL.
+- Logs estruturados em produção sem registrar o e-mail do participante.
 
----
+## API
 
-## 2. Estrutura de Pastas
+| Método | Rota | Finalidade |
+| --- | --- | --- |
+| `GET` | `/api/health` | Saúde do processo e conexão MySQL. |
+| `GET` | `/api/courses` | Catálogos atuais e novos. |
+| `POST` | `/api/subscriptions` | Cria uma inscrição. |
+
+O contrato completo está em `docs/api-spec.md` e o banco em
+`docs/database.md`.
+
+## Instalação local
+
+Requisitos: Node.js 18 ou superior e MySQL 8.
+
+```powershell
+npm ci
+Copy-Item .env.example .env
+```
+
+Edite `.env` com um usuário MySQL dedicado e execute:
+
+```powershell
+npm run db:migrate
+npm start
+```
+
+Sirva os arquivos HTML em `http://localhost:5500`. Nesse endereço,
+`inscricao.html` usa automaticamente a API em `http://localhost:3000/api`.
+Em produção, frontend e API podem compartilhar a mesma origem (`/api`) ou o
+frontend pode definir `window.MOSTRA_API_BASE_URL` antes de carregar
+`js/subscription.js`.
+
+## Testes
+
+```powershell
+npm test
+npm run test:coverage
+```
+
+Os testes comuns não alteram banco real. Para a suíte MySQL, use uma instância
+exclusiva de teste e um usuário autorizado a criar e remover bancos temporários:
+
+```powershell
+npm run test:mysql
+```
+
+A suíte cria uma base aleatória `mostra_test_*` e remove somente essa base ao
+terminar. Nunca use credenciais de produção nesse comando.
+
+## Estrutura principal
 
 ```text
 src/
-├── config/
-│   ├── database.js          # Configuração de conexão com o Banco de Dados
-│   └── rateLimiter.js       # Parâmetros globais do rate limiter
-├── features/
-│   └── subscriptions/       # Módulo da funcionalidade de Inscrição
-│       ├── subscription.routes.js     # Endpoints e Middlewares específicos
-│       ├── subscription.controller.js # Recebe req, chama service e responde res
-│       ├── subscription.service.js    # Regras de negócio e validações
-│       ├── subscription.repository.js # Operações diretas com o banco de dados
-│       └── subscription.schema.js     # Schema de validação de payload (ex: Zod/Joi)
-├── shared/                  # Módulos compartilhados entre features
-│   ├── middlewares/
-│   │   ├── errorHandler.js  # Captura e formatação centralizada de erros
-│   │   └── rateLimiter.js   # Middleware de limitação de requisições
-│   └── utils/
-│       └── logger.js        # Utilitário para logs do sistema
-└── server.js                # Inicialização do servidor Express
+├── config/                         # Banco e rate limit
+├── features/subscriptions/         # Routes, controller, schema, service e repository
+├── shared/                         # Erros, middlewares e logs
+└── server.js                       # Aplicação Express
+migrations/                       # Evolução versionada do banco
+scripts/                          # Executor de migrations e teste MySQL
+tests/                            # Testes HTTP, domínio, frontend e MySQL
+inscricao.html                    # Formulário da Mostra
+js/subscription.js                # Integração frontend/API
 ```
 
----
+## Publicação
 
-## 3. Divisão de Responsabilidades (SRP)
-
-| Camada | Arquivo Exemplo | Responsabilidade |
-| :--- | :--- | :--- |
-| **Routes** | `subscription.routes.js` | Define as rotas HTTP (`POST /api/subscriptions`) e aplica os middlewares específicos. |
-| **Controller** | `subscription.controller.js` | Recebe a requisição, extrai o corpo (`req.body`), aciona a camada de serviço e retorna o status HTTP + JSON. |
-| **Service** | `subscription.service.js` | Contém a regra de negócio (ex: bloquear e-mail repetido e validar escolhas de cursos). |
-| **Repository** | `subscription.repository.js` | Contém as consultas SQL ou chamadas do ORM/ODM (ex: Prisma, TypeORM, Mongoose). |
-| **Schema** | `subscription.schema.js` | Valida a estrutura dos dados recebidos no formulário antes de prosseguir. |
-
----
-
-## 4. Segurança & Boas Práticas
-
-1. **Rate Limiting (Proteção contra Spam):**
-   - Implementado via `express-rate-limit`.
-   - Limita o número de inscrições por IP dentro de uma janela de tempo para evitar bots ou ataques de negação de serviço (DoS).
-
-2. **CORS (Cross-Origin Resource Sharing):**
-   - Restringe o consumo da API apenas para o domínio oficial onde o frontend (HTML/CSS/JS) está hospedado.
-
-3. **Tratamento Global de Erros:**
-   - Evita a exposição de stack traces em ambiente de produção através do middleware `errorHandler.js`.
-## Formulario de interesse em cursos
-
-Um curso atual obrigatorio, no maximo um curso novo opcional e uma resposta por e-mail. Os catalogos ficam no banco. Consulte [banco e migracao](docs/database.md).
-
-Execute os testes isolados com `node --test tests/*.test.js`. O backend HTTP e a validacao completa do payload ainda dependem das Pessoas 1, 3 e 5.
+1. Configure todas as variáveis de `.env.example`; em produção as credenciais
+   do banco e `CLIENT_ORIGIN` são obrigatórias.
+2. Faça backup do banco e execute `npm run db:migrate` uma vez por versão.
+3. Execute `npm test` e, no ambiente de homologação, `npm run test:mysql`.
+4. Inicie a API com `NODE_ENV=production` e configure `TRUST_PROXY` conforme a
+   quantidade real de proxies reversos.
+5. Confira `/api/health` e envie uma inscrição de homologação antes de liberar.

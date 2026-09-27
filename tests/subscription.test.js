@@ -30,7 +30,8 @@ test('aceita um curso novo cadastrado posteriormente', async () => {
 test('rejeita arrays, cursos desconhecidos e e-mail inválido antes de gravar', async () => {
   const service = createService(repository({ create: async () => assert.fail('Não deve gravar') }));
   for (const change of [{ curso: ['Direito'] }, { novo: ['Curso futuro'] },
-    { curso: 'Inexistente' }, { novo: 'Inexistente' }, { email: 'invalido' }]) {
+    { curso: 'Inexistente' }, { novo: 'Inexistente' }, { email: 'invalido' },
+    { idade: 121 }, { novidade: 2 }, { saber: 'TikTok' }]) {
     await assert.rejects(service.create({ ...payload, ...change }), { statusCode: 400 });
   }
 });
@@ -58,17 +59,22 @@ test('preserva falhas inesperadas para o errorHandler', async () => {
 
 test('repositório persiste campos do formulário com parâmetros e sem campos extras', async () => {
   const repo = createRepository({ query: async (sql, params) => {
-    assert.match(sql, /INSERT INTO inscricoes/);
-    assert.equal((sql.match(/\?/g) || []).length, params.length);
-    assert.equal(params.length, 10);
-    assert.equal(params[4], 'Direito');
-    assert.equal(params[5], null);
-    assert.ok(!sql.includes(payload.nome));
-    return [{ insertId: 42 }];
+    if (/INSERT INTO inscricoes/.test(sql)) {
+      assert.equal((sql.match(/\?/g) || []).length, params.length);
+      assert.equal(params.length, 10);
+      assert.equal(params[4], 'Direito');
+      assert.equal(params[5], null);
+      assert.ok(!sql.includes(payload.nome));
+      return [{ insertId: 42 }];
+    }
+    assert.match(sql, /SELECT \* FROM inscricoes WHERE id/);
+    assert.deepEqual(params, [42]);
+    return [[{ id: 42, ...payload, data_inscricao: new Date('2026-09-27T12:00:00Z') }]];
   } });
   const result = await repo.create({ ...payload, cpf: 'ignorado' });
   assert.equal(result.id, 42);
   assert.equal(result.cpf, undefined);
+  assert.ok(result.data_inscricao instanceof Date);
 });
 
 test('classes de erro preservam mensagem, herança e status para o middleware', () => {

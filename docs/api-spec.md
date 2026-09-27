@@ -135,11 +135,11 @@ Recebe os dados do formulário de inscrição, valida rigorosamente os tipos e f
 | `email` | `string` | **Sim** | E-mail válido (RFC 5322). Máximo 320 caracteres. É normalizado em minúsculas e deve ser único na base. |
 | `telefone` | `string` | **Sim** | Telefone com DDD brasileiro válido (ANATEL). 10 dígitos (fixo, inicial 2-5) ou 11 dígitos (celular, inicial 9). Caracteres não numéricos são removidos na sanitização. |
 | `curso` | `string` | **Sim\*** | Curso de interesse homologado (ex: `Engenharia de Software`). Também aceito como `profissao_interesse` para total retrocompatibilidade. |
-| `idade` | `integer` | Não | Idade do participante (número inteiro entre 1 e 120 anos). |
+| `idade` | `integer` | **Sim** | Idade do participante (número inteiro entre 1 e 120 anos). Strings numéricas são normalizadas. |
 | `novo` | `string \| null` | Não | Curso de catálogo novo sugerido/escolhido (máximo 100 caracteres). |
 | `outro` | `string \| null` | Não | Campo de texto livre opcional (máximo 100 caracteres). |
 | `novidade` | `integer \| boolean` | Não | Flag `0` ou `1` indicando se deseja receber novidades (padrão: 0). |
-| `feedback` | `string \| null` | Não | Mensagem ou sugestão opcional do participante. |
+| `feedback` | `string \| null` | Não | Mensagem ou sugestão opcional do participante, com até 5.000 caracteres. |
 | `saber` | `string \| null` | Não | Canal por onde conheceu a Mostra (ex: `Instagram`, `WhatsApp`, `Professor`, `Amigo/Colega`, `Site da faculdade`, `Cartaz`, `Outro`). |
 
 *\* Nota: Deve ser fornecido `curso` ou `profissao_interesse` contendo uma das opções válidas.*

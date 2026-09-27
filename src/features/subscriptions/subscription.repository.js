@@ -12,8 +12,7 @@ function createRepository(db) {
          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [nome, idade, telefone, email, curso, novo, outro, novidade, feedback, saber]
       );
-      return { id: result.insertId, nome, idade, telefone, email, curso,
-        novo, outro, novidade, feedback, saber };
+      return this.findById(result.insertId);
     },
 
     async findByEmail(email) {

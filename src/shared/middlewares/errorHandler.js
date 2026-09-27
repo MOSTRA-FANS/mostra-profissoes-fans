@@ -1,3 +1,5 @@
+const logger = require('../utils/logger');
+
 // Middleware global de erros: deve ser o ULTIMO app.use() do server.js.
 // Express 5 encaminha automaticamente rejeicoes de handlers async para ca.
 // Erros com statusCode/status (ex: AppError, JSON malformado) mantem o status;
@@ -11,7 +13,7 @@ const errorHandler = (err, req, res, next) => {
   const isServerError = statusCode >= 500;
   const isProduction = process.env.NODE_ENV === 'production';
 
-  if (isServerError) console.error(err); // ponytail: trocar pelo logger.js da Pessoa 1 quando existir
+  if (isServerError) logger.error('Erro nao tratado', { error: err, path: req.originalUrl });
 
   let message = err.message || 'Erro interno do servidor';
   if (err.type === 'entity.parse.failed') message = 'JSON malformado no corpo da requisicao';

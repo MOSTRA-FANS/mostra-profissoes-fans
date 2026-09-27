@@ -10,6 +10,7 @@ const valid = {
   nome: '  Maria   da Silva ',
   email: ' Maria@Exemplo.COM ',
   telefone: '(11) 98765-4321',
+  idade: '19',
   profissao_interesse: 'Direito',
 };
 
@@ -51,12 +52,14 @@ test('payload valido passa e e sanitizado', async () => {
     nome: 'Maria da Silva',
     email: 'maria@exemplo.com',
     telefone: '11987654321',
-    profissao_interesse: 'Direito',
+    idade: 19,
+    curso: 'Direito',
+    novidade: 0,
   });
 });
 
-test('profissao com acento e aceita', async () => {
-  assert.equal((await post({ ...valid, profissao_interesse: 'Técnico em Segurança do Trabalho' })).status, 201);
+test('curso novo no catalogo e aceito estruturalmente para validacao posterior no service', async () => {
+  assert.equal((await post({ ...valid, profissao_interesse: 'Curso criado posteriormente' })).status, 201);
 });
 
 test('fixo com 10 digitos e aceito', async () => {
@@ -67,7 +70,9 @@ const invalidCases = {
   nome: ['Maria', 'Jo', 'Maria 123'],
   email: ['maria@', 'maria.exemplo.com'],
   telefone: ['(20) 98765-4321', '1188765432', '119876543', '11 98765-432a'],
-  profissao_interesse: ['Astronauta', 'Administracao'],
+  idade: [0, 121, '999', 'abc'],
+  novidade: [2, -1, 0.5],
+  saber: ['TikTok'],
 };
 
 for (const [campo, values] of Object.entries(invalidCases)) {
@@ -83,7 +88,7 @@ for (const [campo, values] of Object.entries(invalidCases)) {
 
 test('body vazio lista todos os campos obrigatorios', async () => {
   const body = await (await post({})).json();
-  assert.equal(body.errors.length, 4);
+  assert.equal(body.errors.length, 5);
 });
 
 test('JSON malformado -> 400', async () => {
