@@ -8,6 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('subscription-submit');
     const currentCourses = form.elements.curso;
     const newCourses = form.elements.novo;
+
+    try {
+        const draft = JSON.parse(sessionStorage.getItem('mostra-registration-draft') || 'null');
+        sessionStorage.removeItem('mostra-registration-draft');
+        if (draft && typeof draft === 'object') {
+            if (typeof draft.nome === 'string') form.elements.nome.value = draft.nome;
+            if (typeof draft.email === 'string') form.elements.email.value = draft.email;
+        }
+    } catch {
+        sessionStorage.removeItem('mostra-registration-draft');
+    }
+
     const configuredBase = document.querySelector('meta[name="api-base-url"]')?.content.trim();
     const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
     const apiBase = (window.MOSTRA_API_BASE_URL || configuredBase || (isLocal ? 'http://localhost:3000/api' : '/api')).replace(/\/+$/, '');
